@@ -54,6 +54,34 @@ def register_routes(app):
             slider_max=app.config['SLIDER_MAX']
         )
 
+    @app.route('/api/destination/<int:id>/activities')
+    def api_get_activities(id):
+        """API-Endpunkt: Hole Aktivitäten basierend auf Slider-Level"""
+        from flask import jsonify
+
+        slider_value = request.args.get('slider', 0, type=int)
+        destination = Destination.query.get_or_404(id)
+
+        # Filtere Aktivitäten basierend auf Slider-Level
+        activities = Activity.query.filter(
+            Activity.destination_id == id,
+            Activity.slider_level <= slider_value
+        ).order_by(Activity.slider_level).all()
+
+        # Konvertiere zu JSON
+        activities_data = [{
+            'id': activity.id,
+            'title': activity.title,
+            'description': activity.description,
+            'slider_level': activity.slider_level,
+            'image_filename': activity.image_filename
+        } for activity in activities]
+
+        return jsonify({
+            'activities': activities_data,
+            'count': len(activities_data)
+        })
+
     @app.route('/admin')
     def admin():
         """Admin-Übersicht"""

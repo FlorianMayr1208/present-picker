@@ -132,18 +132,118 @@
 <script>
     const slider = document.getElementById('detailSlider');
     const sliderValue = document.getElementById('sliderValue');
+    const activitiesContainer = document.getElementById('activitiesContainer');
     const destinationId = {{ destination.id }};
+    let isLoading = false;
 
     // Update slider value display
     slider.addEventListener('input', function() {
         sliderValue.textContent = this.value;
     });
 
-    // Update activities when slider changes
+    // Update activities when slider changes (AJAX)
+    slider.addEventListener('input', debounce(function() {
+        const newValue = this.value;
+        loadActivities(newValue);
+    }, 300)); // 300ms debounce
+
+    function loadActivities(sliderLevel) {
+        if (isLoading) return;
+        isLoading = true;
+
+        // Zeige Loading-Zustand
+        activitiesContainer.style.opacity = '0.5';
+
+        // Hole Aktivitäten via AJAX
+        fetch(`/api/destination/${destinationId}/activities?slider=${sliderLevel}`)
+            .then(response => response.json())
+            .then(data => {
+                renderActivities(data.activities);
+                isLoading = false;
+                activitiesContainer.style.opacity = '1';
+            })
+            .catch(error => {
+                console.error('Fehler beim Laden der Aktivitäten:', error);
+                isLoading = false;
+                activitiesContainer.style.opacity = '1';
+            });
+    }
+
+    function renderActivities(activities) {
+        if (activities.length === 0) {
+            activitiesContainer.innerHTML = `
+                <div class="alert alert-info" role="alert">
+                    Bewege den Slider nach rechts, um Details über diese Reise zu sehen.
+                </div>
+            `;
+            return;
+        }
+
+        let html = '';
+        activities.forEach(activity => {
+            const hasImage = activity.image_filename ? true : false;
+            const imageCol = hasImage ? 'col-md-4' : '';
+            const contentCol = hasImage ? 'col-md-8' : 'col-md-12';
+
+            html += `
+                <div class="card mb-3 shadow-sm activity-card" data-level="${activity.slider_level}" style="animation: fadeIn 0.5s ease-in;">
+                    <div class="row g-0">
+                        ${hasImage ? `
+                        <div class="${imageCol}">
+                            <img src="/static/images/${activity.image_filename}"
+                                 class="img-fluid rounded-start h-100"
+                                 alt="${escapeHtml(activity.title)}"
+                                 style="object-fit: cover;">
+                        </div>
+                        ` : ''}
+                        <div class="${contentCol}">
+                            <div class="card-body">
+                                <div class="d-flex justify-content-between align-items-center mb-2">
+                                    <h5 class="card-title mb-0">${escapeHtml(activity.title)}</h5>
+                                    <span class="badge bg-primary">Level ${activity.slider_level}</span>
+                                </div>
+                                ${activity.description ? `<p class="card-text">${escapeHtml(activity.description)}</p>` : ''}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            `;
+        });
+
+        activitiesContainer.innerHTML = html;
+    }
+
+    // Hilfsfunktion: Debounce
+    function debounce(func, wait) {
+        let timeout;
+        return function executedFunction(...args) {
+            const later = () => {
+                clearTimeout(timeout);
+                func.apply(this, args);
+            };
+            clearTimeout(timeout);
+            timeout = setTimeout(later, wait);
+        };
+    }
+
+    // Hilfsfunktion: HTML escapen
+    function escapeHtml(text) {
+        if (!text) return '';
+        const map = {
+            '&': '&amp;',
+            '<': '&lt;',
+            '>': '&gt;',
+            '"': '&quot;',
+            "'": '&#039;'
+        };
+        return text.replace(/[&<>"']/g, m => map[m]);
+    }
+
+    // URL aktualisieren ohne Reload (für Browser-History)
     slider.addEventListener('change', function() {
         const newValue = this.value;
-        // Reload page with new slider value
-        window.location.href = `{{ url_for('show_destination', id=destination.id) }}?slider=${newValue}`;
+        const newUrl = `{{ url_for('show_destination', id=destination.id) }}?slider=${newValue}`;
+        window.history.pushState({slider: newValue}, '', newUrl);
     });
 </script>
 {% endblock %}
