@@ -43,31 +43,52 @@
                         <div class="form-text">Eine detaillierte Beschreibung der Aktivität</div>
                     </div>
 
-                    <!-- Slider Level -->
+                    <!-- Slider Level Range -->
                     <div class="mb-3">
-                        <label for="slider_level" class="form-label">
-                            Slider-Level <span class="text-danger">*</span>
-                            <span id="levelDisplay" class="badge bg-primary ms-2">
-                                {{ activity.slider_level if activity else 1 }}
+                        <label class="form-label">
+                            Sichtbarkeits-Bereich <span class="text-danger">*</span>
+                            <span class="badge bg-primary ms-2">
+                                <span id="levelRangeDisplay">{{ activity.slider_level_min if activity else 0 }}-{{ activity.slider_level_max if activity else 5 }}</span>
                             </span>
                         </label>
-                        <input type="range"
-                               class="form-range"
-                               id="slider_level"
-                               name="slider_level"
-                               min="0"
-                               max="{{ slider_max }}"
-                               value="{{ activity.slider_level if activity else 1 }}"
-                               step="1"
-                               oninput="updateLevelDisplay(this.value)">
-                        <input type="hidden" name="slider_level_hidden" id="slider_level_hidden" value="{{ activity.slider_level if activity else 1 }}">
 
-                        <div class="d-flex justify-content-between text-muted small mt-1">
-                            <span>0 - Nur Ziel</span>
-                            <span>{{ slider_max }} - Voll durchgeplant</span>
+                        <div class="row g-3">
+                            <div class="col-md-6">
+                                <label for="slider_level_min" class="form-label small">Minimales Level</label>
+                                <input type="range"
+                                       class="form-range"
+                                       id="slider_level_min"
+                                       name="slider_level_min"
+                                       min="0"
+                                       max="{{ slider_max }}"
+                                       value="{{ activity.slider_level_min if activity else 0 }}"
+                                       step="1"
+                                       oninput="updateLevelDisplay()">
+                                <div class="text-center">
+                                    <span id="minDisplay" class="badge bg-info">{{ activity.slider_level_min if activity else 0 }}</span>
+                                </div>
+                            </div>
+
+                            <div class="col-md-6">
+                                <label for="slider_level_max" class="form-label small">Maximales Level</label>
+                                <input type="range"
+                                       class="form-range"
+                                       id="slider_level_max"
+                                       name="slider_level_max"
+                                       min="0"
+                                       max="{{ slider_max }}"
+                                       value="{{ activity.slider_level_max if activity else 5 }}"
+                                       step="1"
+                                       oninput="updateLevelDisplay()">
+                                <div class="text-center">
+                                    <span id="maxDisplay" class="badge bg-info">{{ activity.slider_level_max if activity else 5 }}</span>
+                                </div>
+                            </div>
                         </div>
-                        <div class="form-text">
-                            Ab welchem Slider-Level soll diese Aktivität sichtbar sein?
+
+                        <div class="form-text mt-2">
+                            Diese Aktivität ist nur zwischen dem minimalen und maximalen Level sichtbar.
+                            Beispiel: Min=1, Max=3 → Sichtbar bei Level 1, 2 und 3, aber nicht bei 0, 4 oder 5.
                         </div>
                     </div>
 
@@ -110,15 +131,14 @@
     <div class="col-lg-4">
         <div class="card">
             <div class="card-body">
-                <h5 class="card-title">Slider-Level</h5>
-                <p class="card-text small">Das Slider-Level bestimmt, ab wann diese Aktivität sichtbar wird:</p>
+                <h5 class="card-title">Sichtbarkeits-Bereich</h5>
+                <p class="card-text small">Der Sichtbarkeits-Bereich bestimmt, bei welchen Slider-Levels diese Aktivität angezeigt wird.</p>
+                <p class="card-text small"><strong>Beispiele:</strong></p>
                 <ul class="list-unstyled small">
-                    <li class="mb-1"><span class="badge bg-secondary">0</span> Sofort sichtbar</li>
-                    <li class="mb-1"><span class="badge bg-primary">1</span> Basis-Aktivitäten</li>
-                    <li class="mb-1"><span class="badge bg-primary">2</span> Wichtige Sehenswürdigkeiten</li>
-                    <li class="mb-1"><span class="badge bg-primary">3</span> Zusätzliche Erlebnisse</li>
-                    <li class="mb-1"><span class="badge bg-primary">4</span> Tagesausflüge</li>
-                    <li class="mb-1"><span class="badge bg-primary">5</span> Alle Details</li>
+                    <li class="mb-2"><span class="badge bg-secondary">Min: 0, Max: 5</span> → Immer sichtbar</li>
+                    <li class="mb-2"><span class="badge bg-primary">Min: 1, Max: 3</span> → Nur bei Level 1-3 sichtbar (z.B. "Mietauto")</li>
+                    <li class="mb-2"><span class="badge bg-primary">Min: 4, Max: 5</span> → Nur bei Level 4-5 sichtbar (z.B. "Geführte Tour" statt Mietauto)</li>
+                    <li class="mb-2"><span class="badge bg-info">Min: 2, Max: 2</span> → Nur bei exakt Level 2 sichtbar</li>
                 </ul>
             </div>
         </div>
@@ -143,8 +163,13 @@
 
 {% block extra_js %}
 <script>
-function updateLevelDisplay(value) {
-    document.getElementById('levelDisplay').textContent = value;
+function updateLevelDisplay() {
+    const minVal = document.getElementById('slider_level_min').value;
+    const maxVal = document.getElementById('slider_level_max').value;
+
+    document.getElementById('minDisplay').textContent = minVal;
+    document.getElementById('maxDisplay').textContent = maxVal;
+    document.getElementById('levelRangeDisplay').textContent = minVal + '-' + maxVal;
 }
 </script>
 {% endblock %}

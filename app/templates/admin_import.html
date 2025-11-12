@@ -1,0 +1,108 @@
+{% extends "base.html" %}
+
+{% block title %}Import/Export - Admin{% endblock %}
+
+{% block content %}
+<div class="row mb-4">
+    <div class="col">
+        <a href="{{ url_for('admin') }}" class="btn btn-outline-secondary mb-3">&larr; Zurück zum Admin</a>
+        <h1 class="display-5">Daten Import & Export</h1>
+        <p class="lead">Exportiere oder importiere Destinationen und Aktivitäten</p>
+    </div>
+</div>
+
+<!-- Export Section -->
+<div class="row mb-5">
+    <div class="col">
+        <div class="card shadow">
+            <div class="card-body">
+                <h5 class="card-title">Export</h5>
+                <p class="card-text">Lade alle Destinationen und Aktivitäten herunter</p>
+
+                <div class="btn-group" role="group">
+                    <a href="{{ url_for('export_xlsx') }}" class="btn btn-success">
+                        <i class="bi bi-file-earmark-excel"></i> Als Excel (.xlsx) herunterladen
+                    </a>
+                    <a href="{{ url_for('export_csv') }}" class="btn btn-info">
+                        <i class="bi bi-file-earmark-zip"></i> Als CSV (.zip) herunterladen
+                    </a>
+                </div>
+
+                <div class="alert alert-info mt-3">
+                    <strong>Hinweis:</strong> Excel-Dateien enthalten 2 Sheets (Destinationen & Aktivitäten). CSV-Export ist ein ZIP mit 2 CSV-Dateien.
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Import Section -->
+<div class="row">
+    <div class="col-lg-8">
+        <div class="card shadow">
+            <div class="card-body">
+                <h5 class="card-title">Import</h5>
+                <p class="card-text">Importiere Destinationen und Aktivitäten aus Excel oder CSV</p>
+
+                <form method="POST" enctype="multipart/form-data">
+                    <div class="mb-3">
+                        <label for="import_file" class="form-label">Datei auswählen</label>
+                        <input type="file"
+                               class="form-control"
+                               id="import_file"
+                               name="import_file"
+                               accept=".xlsx,.csv"
+                               required>
+                        <div class="form-text">
+                            Erlaubte Formate: .xlsx (Excel) oder .csv
+                        </div>
+                    </div>
+
+                    <button type="submit" class="btn btn-primary">
+                        Importieren
+                    </button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- Instructions Sidebar -->
+    <div class="col-lg-4">
+        <div class="card">
+            <div class="card-body">
+                <h5 class="card-title">Anleitung</h5>
+
+                <h6 class="mt-3">Excel-Import (.xlsx)</h6>
+                <p class="small">
+                    Die Excel-Datei muss 2 Sheets haben:
+                </p>
+                <ul class="small">
+                    <li><strong>Destinationen</strong>: ID, Name, Kurzbeschreibung, Titelbild</li>
+                    <li><strong>Aktivitäten</strong>: ID, Destination ID, Destination Name, Titel, Beschreibung, Slider Level, Bild</li>
+                </ul>
+
+                <h6 class="mt-3">CSV-Import</h6>
+                <p class="small">
+                    CSV-Dateien müssen die entsprechenden Spalten-Header haben. Es wird automatisch erkannt, ob es sich um Destinationen oder Aktivitäten handelt.
+                </p>
+
+                <div class="alert alert-warning small mt-3">
+                    <strong>Achtung:</strong> Beim Import werden neue Einträge erstellt. Bestehende Daten bleiben erhalten.
+                </div>
+            </div>
+        </div>
+
+        <div class="card mt-3">
+            <div class="card-body">
+                <h5 class="card-title">Beispiel-Datei</h5>
+                <p class="small">
+                    Exportiere zuerst eine Datei, um das richtige Format zu sehen.
+                </p>
+                <a href="{{ url_for('export_xlsx') }}" class="btn btn-sm btn-outline-success w-100">
+                    Beispiel herunterladen
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

@@ -27,10 +27,7 @@ main {
     flex: 1;
 }
 
-/* Smooth transitions */
-* {
-    transition: all 0.3s ease-in-out;
-}
+/* Smooth transitions - removed universal selector to prevent click blocking */
 
 /* Card hover effects */
 .card {

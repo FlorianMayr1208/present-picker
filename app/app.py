@@ -1,10 +1,14 @@
-from flask import Flask, render_template, request, redirect, url_for, flash
+from flask import Flask, render_template, request, redirect, url_for, flash, send_file, jsonify
 from werkzeug.utils import secure_filename
 from app.config import Config
 from app.models import db
 from app.models.destination import Destination
 from app.models.activity import Activity
 import os
+import csv
+import io
+from openpyxl import Workbook, load_workbook
+from datetime import datetime
 
 
 def create_app(config_class=Config):
@@ -40,11 +44,12 @@ def register_routes(app):
         slider_value = request.args.get('slider', 0, type=int)
         destination = Destination.query.get_or_404(id)
 
-        # Filtere Aktivitäten basierend auf Slider-Level
+        # Filtere Aktivitäten basierend auf Slider-Level Range
         activities = Activity.query.filter(
             Activity.destination_id == id,
-            Activity.slider_level <= slider_value
-        ).order_by(Activity.slider_level).all()
+            Activity.slider_level_min <= slider_value,
+            Activity.slider_level_max >= slider_value
+        ).order_by(Activity.slider_level_min).all()
 
         return render_template(
             'destination.html',
@@ -62,18 +67,20 @@ def register_routes(app):
         slider_value = request.args.get('slider', 0, type=int)
         destination = Destination.query.get_or_404(id)
 
-        # Filtere Aktivitäten basierend auf Slider-Level
+        # Filtere Aktivitäten basierend auf Slider-Level Range
         activities = Activity.query.filter(
             Activity.destination_id == id,
-            Activity.slider_level <= slider_value
-        ).order_by(Activity.slider_level).all()
+            Activity.slider_level_min <= slider_value,
+            Activity.slider_level_max >= slider_value
+        ).order_by(Activity.slider_level_min).all()
 
         # Konvertiere zu JSON
         activities_data = [{
             'id': activity.id,
             'title': activity.title,
             'description': activity.description,
-            'slider_level': activity.slider_level,
+            'slider_level_min': activity.slider_level_min,
+            'slider_level_max': activity.slider_level_max,
             'image_filename': activity.image_filename
         } for activity in activities]
 
@@ -163,7 +170,7 @@ def register_routes(app):
     def admin_activities(destination_id):
         """Aktivitäten einer Destination verwalten"""
         destination = Destination.query.get_or_404(destination_id)
-        activities = Activity.query.filter_by(destination_id=destination_id).order_by(Activity.slider_level).all()
+        activities = Activity.query.filter_by(destination_id=destination_id).order_by(Activity.slider_level_min).all()
         return render_template('admin_activities.html', destination=destination, activities=activities)
 
     @app.route('/admin/destination/<int:destination_id>/activity/new', methods=['GET', 'POST'])
@@ -174,7 +181,8 @@ def register_routes(app):
         if request.method == 'POST':
             title = request.form.get('title')
             description = request.form.get('description')
-            slider_level = request.form.get('slider_level', type=int)
+            slider_level_min = request.form.get('slider_level_min', type=int)
+            slider_level_max = request.form.get('slider_level_max', type=int)
             image_file = request.files.get('image_filename')
 
             # Validierung
@@ -185,8 +193,22 @@ def register_routes(app):
                                      activity=None,
                                      slider_max=app.config['SLIDER_MAX'])
 
-            if slider_level is None or slider_level < 0 or slider_level > app.config['SLIDER_MAX']:
-                flash(f'Slider-Level muss zwischen 0 und {app.config["SLIDER_MAX"]} liegen!', 'danger')
+            if slider_level_min is None or slider_level_min < 0 or slider_level_min > app.config['SLIDER_MAX']:
+                flash(f'Minimales Slider-Level muss zwischen 0 und {app.config["SLIDER_MAX"]} liegen!', 'danger')
+                return render_template('admin_activity_form.html',
+                                     destination=destination,
+                                     activity=None,
+                                     slider_max=app.config['SLIDER_MAX'])
+
+            if slider_level_max is None or slider_level_max < 0 or slider_level_max > app.config['SLIDER_MAX']:
+                flash(f'Maximales Slider-Level muss zwischen 0 und {app.config["SLIDER_MAX"]} liegen!', 'danger')
+                return render_template('admin_activity_form.html',
+                                     destination=destination,
+                                     activity=None,
+                                     slider_max=app.config['SLIDER_MAX'])
+
+            if slider_level_min > slider_level_max:
+                flash('Minimales Level darf nicht größer als maximales Level sein!', 'danger')
                 return render_template('admin_activity_form.html',
                                      destination=destination,
                                      activity=None,
@@ -204,7 +226,8 @@ def register_routes(app):
                 destination_id=destination_id,
                 title=title,
                 description=description,
-                slider_level=slider_level,
+                slider_level_min=slider_level_min,
+                slider_level_max=slider_level_max,
                 image_filename=image_filename
             )
             db.session.add(activity)
@@ -227,7 +250,8 @@ def register_routes(app):
         if request.method == 'POST':
             activity.title = request.form.get('title')
             activity.description = request.form.get('description')
-            slider_level = request.form.get('slider_level', type=int)
+            slider_level_min = request.form.get('slider_level_min', type=int)
+            slider_level_max = request.form.get('slider_level_max', type=int)
             image_file = request.files.get('image_filename')
 
             # Validierung
@@ -238,14 +262,29 @@ def register_routes(app):
                                      activity=activity,
                                      slider_max=app.config['SLIDER_MAX'])
 
-            if slider_level is None or slider_level < 0 or slider_level > app.config['SLIDER_MAX']:
-                flash(f'Slider-Level muss zwischen 0 und {app.config["SLIDER_MAX"]} liegen!', 'danger')
+            if slider_level_min is None or slider_level_min < 0 or slider_level_min > app.config['SLIDER_MAX']:
+                flash(f'Minimales Slider-Level muss zwischen 0 und {app.config["SLIDER_MAX"]} liegen!', 'danger')
                 return render_template('admin_activity_form.html',
                                      destination=destination,
                                      activity=activity,
                                      slider_max=app.config['SLIDER_MAX'])
 
-            activity.slider_level = slider_level
+            if slider_level_max is None or slider_level_max < 0 or slider_level_max > app.config['SLIDER_MAX']:
+                flash(f'Maximales Slider-Level muss zwischen 0 und {app.config["SLIDER_MAX"]} liegen!', 'danger')
+                return render_template('admin_activity_form.html',
+                                     destination=destination,
+                                     activity=activity,
+                                     slider_max=app.config['SLIDER_MAX'])
+
+            if slider_level_min > slider_level_max:
+                flash('Minimales Level darf nicht größer als maximales Level sein!', 'danger')
+                return render_template('admin_activity_form.html',
+                                     destination=destination,
+                                     activity=activity,
+                                     slider_max=app.config['SLIDER_MAX'])
+
+            activity.slider_level_min = slider_level_min
+            activity.slider_level_max = slider_level_max
 
             # Neues Bild hochladen (optional)
             if image_file and image_file.filename:
@@ -271,6 +310,214 @@ def register_routes(app):
         db.session.commit()
         flash(f'Aktivität "{title}" wurde gelöscht!', 'warning')
         return redirect(url_for('admin_activities', destination_id=destination_id))
+
+    # ========== IMPORT/EXPORT ROUTES ==========
+
+    @app.route('/admin/export/xlsx')
+    def export_xlsx():
+        """Exportiere alle Daten als Excel-Datei"""
+        wb = Workbook()
+
+        # Sheet 1: Destinationen
+        ws_dest = wb.active
+        ws_dest.title = "Destinationen"
+        ws_dest.append(['ID', 'Name', 'Kurzbeschreibung', 'Titelbild'])
+
+        destinations = Destination.query.all()
+        for dest in destinations:
+            ws_dest.append([
+                dest.id,
+                dest.name,
+                dest.description_short or '',
+                dest.image_cover or ''
+            ])
+
+        # Sheet 2: Aktivitäten
+        ws_act = wb.create_sheet("Aktivitäten")
+        ws_act.append(['ID', 'Destination ID', 'Destination Name', 'Titel', 'Beschreibung', 'Slider Level Min', 'Slider Level Max', 'Bild'])
+
+        activities = Activity.query.all()
+        for act in activities:
+            ws_act.append([
+                act.id,
+                act.destination_id,
+                act.destination.name,
+                act.title,
+                act.description or '',
+                act.slider_level_min,
+                act.slider_level_max,
+                act.image_filename or ''
+            ])
+
+        # Speichere in BytesIO
+        output = io.BytesIO()
+        wb.save(output)
+        output.seek(0)
+
+        filename = f'reiseplanung_export_{datetime.now().strftime("%Y%m%d_%H%M%S")}.xlsx'
+
+        return send_file(
+            output,
+            mimetype='application/vnd.openxmlformats-officedocument.spreadsheetml.sheet',
+            as_attachment=True,
+            download_name=filename
+        )
+
+    @app.route('/admin/export/csv')
+    def export_csv():
+        """Exportiere alle Daten als CSV-Datei (ZIP mit 2 Dateien)"""
+        import zipfile
+
+        # Erstelle ZIP im Speicher
+        zip_buffer = io.BytesIO()
+
+        with zipfile.ZipFile(zip_buffer, 'w', zipfile.ZIP_DEFLATED) as zip_file:
+            # CSV 1: Destinationen
+            dest_output = io.StringIO()
+            dest_writer = csv.writer(dest_output)
+            dest_writer.writerow(['ID', 'Name', 'Kurzbeschreibung', 'Titelbild'])
+
+            destinations = Destination.query.all()
+            for dest in destinations:
+                dest_writer.writerow([
+                    dest.id,
+                    dest.name,
+                    dest.description_short or '',
+                    dest.image_cover or ''
+                ])
+
+            zip_file.writestr('destinationen.csv', dest_output.getvalue())
+
+            # CSV 2: Aktivitäten
+            act_output = io.StringIO()
+            act_writer = csv.writer(act_output)
+            act_writer.writerow(['ID', 'Destination ID', 'Destination Name', 'Titel', 'Beschreibung', 'Slider Level Min', 'Slider Level Max', 'Bild'])
+
+            activities = Activity.query.all()
+            for act in activities:
+                act_writer.writerow([
+                    act.id,
+                    act.destination_id,
+                    act.destination.name,
+                    act.title,
+                    act.description or '',
+                    act.slider_level_min,
+                    act.slider_level_max,
+                    act.image_filename or ''
+                ])
+
+            zip_file.writestr('aktivitaeten.csv', act_output.getvalue())
+
+        zip_buffer.seek(0)
+        filename = f'reiseplanung_export_{datetime.now().strftime("%Y%m%d_%H%M%S")}.zip'
+
+        return send_file(
+            zip_buffer,
+            mimetype='application/zip',
+            as_attachment=True,
+            download_name=filename
+        )
+
+    @app.route('/admin/import', methods=['GET', 'POST'])
+    def import_data():
+        """Importiere Daten aus Excel oder CSV"""
+        if request.method == 'POST':
+            file = request.files.get('import_file')
+
+            if not file or file.filename == '':
+                flash('Keine Datei ausgewählt!', 'danger')
+                return redirect(url_for('import_data'))
+
+            filename = secure_filename(file.filename)
+
+            try:
+                if filename.endswith('.xlsx'):
+                    # Excel Import
+                    wb = load_workbook(file)
+
+                    # Importiere Destinationen
+                    if 'Destinationen' in wb.sheetnames:
+                        ws_dest = wb['Destinationen']
+                        rows = list(ws_dest.iter_rows(min_row=2, values_only=True))
+
+                        for row in rows:
+                            if row[1]:  # Wenn Name vorhanden
+                                dest = Destination(
+                                    name=row[1],
+                                    description_short=row[2] if row[2] else None,
+                                    image_cover=row[3] if row[3] else None
+                                )
+                                db.session.add(dest)
+
+                        db.session.commit()
+                        flash(f'{len(rows)} Destination(en) importiert!', 'success')
+
+                    # Importiere Aktivitäten
+                    if 'Aktivitäten' in wb.sheetnames:
+                        ws_act = wb['Aktivitäten']
+                        rows = list(ws_act.iter_rows(min_row=2, values_only=True))
+
+                        for row in rows:
+                            if row[1] and row[3]:  # Wenn Destination ID und Titel vorhanden
+                                activity = Activity(
+                                    destination_id=row[1],
+                                    title=row[3],
+                                    description=row[4] if row[4] else None,
+                                    slider_level_min=row[5] if row[5] else 0,
+                                    slider_level_max=row[6] if row[6] else 5,
+                                    image_filename=row[7] if row[7] else None
+                                )
+                                db.session.add(activity)
+
+                        db.session.commit()
+                        flash(f'{len(rows)} Aktivität(en) importiert!', 'success')
+
+                elif filename.endswith('.csv'):
+                    # CSV Import
+                    content = file.read().decode('utf-8')
+                    csv_reader = csv.DictReader(io.StringIO(content))
+
+                    # Erkenne, ob es Destinationen oder Aktivitäten sind
+                    rows = list(csv_reader)
+                    if rows and 'Name' in rows[0]:
+                        # Destinationen
+                        for row in rows:
+                            dest = Destination(
+                                name=row['Name'],
+                                description_short=row.get('Kurzbeschreibung', ''),
+                                image_cover=row.get('Titelbild', '')
+                            )
+                            db.session.add(dest)
+                        db.session.commit()
+                        flash(f'{len(rows)} Destination(en) aus CSV importiert!', 'success')
+
+                    elif rows and 'Titel' in rows[0]:
+                        # Aktivitäten
+                        for row in rows:
+                            activity = Activity(
+                                destination_id=int(row['Destination ID']),
+                                title=row['Titel'],
+                                description=row.get('Beschreibung', ''),
+                                slider_level_min=int(row.get('Slider Level Min', 0)),
+                                slider_level_max=int(row.get('Slider Level Max', 5)),
+                                image_filename=row.get('Bild', '')
+                            )
+                            db.session.add(activity)
+                        db.session.commit()
+                        flash(f'{len(rows)} Aktivität(en) aus CSV importiert!', 'success')
+
+                else:
+                    flash('Ungültiges Dateiformat! Nur .xlsx oder .csv erlaubt.', 'danger')
+                    return redirect(url_for('import_data'))
+
+                return redirect(url_for('admin'))
+
+            except Exception as e:
+                db.session.rollback()
+                flash(f'Fehler beim Import: {str(e)}', 'danger')
+                return redirect(url_for('import_data'))
+
+        return render_template('admin_import.html')
 
 
 # ========== HELPER FUNCTIONS ==========

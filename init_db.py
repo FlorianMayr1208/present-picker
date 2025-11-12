@@ -39,37 +39,42 @@ def init_database():
         spain_activities = [
             Activity(
                 destination_id=spain.id,
-                title="Barcelona erkunden",
-                description="Besuche die Sagrada Familia, spaziere durch das Gotische Viertel und genieße Tapas.",
-                slider_level=1,
+                title="Flug nach Barcelona",
+                description="Direktflug nach Barcelona. Beinhaltet nur den Transport ohne weitere Services.",
+                slider_level_min=0,
+                slider_level_max=5,
                 image_filename="spain/barcelona.jpg"
             ),
             Activity(
                 destination_id=spain.id,
-                title="Park Güell & Gaudí-Architektur",
-                description="Bewundere die einzigartige Architektur von Antoni Gaudí im Park Güell.",
-                slider_level=2,
+                title="Mietauto & flexibles Erkunden",
+                description="Mietauto für maximale Flexibilität. Du entscheidest, wohin die Reise geht.",
+                slider_level_min=1,
+                slider_level_max=3,
                 image_filename="spain/park_guell.jpg"
+            ),
+            Activity(
+                destination_id=spain.id,
+                title="Barcelona City Tour (geführt)",
+                description="Geführte Tour durch Barcelona: Sagrada Familia, Park Güell und Gotisches Viertel.",
+                slider_level_min=4,
+                slider_level_max=5,
+                image_filename="spain/beach.jpg"
             ),
             Activity(
                 destination_id=spain.id,
                 title="Strandtag an der Costa Brava",
                 description="Entspanne an einem der wunderschönen Strände und schwimme im kristallklaren Wasser.",
-                slider_level=3,
-                image_filename="spain/beach.jpg"
-            ),
-            Activity(
-                destination_id=spain.id,
-                title="Tagesausflug nach Girona",
-                description="Erkunde die mittelalterliche Stadt Girona mit ihrer beeindruckenden Kathedrale.",
-                slider_level=4,
+                slider_level_min=2,
+                slider_level_max=5,
                 image_filename="spain/girona.jpg"
             ),
             Activity(
                 destination_id=spain.id,
                 title="Flamenco-Show und Abendessen",
                 description="Genieße eine authentische Flamenco-Vorstellung mit traditionellem spanischen Abendessen.",
-                slider_level=5,
+                slider_level_min=5,
+                slider_level_max=5,
                 image_filename="spain/flamenco.jpg"
             )
         ]
@@ -90,37 +95,42 @@ def init_database():
         iceland_activities = [
             Activity(
                 destination_id=iceland.id,
-                title="Reykjavik Stadtbesichtigung",
-                description="Erkunde die nördlichste Hauptstadt der Welt mit ihren bunten Häusern und Cafés.",
-                slider_level=1,
+                title="Flug nach Reykjavik",
+                description="Flug nach Island. Nur Transport, keine weiteren Services inklusive.",
+                slider_level_min=0,
+                slider_level_max=5,
                 image_filename="iceland/reykjavik.jpg"
             ),
             Activity(
                 destination_id=iceland.id,
-                title="Golden Circle Tour",
-                description="Besuche den Þingvellir-Nationalpark, den Gullfoss-Wasserfall und das Geysir-Gebiet.",
-                slider_level=2,
+                title="Mietwagen & Roadtrip",
+                description="Mietwagen für einen selbstgeplanten Roadtrip durch Island.",
+                slider_level_min=1,
+                slider_level_max=2,
                 image_filename="iceland/golden_circle.jpg"
             ),
             Activity(
                 destination_id=iceland.id,
-                title="Blaue Lagune",
-                description="Entspanne in den geothermalen Gewässern der weltberühmten Blauen Lagune.",
-                slider_level=3,
+                title="Golden Circle Tagestour (geführt)",
+                description="Geführte Tour: Þingvellir-Nationalpark, Gullfoss-Wasserfall und Geysir-Gebiet.",
+                slider_level_min=3,
+                slider_level_max=5,
                 image_filename="iceland/blue_lagoon.jpg"
             ),
             Activity(
                 destination_id=iceland.id,
                 title="Gletscherwanderung",
                 description="Unternimm eine geführte Wanderung auf einem echten Gletscher.",
-                slider_level=4,
+                slider_level_min=4,
+                slider_level_max=5,
                 image_filename="iceland/glacier.jpg"
             ),
             Activity(
                 destination_id=iceland.id,
                 title="Nordlichter-Jagd",
                 description="Erlebe das magische Schauspiel der Aurora Borealis am Nachthimmel.",
-                slider_level=5,
+                slider_level_min=5,
+                slider_level_max=5,
                 image_filename="iceland/northern_lights.jpg"
             )
         ]
@@ -141,37 +151,42 @@ def init_database():
         japan_activities = [
             Activity(
                 destination_id=japan.id,
-                title="Tokyo Highlights",
-                description="Besuche Shibuya, Shinjuku und den Senso-ji Tempel in Asakusa.",
-                slider_level=1,
+                title="Flug nach Tokyo",
+                description="Flug nach Tokyo. Nur Transport ohne weitere Leistungen.",
+                slider_level_min=0,
+                slider_level_max=5,
                 image_filename="japan/tokyo.jpg"
             ),
             Activity(
                 destination_id=japan.id,
-                title="Tempel und Schreine in Kyoto",
-                description="Erkunde den Goldenen Pavillon und den Fushimi Inari Schrein.",
-                slider_level=2,
+                title="JR Pass & individuelle Erkundung",
+                description="Japan Rail Pass für flexible Zugfahrten. Plane deine eigene Route.",
+                slider_level_min=1,
+                slider_level_max=3,
                 image_filename="japan/kyoto_temples.jpg"
             ),
             Activity(
                 destination_id=japan.id,
-                title="Traditionelle Tee-Zeremonie",
-                description="Nimm an einer authentischen japanischen Tee-Zeremonie teil.",
-                slider_level=3,
+                title="Geführte Tour: Tokyo & Kyoto",
+                description="Geführte Tour durch Tokyo (Shibuya, Asakusa) und Kyoto (Goldener Pavillon, Fushimi Inari).",
+                slider_level_min=4,
+                slider_level_max=5,
                 image_filename="japan/tea_ceremony.jpg"
             ),
             Activity(
                 destination_id=japan.id,
                 title="Mount Fuji Ausflug",
                 description="Besuche den ikonischen Mount Fuji und die umliegenden fünf Seen.",
-                slider_level=4,
+                slider_level_min=3,
+                slider_level_max=5,
                 image_filename="japan/mount_fuji.jpg"
             ),
             Activity(
                 destination_id=japan.id,
-                title="Onsen-Erlebnis",
-                description="Entspanne in einem traditionellen japanischen Thermalbad (Onsen) in Hakone.",
-                slider_level=5,
+                title="Onsen & Kaiseki-Dinner",
+                description="Traditionelles Thermalbad und mehrgängiges Kaiseki-Abendessen in Hakone.",
+                slider_level_min=5,
+                slider_level_max=5,
                 image_filename="japan/onsen.jpg"
             )
         ]
