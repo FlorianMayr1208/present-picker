@@ -1,0 +1,149 @@
+{% extends "base.html" %}
+
+{% block title %}{{ destination.name }} - Reiseplanung{% endblock %}
+
+{% block content %}
+<!-- Header Section -->
+<div class="row mb-4">
+    <div class="col">
+        <a href="{{ url_for('index') }}" class="btn btn-outline-secondary mb-3">&larr; Zurück zur Übersicht</a>
+
+        <div class="card shadow">
+            {% if destination.image_cover %}
+            <img src="{{ url_for('static', filename='images/' + destination.image_cover) }}"
+                 class="card-img-top"
+                 alt="{{ destination.name }}"
+                 style="height: 400px; object-fit: cover;">
+            {% endif %}
+
+            <div class="card-body">
+                <h1 class="card-title display-4">{{ destination.name }}</h1>
+                {% if destination.description_short %}
+                <p class="card-text lead">{{ destination.description_short }}</p>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Slider Section -->
+<div class="row mb-4">
+    <div class="col">
+        <div class="card shadow-sm">
+            <div class="card-body">
+                <h5 class="card-title">Detailgrad der Reiseplanung</h5>
+                <p class="text-muted mb-3">
+                    Bewege den Slider, um mehr Details über die Reise zu erfahren
+                </p>
+
+                <div class="mb-3">
+                    <label for="detailSlider" class="form-label">
+                        Aktueller Level: <strong id="sliderValue">{{ slider_value }}</strong> / {{ slider_max }}
+                    </label>
+                    <input type="range"
+                           class="form-range"
+                           id="detailSlider"
+                           min="0"
+                           max="{{ slider_max }}"
+                           value="{{ slider_value }}"
+                           step="1">
+                </div>
+
+                <div class="d-flex justify-content-between text-muted small">
+                    <span>Nur Ziel</span>
+                    <span>Voll durchgeplant</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Activities Section -->
+<div class="row">
+    <div class="col">
+        <h3 class="mb-3">Aktivitäten & Details</h3>
+
+        <div id="activitiesContainer">
+            {% if activities %}
+                {% for activity in activities %}
+                <div class="card mb-3 shadow-sm activity-card" data-level="{{ activity.slider_level }}">
+                    <div class="row g-0">
+                        {% if activity.image_filename %}
+                        <div class="col-md-4">
+                            <img src="{{ url_for('static', filename='images/' + activity.image_filename) }}"
+                                 class="img-fluid rounded-start h-100"
+                                 alt="{{ activity.title }}"
+                                 style="object-fit: cover;">
+                        </div>
+                        {% endif %}
+
+                        <div class="{% if activity.image_filename %}col-md-8{% else %}col-md-12{% endif %}">
+                            <div class="card-body">
+                                <div class="d-flex justify-content-between align-items-center mb-2">
+                                    <h5 class="card-title mb-0">{{ activity.title }}</h5>
+                                    <span class="badge bg-primary">Level {{ activity.slider_level }}</span>
+                                </div>
+                                {% if activity.description %}
+                                <p class="card-text">{{ activity.description }}</p>
+                                {% endif %}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                {% endfor %}
+            {% else %}
+                <div class="alert alert-info" role="alert" id="noActivitiesMessage">
+                    Bewege den Slider nach rechts, um Details über diese Reise zu sehen.
+                </div>
+            {% endif %}
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+{% block extra_css %}
+<style>
+    .activity-card {
+        animation: fadeIn 0.5s ease-in;
+    }
+
+    @keyframes fadeIn {
+        from {
+            opacity: 0;
+            transform: translateY(10px);
+        }
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+
+    .form-range::-webkit-slider-thumb {
+        background: #0d6efd;
+    }
+
+    .form-range::-moz-range-thumb {
+        background: #0d6efd;
+    }
+</style>
+{% endblock %}
+
+{% block extra_js %}
+<script>
+    const slider = document.getElementById('detailSlider');
+    const sliderValue = document.getElementById('sliderValue');
+    const destinationId = {{ destination.id }};
+
+    // Update slider value display
+    slider.addEventListener('input', function() {
+        sliderValue.textContent = this.value;
+    });
+
+    // Update activities when slider changes
+    slider.addEventListener('change', function() {
+        const newValue = this.value;
+        // Reload page with new slider value
+        window.location.href = `{{ url_for('show_destination', id=destination.id) }}?slider=${newValue}`;
+    });
+</script>
+{% endblock %}

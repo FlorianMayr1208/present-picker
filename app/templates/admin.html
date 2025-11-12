@@ -1,0 +1,139 @@
+{% extends "base.html" %}
+
+{% block title %}Admin - Reiseplanung{% endblock %}
+
+{% block content %}
+<div class="row mb-4">
+    <div class="col">
+        <h1 class="display-4">Admin-Bereich</h1>
+        <p class="lead">Verwalte Destinationen und Aktivitäten</p>
+    </div>
+</div>
+
+<!-- Quick Actions -->
+<div class="row mb-4">
+    <div class="col-md-6 mb-3">
+        <div class="card shadow-sm h-100">
+            <div class="card-body">
+                <h5 class="card-title">Destinationen</h5>
+                <p class="card-text">Verwalte Reiseziele und deren Informationen</p>
+                <a href="{{ url_for('admin_destination_new') }}" class="btn btn-primary">
+                    + Neue Destination hinzufügen
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-md-6 mb-3">
+        <div class="card shadow-sm h-100">
+            <div class="card-body">
+                <h5 class="card-title">Statistiken</h5>
+                <p class="card-text mb-2">
+                    <strong>{{ destinations|length }}</strong> Destination(en)<br>
+                    {% set total_activities = namespace(count=0) %}
+                    {% for dest in destinations %}
+                        {% set total_activities.count = total_activities.count + dest.activities|length %}
+                    {% endfor %}
+                    <strong>{{ total_activities.count }}</strong> Aktivität(en) insgesamt
+                </p>
+                <a href="{{ url_for('index') }}" class="btn btn-outline-primary">
+                    Zur Startseite
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Destinations Table -->
+<div class="row">
+    <div class="col">
+        <div class="card shadow">
+            <div class="card-body">
+                <h5 class="card-title">Alle Destinationen</h5>
+
+                {% if destinations %}
+                <div class="table-responsive">
+                    <table class="table table-hover mb-0">
+                        <thead>
+                            <tr>
+                                <th style="width: 50px;">ID</th>
+                                <th>Name</th>
+                                <th>Beschreibung</th>
+                                <th style="width: 100px;" class="text-center">Aktivitäten</th>
+                                <th style="width: 280px;">Aktionen</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {% for destination in destinations %}
+                            <tr>
+                                <td>{{ destination.id }}</td>
+                                <td>
+                                    <strong>{{ destination.name }}</strong>
+                                </td>
+                                <td>
+                                    <small class="text-muted">
+                                        {{ destination.description_short[:60] if destination.description_short else '-' }}
+                                        {% if destination.description_short and destination.description_short|length > 60 %}...{% endif %}
+                                    </small>
+                                </td>
+                                <td class="text-center">
+                                    <span class="badge bg-primary">{{ destination.activities|length }}</span>
+                                </td>
+                                <td>
+                                    <div class="btn-group btn-group-sm" role="group">
+                                        <a href="{{ url_for('show_destination', id=destination.id) }}"
+                                           class="btn btn-outline-info"
+                                           title="Anzeigen">
+                                            Anzeigen
+                                        </a>
+                                        <a href="{{ url_for('admin_activities', destination_id=destination.id) }}"
+                                           class="btn btn-outline-secondary"
+                                           title="Aktivitäten verwalten">
+                                            Aktivitäten
+                                        </a>
+                                        <a href="{{ url_for('admin_destination_edit', id=destination.id) }}"
+                                           class="btn btn-outline-primary"
+                                           title="Bearbeiten">
+                                            Bearbeiten
+                                        </a>
+                                        <button type="button"
+                                                class="btn btn-outline-danger"
+                                                onclick="confirmDelete('{{ destination.id }}', '{{ destination.name }}')"
+                                                title="Löschen">
+                                            Löschen
+                                        </button>
+                                    </div>
+
+                                    <!-- Hidden delete form -->
+                                    <form id="delete-form-{{ destination.id }}"
+                                          action="{{ url_for('admin_destination_delete', id=destination.id) }}"
+                                          method="POST"
+                                          style="display: none;">
+                                    </form>
+                                </td>
+                            </tr>
+                            {% endfor %}
+                        </tbody>
+                    </table>
+                </div>
+                {% else %}
+                <div class="alert alert-info mb-0">
+                    <h5 class="alert-heading">Keine Destinationen vorhanden</h5>
+                    <p class="mb-0">Erstelle die erste Destination, um zu beginnen!</p>
+                </div>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+{% block extra_js %}
+<script>
+function confirmDelete(destinationId, destinationName) {
+    if (confirm(`Möchtest du die Destination "${destinationName}" wirklich löschen?\n\nAlle zugehörigen Aktivitäten werden ebenfalls gelöscht!\n\nDiese Aktion kann nicht rückgängig gemacht werden.`)) {
+        document.getElementById('delete-form-' + destinationId).submit();
+    }
+}
+</script>
+{% endblock %}

@@ -1,0 +1,150 @@
+{% extends "base.html" %}
+
+{% block title %}{% if activity %}Aktivität bearbeiten{% else %}Neue Aktivität{% endif %} - {{ destination.name }}{% endblock %}
+
+{% block content %}
+<div class="row mb-4">
+    <div class="col">
+        <a href="{{ url_for('admin_activities', destination_id=destination.id) }}"
+           class="btn btn-outline-secondary mb-3">
+            &larr; Zurück zu Aktivitäten
+        </a>
+        <h1 class="display-5">
+            {% if activity %}Aktivität bearbeiten{% else %}Neue Aktivität erstellen{% endif %}
+        </h1>
+        <p class="lead text-muted">{{ destination.name }}</p>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-lg-8">
+        <div class="card shadow">
+            <div class="card-body">
+                <form method="POST" enctype="multipart/form-data">
+                    <!-- Titel -->
+                    <div class="mb-3">
+                        <label for="title" class="form-label">Titel <span class="text-danger">*</span></label>
+                        <input type="text"
+                               class="form-control"
+                               id="title"
+                               name="title"
+                               value="{{ activity.title if activity else '' }}"
+                               required>
+                        <div class="form-text">Der Titel der Aktivität (z.B. "Barcelona erkunden")</div>
+                    </div>
+
+                    <!-- Beschreibung -->
+                    <div class="mb-3">
+                        <label for="description" class="form-label">Beschreibung</label>
+                        <textarea class="form-control"
+                                  id="description"
+                                  name="description"
+                                  rows="4">{{ activity.description if activity else '' }}</textarea>
+                        <div class="form-text">Eine detaillierte Beschreibung der Aktivität</div>
+                    </div>
+
+                    <!-- Slider Level -->
+                    <div class="mb-3">
+                        <label for="slider_level" class="form-label">
+                            Slider-Level <span class="text-danger">*</span>
+                            <span id="levelDisplay" class="badge bg-primary ms-2">
+                                {{ activity.slider_level if activity else 1 }}
+                            </span>
+                        </label>
+                        <input type="range"
+                               class="form-range"
+                               id="slider_level"
+                               name="slider_level"
+                               min="0"
+                               max="{{ slider_max }}"
+                               value="{{ activity.slider_level if activity else 1 }}"
+                               step="1"
+                               oninput="updateLevelDisplay(this.value)">
+                        <input type="hidden" name="slider_level_hidden" id="slider_level_hidden" value="{{ activity.slider_level if activity else 1 }}">
+
+                        <div class="d-flex justify-content-between text-muted small mt-1">
+                            <span>0 - Nur Ziel</span>
+                            <span>{{ slider_max }} - Voll durchgeplant</span>
+                        </div>
+                        <div class="form-text">
+                            Ab welchem Slider-Level soll diese Aktivität sichtbar sein?
+                        </div>
+                    </div>
+
+                    <!-- Bild -->
+                    <div class="mb-3">
+                        <label for="image_filename" class="form-label">Bild</label>
+                        {% if activity and activity.image_filename %}
+                        <div class="mb-2">
+                            <img src="{{ url_for('static', filename='images/' + activity.image_filename) }}"
+                                 alt="{{ activity.title }}"
+                                 class="img-thumbnail"
+                                 style="max-height: 200px;">
+                            <div class="form-text">Aktuelles Bild (wird ersetzt, wenn neues hochgeladen wird)</div>
+                        </div>
+                        {% endif %}
+                        <input type="file"
+                               class="form-control"
+                               id="image_filename"
+                               name="image_filename"
+                               accept="image/*">
+                        <div class="form-text">Erlaubte Formate: PNG, JPG, JPEG, GIF, WEBP (max. 16 MB)</div>
+                    </div>
+
+                    <!-- Buttons -->
+                    <div class="d-flex gap-2">
+                        <button type="submit" class="btn btn-primary">
+                            {% if activity %}Aktualisieren{% else %}Erstellen{% endif %}
+                        </button>
+                        <a href="{{ url_for('admin_activities', destination_id=destination.id) }}"
+                           class="btn btn-secondary">
+                            Abbrechen
+                        </a>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- Hilfe-Sidebar -->
+    <div class="col-lg-4">
+        <div class="card">
+            <div class="card-body">
+                <h5 class="card-title">Slider-Level</h5>
+                <p class="card-text small">Das Slider-Level bestimmt, ab wann diese Aktivität sichtbar wird:</p>
+                <ul class="list-unstyled small">
+                    <li class="mb-1"><span class="badge bg-secondary">0</span> Sofort sichtbar</li>
+                    <li class="mb-1"><span class="badge bg-primary">1</span> Basis-Aktivitäten</li>
+                    <li class="mb-1"><span class="badge bg-primary">2</span> Wichtige Sehenswürdigkeiten</li>
+                    <li class="mb-1"><span class="badge bg-primary">3</span> Zusätzliche Erlebnisse</li>
+                    <li class="mb-1"><span class="badge bg-primary">4</span> Tagesausflüge</li>
+                    <li class="mb-1"><span class="badge bg-primary">5</span> Alle Details</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="card mt-3">
+            <div class="card-body">
+                <h5 class="card-title">Tipps</h5>
+                <p class="card-text small">
+                    <strong>Titel:</strong> Kurz und prägnant
+                </p>
+                <p class="card-text small">
+                    <strong>Beschreibung:</strong> Erkläre, was die Aktivität beinhaltet
+                </p>
+                <p class="card-text small">
+                    <strong>Bild:</strong> Am besten im Querformat (16:9 oder 4:3)
+                </p>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+{% block extra_js %}
+<script>
+function updateLevelDisplay(value) {
+    document.getElementById('levelDisplay').textContent = value;
+}
+</script>
+{% endblock %}

@@ -1,0 +1,66 @@
+{% extends "base.html" %}
+
+{% block title %}Destinationen - Reiseplanung{% endblock %}
+
+{% block content %}
+<div class="row mb-4">
+    <div class="col">
+        <h1 class="display-4">Wähle dein Reiseziel</h1>
+        <p class="lead">Entdecke spannende Reiseziele und plane deine perfekte Reise</p>
+    </div>
+</div>
+
+{% if destinations %}
+<div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
+    {% for destination in destinations %}
+    <div class="col">
+        <div class="card h-100 shadow-sm destination-card">
+            {% if destination.image_cover %}
+            <img src="{{ url_for('static', filename='images/' + destination.image_cover) }}"
+                 class="card-img-top"
+                 alt="{{ destination.name }}"
+                 style="height: 250px; object-fit: cover;">
+            {% else %}
+            <div class="card-img-top bg-secondary d-flex align-items-center justify-content-center"
+                 style="height: 250px;">
+                <span class="text-white fs-1">{{ destination.name[0] }}</span>
+            </div>
+            {% endif %}
+
+            <div class="card-body">
+                <h5 class="card-title">{{ destination.name }}</h5>
+                {% if destination.description_short %}
+                <p class="card-text text-muted">{{ destination.description_short[:100] }}{% if destination.description_short|length > 100 %}...{% endif %}</p>
+                {% endif %}
+            </div>
+
+            <div class="card-footer bg-transparent border-0">
+                <a href="{{ url_for('show_destination', id=destination.id, slider=0) }}"
+                   class="btn btn-primary w-100">Details anzeigen</a>
+            </div>
+        </div>
+    </div>
+    {% endfor %}
+</div>
+{% else %}
+<div class="alert alert-info" role="alert">
+    <h4 class="alert-heading">Keine Destinationen vorhanden</h4>
+    <p>Es wurden noch keine Reiseziele angelegt. Bitte verwende den Admin-Bereich, um Destinationen hinzuzufügen.</p>
+    <hr>
+    <a href="{{ url_for('admin') }}" class="btn btn-info">Zum Admin-Bereich</a>
+</div>
+{% endif %}
+{% endblock %}
+
+{% block extra_css %}
+<style>
+    .destination-card {
+        transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+    }
+
+    .destination-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15) !important;
+    }
+</style>
+{% endblock %}
