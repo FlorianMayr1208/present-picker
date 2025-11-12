@@ -1,0 +1,42 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+.venv/
+venv/
+ENV/
+env/
+
+# Flask
+instance/
+.webassets-cache
+
+# Database
+*.db
+*.sqlite
+*.sqlite3
+database.db
+
+# IDEs
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Uploaded images (keep structure, ignore content)
+app/static/images/*
+!app/static/images/.gitkeep
+
+# Logs
+*.log
+
+# Environment variables
+.env
+.flaskenv
