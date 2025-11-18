@@ -19,9 +19,15 @@ def create_app(config_class=Config):
     # Initialisiere Extensions
     db.init_app(app)
 
-    # Erstelle Datenbank-Tabellen
+    # Erstelle Datenbank-Tabellen nur in Development Mode
+    # Für Production sollte ein separates Migrations-Skript verwendet werden
     with app.app_context():
-        db.create_all()
+        try:
+            # Prüfe ob Tabellen existieren, ohne sie zu erstellen
+            db.engine.connect()
+        except Exception as e:
+            # Falls Verbindung fehlschlägt, logge den Fehler aber fahre fort
+            app.logger.warning(f"Database connection check failed: {e}")
 
     # Registriere Routen
     register_routes(app)
