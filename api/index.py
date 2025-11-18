@@ -7,10 +7,8 @@ import os
 # Add parent directory to path
 sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
 
-from app.app import create_app
-
-# Create Flask app
-app = create_app()
+# Import simplified app without database
+from app_simple import app
 
 # Vercel expects a handler function
 def handler(environ, start_response):

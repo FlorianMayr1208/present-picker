@@ -1,0 +1,20 @@
+[
+  {
+    "id": 1,
+    "name": "Spanien - Barcelona & Costa Brava",
+    "description_short": "Entdecke die lebendige Kultur Barcelonas und entspanne an den schönen Stränden der Costa Brava.",
+    "image_cover": "https://images.unsplash.com/photo-1583422409516-2895a77efded?w=800"
+  },
+  {
+    "id": 2,
+    "name": "Island - Feuer und Eis",
+    "description_short": "Erlebe die atemberaubende Natur Islands mit Vulkanen, Wasserfällen und Nordlichtern.",
+    "image_cover": "https://images.unsplash.com/photo-1504893524553-b855bce32c67?w=800"
+  },
+  {
+    "id": 3,
+    "name": "Japan - Tokyo & Kyoto",
+    "description_short": "Tauche ein in die faszinierende Mischung aus Tradition und Moderne in Japans Metropolen.",
+    "image_cover": "https://images.unsplash.com/photo-1542640244-7e672d6cef4e?w=800"
+  }
+]

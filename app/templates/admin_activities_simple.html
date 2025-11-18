@@ -1,0 +1,79 @@
+{% extends "base.html" %}
+
+{% block title %}Aktivitäten - {{ destination.name }}{% endblock %}
+
+{% block content %}
+<div class="row mb-4">
+    <div class="col">
+        <a href="{{ url_for('admin') }}" class="btn btn-outline-secondary mb-3">
+            &larr; Zurück zur Übersicht
+        </a>
+        <h1 class="display-5">{{ destination.name }}</h1>
+        <p class="lead text-muted">{{ activities|length }} Aktivität(en)</p>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col">
+        {% if activities %}
+        <div class="table-responsive">
+            <table class="table table-hover">
+                <thead>
+                    <tr>
+                        <th style="width: 100px;">Level</th>
+                        <th>Titel</th>
+                        <th>Beschreibung</th>
+                        <th style="width: 100px;">Bild</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for activity in activities %}
+                    <tr>
+                        <td>
+                            <span class="badge bg-primary fs-6">{{ activity.slider_level_min }}-{{ activity.slider_level_max }}</span>
+                        </td>
+                        <td>
+                            <strong>{{ activity.title }}</strong>
+                        </td>
+                        <td>
+                            <small class="text-muted">
+                                {{ activity.description[:80] if activity.description else '-' }}
+                                {% if activity.description and activity.description|length > 80 %}...{% endif %}
+                            </small>
+                        </td>
+                        <td>
+                            {% if activity.image_filename %}
+                            <img src="{{ activity.image_filename }}"
+                                 alt="{{ activity.title }}"
+                                 class="img-thumbnail"
+                                 style="max-height: 50px; max-width: 80px; object-fit: cover;">
+                            {% else %}
+                            <span class="text-muted">-</span>
+                            {% endif %}
+                        </td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+        {% else %}
+        <div class="alert alert-info">
+            Keine Aktivitäten für diese Destination vorhanden.
+        </div>
+        {% endif %}
+    </div>
+</div>
+
+<div class="row mt-4">
+    <div class="col">
+        <div class="card bg-light">
+            <div class="card-body">
+                <h5 class="card-title">💡 Aktivitäten bearbeiten</h5>
+                <p class="card-text">
+                    Um diese Aktivitäten zu bearbeiten, öffne <code>data/activities.json</code> und bearbeite die Einträge mit <code>"destination_id": {{ destination.id }}</code>.
+                </p>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

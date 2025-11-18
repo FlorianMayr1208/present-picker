@@ -1,0 +1,137 @@
+[
+  {
+    "id": 1,
+    "destination_id": 1,
+    "title": "Flug nach Barcelona",
+    "description": "Direktflug nach Barcelona. Beinhaltet nur den Transport ohne weitere Services.",
+    "slider_level_min": 0,
+    "slider_level_max": 5,
+    "image_filename": "https://images.unsplash.com/photo-1562883676-8c7feb83f09b?w=800"
+  },
+  {
+    "id": 2,
+    "destination_id": 1,
+    "title": "Mietauto & flexibles Erkunden",
+    "description": "Mietauto für maximale Flexibilität. Du entscheidest, wohin die Reise geht.",
+    "slider_level_min": 1,
+    "slider_level_max": 3,
+    "image_filename": "https://images.unsplash.com/photo-1449965408869-eaa3f722e40d?w=800"
+  },
+  {
+    "id": 3,
+    "destination_id": 1,
+    "title": "Barcelona City Tour (geführt)",
+    "description": "Geführte Tour durch Barcelona: Sagrada Familia, Park Güell und Gotisches Viertel.",
+    "slider_level_min": 4,
+    "slider_level_max": 5,
+    "image_filename": "https://images.unsplash.com/photo-1583422409516-2895a77efded?w=800"
+  },
+  {
+    "id": 4,
+    "destination_id": 1,
+    "title": "Strandtag an der Costa Brava",
+    "description": "Entspanne an einem der wunderschönen Strände und schwimme im kristallklaren Wasser.",
+    "slider_level_min": 2,
+    "slider_level_max": 5,
+    "image_filename": "https://images.unsplash.com/photo-1559827260-dc66d52bef19?w=800"
+  },
+  {
+    "id": 5,
+    "destination_id": 1,
+    "title": "Flamenco-Show und Abendessen",
+    "description": "Genieße eine authentische Flamenco-Vorstellung mit traditionellem spanischen Abendessen.",
+    "slider_level_min": 5,
+    "slider_level_max": 5,
+    "image_filename": "https://images.unsplash.com/photo-1579783902614-a3fb3927b6a5?w=800"
+  },
+  {
+    "id": 6,
+    "destination_id": 2,
+    "title": "Flug nach Reykjavik",
+    "description": "Flug nach Island. Nur Transport, keine weiteren Services inklusive.",
+    "slider_level_min": 0,
+    "slider_level_max": 5,
+    "image_filename": "https://images.unsplash.com/photo-1504893524553-b855bce32c67?w=800"
+  },
+  {
+    "id": 7,
+    "destination_id": 2,
+    "title": "Mietwagen & Roadtrip",
+    "description": "Mietwagen für einen selbstgeplanten Roadtrip durch Island.",
+    "slider_level_min": 1,
+    "slider_level_max": 2,
+    "image_filename": "https://images.unsplash.com/photo-1531168556467-80aace0d0144?w=800"
+  },
+  {
+    "id": 8,
+    "destination_id": 2,
+    "title": "Golden Circle Tagestour (geführt)",
+    "description": "Geführte Tour: Þingvellir-Nationalpark, Gullfoss-Wasserfall und Geysir-Gebiet.",
+    "slider_level_min": 3,
+    "slider_level_max": 5,
+    "image_filename": "https://images.unsplash.com/photo-1519904981063-b0cf448d479e?w=800"
+  },
+  {
+    "id": 9,
+    "destination_id": 2,
+    "title": "Gletscherwanderung",
+    "description": "Unternimm eine geführte Wanderung auf einem echten Gletscher.",
+    "slider_level_min": 4,
+    "slider_level_max": 5,
+    "image_filename": "https://images.unsplash.com/photo-1578996956925-c2af3aa415db?w=800"
+  },
+  {
+    "id": 10,
+    "destination_id": 2,
+    "title": "Nordlichter-Jagd",
+    "description": "Erlebe das magische Schauspiel der Aurora Borealis am Nachthimmel.",
+    "slider_level_min": 5,
+    "slider_level_max": 5,
+    "image_filename": "https://images.unsplash.com/photo-1579033461380-adb47c3eb938?w=800"
+  },
+  {
+    "id": 11,
+    "destination_id": 3,
+    "title": "Flug nach Tokyo",
+    "description": "Flug nach Tokyo. Nur Transport ohne weitere Leistungen.",
+    "slider_level_min": 0,
+    "slider_level_max": 5,
+    "image_filename": "https://images.unsplash.com/photo-1542640244-7e672d6cef4e?w=800"
+  },
+  {
+    "id": 12,
+    "destination_id": 3,
+    "title": "JR Pass & individuelle Erkundung",
+    "description": "Japan Rail Pass für flexible Zugfahrten. Plane deine eigene Route.",
+    "slider_level_min": 1,
+    "slider_level_max": 3,
+    "image_filename": "https://images.unsplash.com/photo-1590559899731-a382839e5549?w=800"
+  },
+  {
+    "id": 13,
+    "destination_id": 3,
+    "title": "Geführte Tour: Tokyo & Kyoto",
+    "description": "Geführte Tour durch Tokyo (Shibuya, Asakusa) und Kyoto (Goldener Pavillon, Fushimi Inari).",
+    "slider_level_min": 4,
+    "slider_level_max": 5,
+    "image_filename": "https://images.unsplash.com/photo-1528360983277-13d401cdc186?w=800"
+  },
+  {
+    "id": 14,
+    "destination_id": 3,
+    "title": "Mount Fuji Ausflug",
+    "description": "Besuche den ikonischen Mount Fuji und die umliegenden fünf Seen.",
+    "slider_level_min": 3,
+    "slider_level_max": 5,
+    "image_filename": "https://images.unsplash.com/photo-1570459027562-4a916cc6113f?w=800"
+  },
+  {
+    "id": 15,
+    "destination_id": 3,
+    "title": "Onsen & Kaiseki-Dinner",
+    "description": "Traditionelles Thermalbad und mehrgängiges Kaiseki-Abendessen in Hakone.",
+    "slider_level_min": 5,
+    "slider_level_max": 5,
+    "image_filename": "https://images.unsplash.com/photo-1540959733332-eab4deabeeaf?w=800"
+  }
+]

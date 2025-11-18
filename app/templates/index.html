@@ -16,7 +16,7 @@
     <div class="col">
         <div class="card h-100 shadow-sm destination-card">
             {% if destination.image_cover %}
-            <img src="{{ url_for('static', filename='images/' + destination.image_cover) }}"
+            <img src="{% if destination.image_cover.startswith('http') %}{{ destination.image_cover }}{% else %}{{ url_for('static', filename='images/' + destination.image_cover) }}{% endif %}"
                  class="card-img-top"
                  alt="{{ destination.name }}"
                  style="height: 250px; object-fit: cover;">

@@ -70,7 +70,7 @@
                     <div class="row g-0">
                         {% if activity.image_filename %}
                         <div class="col-md-4">
-                            <img src="{{ url_for('static', filename='images/' + activity.image_filename) }}"
+                            <img src="{% if activity.image_filename.startswith('http') %}{{ activity.image_filename }}{% else %}{{ url_for('static', filename='images/' + activity.image_filename) }}{% endif %}"
                                  class="img-fluid rounded-start h-100"
                                  alt="{{ activity.title }}"
                                  style="object-fit: cover;">
@@ -190,7 +190,7 @@
                     <div class="row g-0">
                         ${hasImage ? `
                         <div class="${imageCol}">
-                            <img src="/static/images/${activity.image_filename}"
+                            <img src="${activity.image_filename.startsWith('http') ? activity.image_filename : '/static/images/' + activity.image_filename}"
                                  class="img-fluid rounded-start h-100"
                                  alt="${escapeHtml(activity.title)}"
                                  style="object-fit: cover;">
