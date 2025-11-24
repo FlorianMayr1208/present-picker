@@ -5,6 +5,7 @@ Nutzt JSON-Dateien für Datenspeicherung
 from flask import Flask, render_template, request, jsonify
 import json
 import os
+from datetime import datetime
 
 app = Flask(__name__,
             template_folder='app/templates',
@@ -144,6 +145,58 @@ def admin_activities(destination_id):
         'admin_activities_simple.html',
         destination=destination,
         activities=activities
+    )
+
+
+@app.route('/destination/<int:id>/export-pdf', methods=['POST'])
+def export_pdf(id):
+    """PDF-Export der ausgewählten Aktivitäten (Browser-basiert)"""
+    destination = get_destination_by_id(id)
+
+    if not destination:
+        return "Destination nicht gefunden", 404
+
+    # Parse selected items from frontend
+    selected_items_json = request.form.get('selected_items', '[]')
+    selected_items = json.loads(selected_items_json)
+
+    # Load all activities
+    all_activities = load_activities()
+
+    # Build selected activities structure
+    selected_activities_data = []
+
+    for item in selected_items:
+        activity_id = int(item['activity_id'])
+        sub_id = item['sub_id']
+
+        # Find the activity
+        activity = next((a for a in all_activities if a['id'] == activity_id and a['destination_id'] == id), None)
+
+        if activity and 'sub_items' in activity:
+            # Find the sub-item
+            sub_item = next((s for s in activity['sub_items'] if s['id'] == sub_id), None)
+
+            if sub_item:
+                selected_activities_data.append({
+                    'category': activity['title'],
+                    'title': sub_item['title'],
+                    'description': sub_item.get('description', ''),
+                    'points': sub_item.get('points', 0),
+                    'image_url': sub_item.get('image_filename', '')
+                })
+
+    # Calculate total points
+    total_points = sum(item['points'] for item in selected_activities_data)
+
+    # Render print-optimized HTML
+    return render_template(
+        'pdf_export.html',
+        destination=destination,
+        selected_activities=selected_activities_data,
+        total_points=total_points,
+        points_budget=destination.get('points_budget', 0),
+        export_date=datetime.now().strftime('%d.%m.%Y')
     )
 
 

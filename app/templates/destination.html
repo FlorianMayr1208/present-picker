@@ -82,6 +82,11 @@
                 <div class="progress mt-3" style="height: 8px;">
                     <div class="progress-bar" id="pointsProgressBar" role="progressbar" style="width: 0%" aria-valuenow="0" aria-valuemin="0" aria-valuemax="{{ points_budget }}"></div>
                 </div>
+                <div class="mt-3 text-end">
+                    <button type="button" class="btn btn-primary" id="exportPdfBtn">
+                        <i class="bi bi-file-earmark-pdf"></i> Als PDF exportieren
+                    </button>
+                </div>
             </div>
         </div>
     </div>
@@ -560,6 +565,47 @@
 
     // Initialize points display on page load
     updatePointsDisplay();
+
+    // PDF Export handler
+    document.getElementById('exportPdfBtn').addEventListener('click', function() {
+        // Collect selected activities
+        const selectedItems = [];
+
+        subCheckboxes.forEach(checkbox => {
+            if (checkbox.checked) {
+                const activityId = checkbox.dataset.parentId;
+                const subId = checkbox.dataset.subId;
+                const points = parseInt(checkbox.dataset.points) || 0;
+
+                selectedItems.push({
+                    activity_id: activityId,
+                    sub_id: subId,
+                    points: points
+                });
+            }
+        });
+
+        if (selectedItems.length === 0) {
+            alert('Bitte wähle zuerst einige Aktivitäten aus!');
+            return;
+        }
+
+        // Send to backend
+        const form = document.createElement('form');
+        form.method = 'POST';
+        form.action = '/destination/{{ destination.id }}/export-pdf';
+        form.target = '_blank';
+
+        const input = document.createElement('input');
+        input.type = 'hidden';
+        input.name = 'selected_items';
+        input.value = JSON.stringify(selectedItems);
+
+        form.appendChild(input);
+        document.body.appendChild(form);
+        form.submit();
+        document.body.removeChild(form);
+    });
     {% endif %}
 
     // ========== SHARED HELPER FUNCTIONS ==========

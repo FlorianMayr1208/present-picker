@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <title>Reiseplanung - {{ destination.name }}</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        @page {
+            size: A4;
+            margin: 2cm;
+        }
+
+        body {
+            font-family: 'Helvetica', 'Arial', sans-serif;
+            line-height: 1.6;
+            color: #333;
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 2cm;
+            padding-bottom: 1cm;
+            border-bottom: 3px solid #0d6efd;
+        }
+
+        .header h1 {
+            color: #0d6efd;
+            font-size: 32pt;
+            margin: 0 0 10pt 0;
+        }
+
+        .header .subtitle {
+            font-size: 14pt;
+            color: #666;
+            margin: 5pt 0;
+        }
+
+        .header .date {
+            font-size: 10pt;
+            color: #999;
+            margin-top: 10pt;
+        }
+
+        .summary {
+            background-color: #f8f9fa;
+            padding: 15pt;
+            margin-bottom: 1cm;
+            border-radius: 5pt;
+        }
+
+        .summary h2 {
+            color: #0d6efd;
+            font-size: 16pt;
+            margin: 0 0 10pt 0;
+        }
+
+        .summary .points {
+            font-size: 18pt;
+            font-weight: bold;
+            color: #0d6efd;
+        }
+
+        .activity {
+            page-break-inside: avoid;
+            margin-bottom: 0.8cm;
+            border: 1px solid #dee2e6;
+            border-radius: 5pt;
+            overflow: hidden;
+        }
+
+        .activity-header {
+            background-color: #e9ecef;
+            padding: 10pt;
+            border-bottom: 1px solid #dee2e6;
+        }
+
+        .activity-header .category {
+            font-size: 10pt;
+            color: #666;
+            text-transform: uppercase;
+            letter-spacing: 1pt;
+        }
+
+        .activity-header .title {
+            font-size: 14pt;
+            font-weight: bold;
+            color: #0d6efd;
+            margin: 5pt 0;
+        }
+
+        .activity-header .points-badge {
+            display: inline-block;
+            background-color: #6c757d;
+            color: white;
+            padding: 3pt 8pt;
+            border-radius: 3pt;
+            font-size: 10pt;
+            font-weight: bold;
+        }
+
+        .activity-body {
+            padding: 15pt;
+            display: flex;
+            gap: 15pt;
+            align-items: flex-start;
+        }
+
+        .activity-image {
+            width: 120pt;
+            height: 120pt;
+            object-fit: cover;
+            border-radius: 5pt;
+            flex-shrink: 0;
+        }
+
+        .activity-content {
+            flex: 1;
+        }
+
+        .activity-description {
+            font-size: 11pt;
+            color: #555;
+            line-height: 1.5;
+        }
+
+        .footer {
+            margin-top: 2cm;
+            padding-top: 1cm;
+            border-top: 2px solid #dee2e6;
+            text-align: center;
+            font-size: 9pt;
+            color: #999;
+        }
+
+        /* Print button - hidden when printing */
+        .print-button {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            padding: 15px 30px;
+            background-color: #0d6efd;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            z-index: 1000;
+        }
+
+        .print-button:hover {
+            background-color: #0b5ed7;
+        }
+
+        @media print {
+            .print-button {
+                display: none;
+            }
+        }
+    </style>
+</head>
+<body>
+    <button class="print-button" onclick="window.print()">Als PDF speichern</button>
+    <div class="header">
+        <h1>{{ destination.name }}</h1>
+        <div class="subtitle">{{ destination.description_short }}</div>
+        <div class="date">Erstellt am {{ export_date }}</div>
+    </div>
+
+    <div class="summary">
+        <h2>Zusammenfassung</h2>
+        <p>
+            Du hast <span class="points">{{ total_points }}</span> von
+            <span class="points">{{ points_budget }}</span> Punkten genutzt.
+        </p>
+        <p>
+            Anzahl der ausgewählten Aktivitäten: <strong>{{ selected_activities|length }}</strong>
+        </p>
+    </div>
+
+    {% for activity in selected_activities %}
+    <div class="activity">
+        <div class="activity-header">
+            <div class="category">{{ activity.category }}</div>
+            <div class="title">{{ activity.title }}</div>
+            {% if activity.points > 0 %}
+            <span class="points-badge">{{ activity.points }} Punkte</span>
+            {% endif %}
+        </div>
+        <div class="activity-body">
+            {% if activity.image_url %}
+            <img src="{{ activity.image_url }}" class="activity-image" alt="{{ activity.title }}">
+            {% endif %}
+            <div class="activity-content">
+                <div class="activity-description">
+                    {{ activity.description }}
+                </div>
+            </div>
+        </div>
+    </div>
+    {% endfor %}
+
+    <div class="footer">
+        <p>Reiseplanung generiert mit deiner Reise-Auswahl-App</p>
+        <p>Viel Spaß bei deiner Reise nach {{ destination.name }}!</p>
+    </div>
+</body>
+</html>
