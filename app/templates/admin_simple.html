@@ -105,4 +105,350 @@
         </div>
     </div>
 </div>
+
+<!-- Detailed Guide Section -->
+<div class="row mt-5">
+    <div class="col">
+        <h2 class="mb-4">📖 Ausführliche Anleitung</h2>
+
+        <!-- Tabs -->
+        <ul class="nav nav-tabs" id="guideTabs" role="tablist">
+            <li class="nav-item" role="presentation">
+                <button class="nav-link active" id="destinations-tab" data-bs-toggle="tab" data-bs-target="#destinations-guide" type="button" role="tab">
+                    Destinations.json
+                </button>
+            </li>
+            <li class="nav-item" role="presentation">
+                <button class="nav-link" id="activities-tab" data-bs-toggle="tab" data-bs-target="#activities-guide" type="button" role="tab">
+                    Activities.json
+                </button>
+            </li>
+            <li class="nav-item" role="presentation">
+                <button class="nav-link" id="points-tab" data-bs-toggle="tab" data-bs-target="#points-guide" type="button" role="tab">
+                    Punktesystem
+                </button>
+            </li>
+        </ul>
+
+        <div class="tab-content border border-top-0 p-4" id="guideTabContent">
+            <!-- Destinations Guide -->
+            <div class="tab-pane fade show active" id="destinations-guide" role="tabpanel">
+                <h4>destinations.json - Struktur</h4>
+                <p>Jede Destination hat folgende Felder:</p>
+
+                <h5 class="mt-4">Beispiel: Slider-Modus (wie Portugal)</h5>
+                <pre class="bg-dark text-light p-3 rounded"><code>{
+  "id": 5,
+  "name": "Südspanien - Spanien",
+  "description_short": "Sonne, Strand und andalusische Kultur",
+  "image_cover": "https://images.unsplash.com/photo-1543783207-ec64e4d95325?w=800",
+  "selection_mode": "slider"
+}</code></pre>
+
+                <h5 class="mt-4">Beispiel: Checkbox-Modus (wie Marrakesch)</h5>
+                <pre class="bg-dark text-light p-3 rounded"><code>{
+  "id": 6,
+  "name": "Bali - Indonesien",
+  "description_short": "Tropisches Paradies mit Tempeln und Reisterrassen",
+  "image_cover": "https://images.unsplash.com/photo-1537996194471-e657df975ab4?w=800",
+  "selection_mode": "checkboxes",
+  "points_budget": 100
+}</code></pre>
+
+                <h5 class="mt-4">Feld-Erklärungen</h5>
+                <table class="table table-sm">
+                    <thead>
+                        <tr>
+                            <th>Feld</th>
+                            <th>Pflicht</th>
+                            <th>Beschreibung</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><code>id</code></td>
+                            <td>✅</td>
+                            <td>Eindeutige Nummer (muss in activities referenziert werden)</td>
+                        </tr>
+                        <tr>
+                            <td><code>name</code></td>
+                            <td>✅</td>
+                            <td>Name der Destination (z.B. "Paris - Frankreich")</td>
+                        </tr>
+                        <tr>
+                            <td><code>description_short</code></td>
+                            <td>✅</td>
+                            <td>Kurze Beschreibung (1-2 Sätze)</td>
+                        </tr>
+                        <tr>
+                            <td><code>image_cover</code></td>
+                            <td>✅</td>
+                            <td>URL zum Titelbild (Unsplash empfohlen)</td>
+                        </tr>
+                        <tr>
+                            <td><code>selection_mode</code></td>
+                            <td>✅</td>
+                            <td><code>"slider"</code> oder <code>"checkboxes"</code></td>
+                        </tr>
+                        <tr>
+                            <td><code>points_budget</code></td>
+                            <td>Nur bei checkboxes</td>
+                            <td>Maximale Punkte (empfohlen: 100)</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <!-- Activities Guide -->
+            <div class="tab-pane fade" id="activities-guide" role="tabpanel">
+                <h4>activities.json - Struktur</h4>
+
+                <h5 class="mt-4">Beispiel: Slider-Modus Aktivität</h5>
+                <pre class="bg-dark text-light p-3 rounded"><code>{
+  "id": 21,
+  "destination_id": 5,
+  "title": "Anreise & Unterkunft (5 Nächte)",
+  "description": "Flug nach Málaga, Mietwagen, zentrale Unterkunft",
+  "slider_level_min": 0,
+  "slider_level_max": 5,
+  "image_filename": "https://images.unsplash.com/photo-1543783207-ec64e4d95325?w=800"
+}</code></pre>
+
+                <h5 class="mt-4">Beispiel: Checkbox-Modus Aktivität mit Sub-Items</h5>
+                <pre class="bg-dark text-light p-3 rounded"><code>{
+  "id": 22,
+  "destination_id": 6,
+  "title": "Tempel & Kultur",
+  "description": "Entdecke die spirituelle Seite Balis",
+  "image_filename": "https://images.unsplash.com/photo-1537996194471-e657df975ab4?w=800",
+  "default_selected": false,
+  "sub_items": [
+    {
+      "id": "22a",
+      "title": "Tanah Lot Tempel",
+      "description": "Berühmter Meerestempel bei Sonnenuntergang",
+      "points": 15,
+      "default_selected": false,
+      "image_filename": "https://images.unsplash.com/photo-1555400038-63f5ba517a47?w=600"
+    },
+    {
+      "id": "22b",
+      "title": "Ubud Royal Palace",
+      "description": "Historischer Palast mit traditionellen Tänzen",
+      "points": 12,
+      "default_selected": false,
+      "image_filename": "https://images.unsplash.com/photo-1528127269322-539801943592?w=600"
+    }
+  ]
+}</code></pre>
+
+                <h5 class="mt-4">Beispiel: Mandatory Items (0 Punkte, nicht abwählbar)</h5>
+                <pre class="bg-dark text-light p-3 rounded"><code>{
+  "id": "23a",
+  "title": "Flug nach Bali",
+  "description": "Direktflug von Frankfurt",
+  "points": 0,
+  "default_selected": true,
+  "mandatory": true,
+  "image_filename": "https://images.unsplash.com/photo-1436491865332-7a61a109cc05?w=600"
+}</code></pre>
+
+                <h5 class="mt-4">Beispiel: "Den Rest spontan" Option</h5>
+                <pre class="bg-dark text-light p-3 rounded"><code>{
+  "id": "24a",
+  "title": "Den Rest spontan",
+  "description": "Nutze alle verbleibenden Punkte flexibel vor Ort",
+  "points": 0,
+  "default_selected": false,
+  "is_spontaneous": true,
+  "image_filename": "https://images.unsplash.com/photo-1469854523086-cc02fe5d8800?w=600"
+}</code></pre>
+
+                <h5 class="mt-4">Feld-Erklärungen: Haupt-Aktivität</h5>
+                <table class="table table-sm">
+                    <thead>
+                        <tr>
+                            <th>Feld</th>
+                            <th>Pflicht</th>
+                            <th>Beschreibung</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><code>id</code></td>
+                            <td>✅</td>
+                            <td>Eindeutige Nummer</td>
+                        </tr>
+                        <tr>
+                            <td><code>destination_id</code></td>
+                            <td>✅</td>
+                            <td>ID der zugehörigen Destination</td>
+                        </tr>
+                        <tr>
+                            <td><code>title</code></td>
+                            <td>✅</td>
+                            <td>Kategorie-Name (z.B. "Essen & Kulinarik")</td>
+                        </tr>
+                        <tr>
+                            <td><code>description</code></td>
+                            <td>✅</td>
+                            <td>Beschreibung der Kategorie</td>
+                        </tr>
+                        <tr>
+                            <td><code>image_filename</code></td>
+                            <td>❌</td>
+                            <td>URL zum Kategorie-Bild</td>
+                        </tr>
+                        <tr>
+                            <td><code>default_selected</code></td>
+                            <td>Nur checkboxes</td>
+                            <td><code>true</code> oder <code>false</code></td>
+                        </tr>
+                        <tr>
+                            <td><code>sub_items</code></td>
+                            <td>Nur checkboxes</td>
+                            <td>Array von Sub-Aktivitäten</td>
+                        </tr>
+                        <tr>
+                            <td><code>slider_level_min</code></td>
+                            <td>Nur slider</td>
+                            <td>Ab welchem Level sichtbar (0-5)</td>
+                        </tr>
+                        <tr>
+                            <td><code>slider_level_max</code></td>
+                            <td>Nur slider</td>
+                            <td>Bis welchem Level sichtbar (0-5)</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <h5 class="mt-4">Feld-Erklärungen: Sub-Items</h5>
+                <table class="table table-sm">
+                    <thead>
+                        <tr>
+                            <th>Feld</th>
+                            <th>Pflicht</th>
+                            <th>Beschreibung</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><code>id</code></td>
+                            <td>✅</td>
+                            <td>Eindeutige ID (z.B. "22a", "22b")</td>
+                        </tr>
+                        <tr>
+                            <td><code>title</code></td>
+                            <td>✅</td>
+                            <td>Name der Aktivität</td>
+                        </tr>
+                        <tr>
+                            <td><code>description</code></td>
+                            <td>✅</td>
+                            <td>Detaillierte Beschreibung</td>
+                        </tr>
+                        <tr>
+                            <td><code>points</code></td>
+                            <td>✅</td>
+                            <td>Kostet X Punkte (0 für mandatory)</td>
+                        </tr>
+                        <tr>
+                            <td><code>default_selected</code></td>
+                            <td>✅</td>
+                            <td><code>true</code> oder <code>false</code></td>
+                        </tr>
+                        <tr>
+                            <td><code>image_filename</code></td>
+                            <td>❌</td>
+                            <td>URL zum Aktivitäts-Bild</td>
+                        </tr>
+                        <tr>
+                            <td><code>mandatory</code></td>
+                            <td>❌</td>
+                            <td><code>true</code> = nicht abwählbar</td>
+                        </tr>
+                        <tr>
+                            <td><code>is_spontaneous</code></td>
+                            <td>❌</td>
+                            <td><code>true</code> für "Rest spontan"</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <!-- Points System Guide -->
+            <div class="tab-pane fade" id="points-guide" role="tabpanel">
+                <h4>Punktesystem - Best Practices</h4>
+
+                <h5 class="mt-4">Grundprinzip</h5>
+                <ul>
+                    <li><strong>Budget:</strong> Setze <code>points_budget</code> in destinations.json (empfohlen: 100)</li>
+                    <li><strong>Basis:</strong> Flug, Unterkunft, Transfer = 0 Punkte (mandatory)</li>
+                    <li><strong>Verteilung:</strong> Verteile restliche Punkte nach Wertigkeit</li>
+                </ul>
+
+                <h5 class="mt-4">Empfohlene Punktewerte</h5>
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th>Kategorie</th>
+                            <th>Punkte</th>
+                            <th>Beispiele</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Basis (Mandatory)</td>
+                            <td>0</td>
+                            <td>Flug, Unterkunft, Transfer</td>
+                        </tr>
+                        <tr>
+                            <td>Kleine Aktivitäten</td>
+                            <td>8-12</td>
+                            <td>Museum, Stadtführung, lokales Essen</td>
+                        </tr>
+                        <tr>
+                            <td>Mittlere Aktivitäten</td>
+                            <td>15-20</td>
+                            <td>Kochkurs, Bootstour, Special Dinner</td>
+                        </tr>
+                        <tr>
+                            <td>Große Aktivitäten</td>
+                            <td>25-30</td>
+                            <td>Tagesausflug, Wassersport, Helikopter</td>
+                        </tr>
+                        <tr>
+                            <td>Highlights</td>
+                            <td>35-40</td>
+                            <td>Ballonfahrt, Tauchkurs, VIP-Erlebnis</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <h5 class="mt-4">Beispiel-Rechnung (Budget: 100 Punkte)</h5>
+                <div class="alert alert-success">
+                    <strong>Option A - Kultur-Fokus:</strong><br>
+                    Alle Museen (40) + Essen-Paket (45) + Stadtführung (10) = 95 Punkte ✅
+                </div>
+                <div class="alert alert-success">
+                    <strong>Option B - Erlebnis-Fokus:</strong><br>
+                    Ballonfahrt (35) + Bootstour (25) + Kochkurs (15) + Museum (12) = 87 Punkte ✅
+                </div>
+                <div class="alert alert-success">
+                    <strong>Option C - Mix mit Spontan:</strong><br>
+                    Tagesausflug (28) + Special Dinner (18) + Den Rest spontan (54) = 100 Punkte ✅
+                </div>
+
+                <h5 class="mt-4">Tipps</h5>
+                <ul>
+                    <li>✅ Sorge dafür, dass verschiedene Kombinationen möglich sind</li>
+                    <li>✅ Teure Highlights sollten alleine ca. 30-40% des Budgets kosten</li>
+                    <li>✅ "Den Rest spontan" ermöglicht flexible Restverwendung</li>
+                    <li>❌ Vermeide zu viele teure Items (sonst keine Auswahl möglich)</li>
+                    <li>❌ Vermeide zu viele billige Items (sonst wird's unübersichtlich)</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
 {% endblock %}
