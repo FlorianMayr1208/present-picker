@@ -200,7 +200,7 @@
     ]
   },
   {
-    "id": 8,
+    "id": 7,
     "destination_id": 2,
     "title": "Anreise & Unterkunft (5 Nächte)",
     "description": "Flug nach Istanbul mit optionalem Mietwagen. Zentrale Unterkunft mit Bosporus-Blick. Kulturelle Highlights inklusive.",
@@ -209,7 +209,7 @@
     "image_filename": "https://images.unsplash.com/photo-1524231757912-21f4fe3a7200?w=800"
   },
   {
-    "id": 8,
+    "id": 7,
     "destination_id": 2,
     "title": "Essen",
     "description": "Streetfood-Hopping (Lahmacun, Künefe, Balik Ekmek), Gewürzbasar-Verkostungen.",
@@ -218,7 +218,7 @@
     "image_filename": "https://images.unsplash.com/photo-1555939594-58d7cb561ad1?w=800"
   },
   {
-    "id": 9,
+    "id": 8,
     "destination_id": 2,
     "title": "Kultur",
     "description": "Hagia Sophia, Topkapi-Palast, Blaue Moschee, Basilica Cistern, Galata-Turm.",
@@ -227,7 +227,7 @@
     "image_filename": "https://images.unsplash.com/photo-1513415756775-62b3a2758b61?w=800"
   },
   {
-    "id": 10,
+    "id": 9,
     "destination_id": 2,
     "title": "Musik",
     "description": "Sufi-Derwische, Jazz-Clubs, Live-Musik in Kadiköy.",
@@ -236,7 +236,7 @@
     "image_filename": "https://images.unsplash.com/photo-1514320291840-2e0a9bf2a9ae?w=800"
   },
   {
-    "id": 11,
+    "id": 10,
     "destination_id": 2,
     "title": "Ausflüge",
     "description": "Bosporus-Dinner-Cruise, Prinzeninseln, Schwarzes Meer (Riva), Üsküdar-Promenade.",
@@ -245,7 +245,7 @@
     "image_filename": "https://images.unsplash.com/photo-1488646953014-85cb44e25828?w=800"
   },
   {
-    "id": 12,
+    "id": 11,
     "destination_id": 3,
     "title": "Anreise & Unterkunft (5 Nächte)",
     "description": "Flug nach Athen, weiter mit Fähren zu den Inseln. Charmante Unterkünfte auf Aegina, Poros und Hydra. Perfekt für Winter!",
@@ -254,7 +254,7 @@
     "image_filename": "https://images.unsplash.com/photo-1613395877344-13d4a8e0d49e?w=800"
   },
   {
-    "id": 13,
+    "id": 12,
     "destination_id": 3,
     "title": "Essen",
     "description": "Frischer Fisch in Poros, Mezedes auf Hydra, Pistazien auf Aegina.",
@@ -263,7 +263,7 @@
     "image_filename": "https://images.unsplash.com/photo-1555939594-58d7cb561ad1?w=800"
   },
   {
-    "id": 14,
+    "id": 13,
     "destination_id": 3,
     "title": "Kultur",
     "description": "Kloster Agios Nektarios, Hydra-Museum, Altstadt von Poros.",
@@ -272,7 +272,7 @@
     "image_filename": "https://images.unsplash.com/photo-1513415756775-62b3a2758b61?w=800"
   },
   {
-    "id": 15,
+    "id": 14,
     "destination_id": 3,
     "title": "Natur",
     "description": "Küstenwanderungen Hydra–Kamini, Ausflüge zu versteckten Buchten.",
@@ -281,7 +281,7 @@
     "image_filename": "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=800"
   },
   {
-    "id": 16,
+    "id": 15,
     "destination_id": 3,
     "title": "Ausflüge",
     "description": "Tempel des Aphaia, kleine Inselhüpfer-Bootstour, Spaziergänge durch traditionelle Dörfer.",
@@ -290,7 +290,7 @@
     "image_filename": "https://images.unsplash.com/photo-1488646953014-85cb44e25828?w=800"
   },
   {
-    "id": 17,
+    "id": 16,
     "destination_id": 4,
     "title": "Anreise & Unterkunft (5 Nächte)",
     "description": "Flug nach Lissabon, Zugfahrt nach Porto. 3 Nächte Lissabon, 2 Nächte Porto. Zentrale Lage in beiden Städten.",
@@ -299,7 +299,7 @@
     "image_filename": "https://images.unsplash.com/photo-1555881400-74d7acaacd8b?w=800"
   },
   {
-    "id": 18,
+    "id": 17,
     "destination_id": 4,
     "title": "Essen",
     "description": "Pastéis de Belém, Francesinha, Portwein-Verkostungen.",
@@ -308,7 +308,7 @@
     "image_filename": "https://images.unsplash.com/photo-1555939594-58d7cb561ad1?w=800"
   },
   {
-    "id": 19,
+    "id": 18,
     "destination_id": 4,
     "title": "Kultur",
     "description": "Torre de Belém, Jerónimos-Kloster, Livraria Lello, Casa da Música.",
@@ -317,7 +317,7 @@
     "image_filename": "https://images.unsplash.com/photo-1513415756775-62b3a2758b61?w=800"
   },
   {
-    "id": 20,
+    "id": 19,
     "destination_id": 4,
     "title": "Musik",
     "description": "Fado-Abend in Alfama oder Bairro Alto.",
@@ -326,7 +326,7 @@
     "image_filename": "https://images.unsplash.com/photo-1514320291840-2e0a9bf2a9ae?w=800"
   },
   {
-    "id": 21,
+    "id": 20,
     "destination_id": 4,
     "title": "Ausflüge",
     "description": "Sintra-Paläste (Pena, Regaleira), Douro-Tal & Weingüter, Strand von Foz do Douro.",

@@ -50,11 +50,17 @@ def get_activities_by_destination(dest_id, slider_value=None):
     if slider_value is not None:
         filtered = [
             a for a in filtered
-            if a['slider_level_min'] <= slider_value <= a['slider_level_max']
+            if 'slider_level_min' in a and 'slider_level_max' in a
+            and a['slider_level_min'] <= slider_value <= a['slider_level_max']
         ]
 
-    # Sortiere nach min level
-    filtered.sort(key=lambda x: x['slider_level_min'])
+    # Sortiere nach min level (nur für Slider-Aktivitäten)
+    # Für Checkbox-Aktivitäten behalte die ID-Reihenfolge
+    if filtered and 'slider_level_min' in filtered[0]:
+        filtered.sort(key=lambda x: x['slider_level_min'])
+    else:
+        filtered.sort(key=lambda x: x['id'])
+
     return filtered
 
 
@@ -67,21 +73,30 @@ def index():
 
 @app.route('/destination/<int:id>')
 def show_destination(id):
-    """Detailansicht einer Destination mit Slider"""
-    slider_value = request.args.get('slider', 0, type=int)
+    """Detailansicht einer Destination mit Slider oder Checkboxen"""
     destination = get_destination_by_id(id)
 
     if not destination:
         return "Destination nicht gefunden", 404
 
-    activities = get_activities_by_destination(id, slider_value)
+    selection_mode = destination.get('selection_mode', 'slider')
+
+    if selection_mode == 'checkboxes':
+        # Checkbox-Modus: Alle Aktivitäten laden
+        activities = get_activities_by_destination(id, slider_value=None)
+    else:
+        # Slider-Modus: Aktivitäten nach Slider-Level filtern
+        slider_value = request.args.get('slider', 0, type=int)
+        activities = get_activities_by_destination(id, slider_value)
 
     return render_template(
         'destination.html',
         destination=destination,
         activities=activities,
-        slider_value=slider_value,
-        slider_max=app.config['SLIDER_MAX']
+        slider_value=request.args.get('slider', 0, type=int),
+        slider_max=app.config['SLIDER_MAX'],
+        selection_mode=selection_mode,
+        points_budget=destination.get('points_budget', 0)
     )
 
 

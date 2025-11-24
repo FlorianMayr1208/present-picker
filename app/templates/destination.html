@@ -26,6 +26,8 @@
     </div>
 </div>
 
+<!-- Selection Mode: Slider or Checkboxes -->
+{% if selection_mode == 'slider' %}
 <!-- Slider Section -->
 <div class="row mb-4">
     <div class="col">
@@ -57,6 +59,34 @@
         </div>
     </div>
 </div>
+{% else %}
+<!-- Checkbox Selection Info with Points Budget -->
+<div class="row mb-4">
+    <div class="col">
+        <div class="card shadow-sm">
+            <div class="card-body">
+                <div class="d-flex justify-content-between align-items-center">
+                    <div>
+                        <h5 class="card-title mb-2">Stelle deine Reise zusammen</h5>
+                        <p class="text-muted mb-0">
+                            Wähle die Aktivitäten und Erlebnisse aus, die dich interessieren
+                        </p>
+                    </div>
+                    <div class="text-end">
+                        <div class="points-display">
+                            <span class="points-used" id="pointsUsed">0</span> / <span class="points-total">{{ points_budget }}</span>
+                            <div class="small text-muted">Punkte</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="progress mt-3" style="height: 8px;">
+                    <div class="progress-bar" id="pointsProgressBar" role="progressbar" style="width: 0%" aria-valuenow="0" aria-valuemin="0" aria-valuemax="{{ points_budget }}"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endif %}
 
 <!-- Activities Section -->
 <div class="row">
@@ -65,32 +95,110 @@
 
         <div id="activitiesContainer">
             {% if activities %}
-                {% for activity in activities %}
-                <div class="card mb-3 shadow-sm activity-card" data-level-min="{{ activity.slider_level_min }}" data-level-max="{{ activity.slider_level_max }}">
-                    <div class="row g-0">
-                        {% if activity.image_filename %}
-                        <div class="col-md-4">
-                            <img src="{% if activity.image_filename.startswith('http') %}{{ activity.image_filename }}{% else %}{{ url_for('static', filename='images/' + activity.image_filename) }}{% endif %}"
-                                 class="img-fluid rounded-start h-100"
-                                 alt="{{ activity.title }}"
-                                 style="object-fit: cover;">
-                        </div>
-                        {% endif %}
+                {% if selection_mode == 'checkboxes' %}
+                    <!-- Checkbox Mode: Show activities with checkboxes -->
+                    {% for activity in activities %}
+                    <div class="card mb-3 shadow-sm activity-card-checkbox">
+                        <div class="row g-0">
+                            {% if activity.image_filename %}
+                            <div class="col-md-4">
+                                <img src="{% if activity.image_filename.startswith('http') %}{{ activity.image_filename }}{% else %}{{ url_for('static', filename='images/' + activity.image_filename) }}{% endif %}"
+                                     class="img-fluid rounded-start h-100"
+                                     alt="{{ activity.title }}"
+                                     style="object-fit: cover;">
+                            </div>
+                            {% endif %}
 
-                        <div class="{% if activity.image_filename %}col-md-8{% else %}col-md-12{% endif %}">
-                            <div class="card-body">
-                                <div class="d-flex justify-content-between align-items-center mb-2">
-                                    <h5 class="card-title mb-0">{{ activity.title }}</h5>
-                                    <span class="badge bg-primary">Level {{ activity.slider_level_min }}-{{ activity.slider_level_max }}</span>
+                            <div class="{% if activity.image_filename %}col-md-8{% else %}col-md-12{% endif %}">
+                                <div class="card-body">
+                                    <!-- Category Title (no checkbox) -->
+                                    <h5 class="mb-2">{{ activity.title }}</h5>
+
+                                    {% if activity.description %}
+                                    <p class="card-text text-muted mb-3">{{ activity.description }}</p>
+                                    {% endif %}
+
+                                    <!-- Sub-items -->
+                                    {% if activity.sub_items %}
+                                    <div class="sub-items mt-3">
+                                        {% for sub_item in activity.sub_items %}
+                                        <div class="card mb-3 sub-item-card">
+                                            <div class="row g-0">
+                                                {% if sub_item.image_filename %}
+                                                <div class="col-md-3">
+                                                    <img src="{% if sub_item.image_filename.startswith('http') %}{{ sub_item.image_filename }}{% else %}{{ url_for('static', filename='images/' + sub_item.image_filename) }}{% endif %}"
+                                                         class="img-fluid rounded-start h-100"
+                                                         alt="{{ sub_item.title }}"
+                                                         style="object-fit: cover; min-height: 120px;">
+                                                </div>
+                                                {% endif %}
+                                                <div class="{% if sub_item.image_filename %}col-md-9{% else %}col-md-12{% endif %}">
+                                                    <div class="card-body py-2 px-3">
+                                                        <div class="form-check">
+                                                            <input class="form-check-input sub-item-checkbox"
+                                                                   type="checkbox"
+                                                                   id="sub-{{ sub_item.id }}"
+                                                                   data-parent-id="{{ activity.id }}"
+                                                                   data-sub-id="{{ sub_item.id }}"
+                                                                   data-points="{{ sub_item.points|default(0) }}"
+                                                                   {% if sub_item.is_spontaneous %}data-spontaneous="true"{% endif %}
+                                                                   {% if sub_item.default_selected %}checked{% endif %}
+                                                                   {% if sub_item.mandatory %}disabled{% endif %}>
+                                                            <label class="form-check-label w-100" for="sub-{{ sub_item.id }}">
+                                                                <div class="d-flex justify-content-between align-items-start">
+                                                                    <div>
+                                                                        <strong>{{ sub_item.title }}</strong>
+                                                                        {% if sub_item.description %}
+                                                                        <br><small class="text-muted">{{ sub_item.description }}</small>
+                                                                        {% endif %}
+                                                                    </div>
+                                                                    <span class="badge {% if sub_item.is_spontaneous %}bg-info{% else %}bg-secondary{% endif %} ms-2 points-badge" id="badge-sub-{{ sub_item.id }}">
+                                                                        {{ sub_item.points|default(0) }} Pkt
+                                                                    </span>
+                                                                </div>
+                                                            </label>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        {% endfor %}
+                                    </div>
+                                    {% endif %}
                                 </div>
-                                {% if activity.description %}
-                                <p class="card-text">{{ activity.description }}</p>
-                                {% endif %}
                             </div>
                         </div>
                     </div>
-                </div>
-                {% endfor %}
+                    {% endfor %}
+                {% else %}
+                    <!-- Slider Mode: Show activities as cards -->
+                    {% for activity in activities %}
+                    <div class="card mb-3 shadow-sm activity-card" data-level-min="{{ activity.slider_level_min }}" data-level-max="{{ activity.slider_level_max }}">
+                        <div class="row g-0">
+                            {% if activity.image_filename %}
+                            <div class="col-md-4">
+                                <img src="{% if activity.image_filename.startswith('http') %}{{ activity.image_filename }}{% else %}{{ url_for('static', filename='images/' + activity.image_filename) }}{% endif %}"
+                                     class="img-fluid rounded-start h-100"
+                                     alt="{{ activity.title }}"
+                                     style="object-fit: cover;">
+                            </div>
+                            {% endif %}
+
+                            <div class="{% if activity.image_filename %}col-md-8{% else %}col-md-12{% endif %}">
+                                <div class="card-body">
+                                    <div class="d-flex justify-content-between align-items-center mb-2">
+                                        <h5 class="card-title mb-0">{{ activity.title }}</h5>
+                                        <span class="badge bg-primary">Level {{ activity.slider_level_min }}-{{ activity.slider_level_max }}</span>
+                                    </div>
+                                    {% if activity.description %}
+                                    <p class="card-text">{{ activity.description }}</p>
+                                    {% endif %}
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    {% endfor %}
+                {% endif %}
             {% else %}
                 <div class="alert alert-info" role="alert" id="noActivitiesMessage">
                     Bewege den Slider nach rechts, um Details über diese Reise zu sehen.
@@ -125,15 +233,93 @@
     .form-range::-moz-range-thumb {
         background: #0d6efd;
     }
+
+    /* Checkbox mode styling */
+    .activity-card-checkbox {
+        transition: all 0.2s ease;
+    }
+
+    .activity-card-checkbox:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15) !important;
+    }
+
+    .form-check-input {
+        width: 1.5em;
+        height: 1.5em;
+        cursor: pointer;
+    }
+
+    .form-check-label {
+        cursor: pointer;
+        margin-left: 0.5rem;
+    }
+
+    .sub-items {
+        padding-left: 0.5rem;
+    }
+
+    .sub-item-card {
+        border: 1px solid #e0e0e0;
+        transition: all 0.2s ease;
+    }
+
+    .sub-item-card:hover {
+        border-color: #0d6efd;
+        box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075);
+    }
+
+    .sub-item-checkbox:disabled {
+        cursor: not-allowed;
+    }
+
+    .sub-item-checkbox:disabled + label {
+        opacity: 0.7;
+        cursor: not-allowed;
+    }
+
+    /* Points display */
+    .points-display {
+        font-size: 1.5rem;
+        font-weight: bold;
+    }
+
+    .points-used {
+        color: #0d6efd;
+    }
+
+    .points-total {
+        color: #6c757d;
+    }
+
+    .progress-bar {
+        transition: width 0.3s ease, background-color 0.3s ease;
+    }
+
+    .progress-bar.bg-warning {
+        background-color: #ffc107 !important;
+    }
+
+    .progress-bar.bg-danger {
+        background-color: #dc3545 !important;
+    }
+
+    .over-budget {
+        color: #dc3545 !important;
+    }
 </style>
 {% endblock %}
 
 {% block extra_js %}
 <script>
+    const selectionMode = '{{ selection_mode }}';
+    const destinationId = {{ destination.id }};
+
+    {% if selection_mode == 'slider' %}
+    // ========== SLIDER MODE ==========
     const slider = document.getElementById('detailSlider');
     const sliderValue = document.getElementById('sliderValue');
     const activitiesContainer = document.getElementById('activitiesContainer');
-    const destinationId = {{ destination.id }};
     let isLoading = false;
 
     // Update slider value display
@@ -213,7 +399,170 @@
         activitiesContainer.innerHTML = html;
     }
 
-    // Hilfsfunktion: Debounce
+    // URL aktualisieren ohne Reload (für Browser-History)
+    slider.addEventListener('change', function() {
+        const newValue = this.value;
+        const newUrl = `{{ url_for('show_destination', id=destination.id) }}?slider=${newValue}`;
+        window.history.pushState({slider: newValue}, '', newUrl);
+    });
+
+    {% else %}
+    // ========== CHECKBOX MODE ==========
+    const pointsBudget = {{ points_budget }};
+    const pointsUsedElement = document.getElementById('pointsUsed');
+    const pointsProgressBar = document.getElementById('pointsProgressBar');
+
+    const subCheckboxes = document.querySelectorAll('.sub-item-checkbox');
+
+    // Track selections
+    let selectedActivities = {};
+
+    // Find spontaneous checkbox
+    const spontaneousCheckbox = document.querySelector('.sub-item-checkbox[data-spontaneous="true"]');
+
+    // Calculate current points (excluding spontaneous option)
+    function calculatePoints() {
+        let totalPoints = 0;
+        subCheckboxes.forEach(checkbox => {
+            if (checkbox.checked && !checkbox.dataset.spontaneous) {
+                const points = parseInt(checkbox.dataset.points) || 0;
+                totalPoints += points;
+            }
+        });
+        return totalPoints;
+    }
+
+    // Calculate remaining points
+    function calculateRemainingPoints() {
+        const usedPoints = calculatePoints();
+        return Math.max(0, pointsBudget - usedPoints);
+    }
+
+    // Update spontaneous option
+    function updateSpontaneousOption() {
+        if (!spontaneousCheckbox) return;
+
+        const remainingPoints = calculateRemainingPoints();
+        const badge = document.getElementById('badge-' + spontaneousCheckbox.id);
+
+        // Update badge text
+        if (badge) {
+            badge.textContent = remainingPoints + ' Pkt';
+        }
+
+        // Update data-points attribute for calculation
+        spontaneousCheckbox.dataset.points = remainingPoints;
+
+        // Disable if no points remaining
+        if (remainingPoints === 0 && !spontaneousCheckbox.checked) {
+            spontaneousCheckbox.disabled = true;
+        } else if (remainingPoints > 0) {
+            spontaneousCheckbox.disabled = false;
+        }
+    }
+
+    // Update points display and progress bar
+    function updatePointsDisplay() {
+        // Update spontaneous option first
+        updateSpontaneousOption();
+
+        // Calculate total including spontaneous if checked
+        let currentPoints = calculatePoints();
+        if (spontaneousCheckbox && spontaneousCheckbox.checked) {
+            currentPoints += parseInt(spontaneousCheckbox.dataset.points) || 0;
+        }
+
+        pointsUsedElement.textContent = currentPoints;
+
+        // Update progress bar
+        const percentage = (currentPoints / pointsBudget) * 100;
+        pointsProgressBar.style.width = percentage + '%';
+        pointsProgressBar.setAttribute('aria-valuenow', currentPoints);
+
+        // Color coding
+        pointsProgressBar.classList.remove('bg-success', 'bg-warning', 'bg-danger');
+        pointsUsedElement.classList.remove('over-budget');
+
+        if (currentPoints > pointsBudget) {
+            pointsProgressBar.classList.add('bg-danger');
+            pointsUsedElement.classList.add('over-budget');
+        } else if (percentage >= 80) {
+            pointsProgressBar.classList.add('bg-warning');
+        } else {
+            pointsProgressBar.classList.add('bg-success');
+        }
+
+        // Disable/enable checkboxes based on budget
+        updateCheckboxStates();
+    }
+
+    // Update checkbox enabled/disabled states
+    function updateCheckboxStates() {
+        const currentPoints = calculatePoints();
+
+        subCheckboxes.forEach(checkbox => {
+            // Skip spontaneous checkbox - it has its own logic
+            if (checkbox.dataset.spontaneous) {
+                return;
+            }
+
+            // Don't disable mandatory items or already checked items
+            if (checkbox.hasAttribute('disabled') && !checkbox.dataset.points) {
+                return; // Skip mandatory items
+            }
+
+            if (!checkbox.checked) {
+                const points = parseInt(checkbox.dataset.points) || 0;
+
+                // If spontaneous is checked, budget is considered full - disable all other options
+                if (spontaneousCheckbox && spontaneousCheckbox.checked) {
+                    checkbox.disabled = true;
+                } else {
+                    // Normal budget check
+                    const wouldExceedBudget = (currentPoints + points) > pointsBudget;
+                    checkbox.disabled = wouldExceedBudget;
+                }
+            }
+        });
+    }
+
+    // Sub-item checkbox change handler
+    subCheckboxes.forEach(checkbox => {
+        checkbox.addEventListener('change', function() {
+            const activityId = this.dataset.parentId;
+            const subId = this.dataset.subId;
+
+            // Initialize activity if needed
+            if (!selectedActivities[activityId]) {
+                selectedActivities[activityId] = { subItems: {} };
+            }
+
+            selectedActivities[activityId].subItems[subId] = this.checked;
+
+            updatePointsDisplay();
+            logSelection();
+        });
+    });
+
+    // Log current selection (for debugging / future API call)
+    function logSelection() {
+        const regularPoints = calculatePoints();
+        const spontaneousPoints = (spontaneousCheckbox && spontaneousCheckbox.checked) ? parseInt(spontaneousCheckbox.dataset.points) : 0;
+        const totalPoints = regularPoints + spontaneousPoints;
+
+        console.log('Current selection:', selectedActivities);
+        console.log('Regular points:', regularPoints);
+        console.log('Spontaneous points:', spontaneousPoints);
+        console.log('Total points:', totalPoints, '/', pointsBudget);
+        console.log('Remaining:', pointsBudget - totalPoints);
+        // TODO: Save to session/cookie or API
+    }
+
+    // Initialize points display on page load
+    updatePointsDisplay();
+    {% endif %}
+
+    // ========== SHARED HELPER FUNCTIONS ==========
     function debounce(func, wait) {
         let timeout;
         return function executedFunction(...args) {
@@ -226,7 +575,6 @@
         };
     }
 
-    // Hilfsfunktion: HTML escapen
     function escapeHtml(text) {
         if (!text) return '';
         const map = {
@@ -238,12 +586,5 @@
         };
         return text.replace(/[&<>"']/g, m => map[m]);
     }
-
-    // URL aktualisieren ohne Reload (für Browser-History)
-    slider.addEventListener('change', function() {
-        const newValue = this.value;
-        const newUrl = `{{ url_for('show_destination', id=destination.id) }}?slider=${newValue}`;
-        window.history.pushState({slider: newValue}, '', newUrl);
-    });
 </script>
 {% endblock %}
