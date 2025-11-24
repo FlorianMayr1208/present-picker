@@ -1,20 +1,26 @@
 [
   {
     "id": 1,
-    "name": "Spanien - Barcelona & Costa Brava",
-    "description_short": "Entdecke die lebendige Kultur Barcelonas und entspanne an den schönen Stränden der Costa Brava.",
-    "image_cover": "https://images.unsplash.com/photo-1583422409516-2895a77efded?w=800"
+    "name": "Marrakesch - Marokko",
+    "description_short": "Orientalische Stadt voller Farben, Souks und Wüstenabenteuer.",
+    "image_cover": "https://images.unsplash.com/photo-1597212618440-806262de4f6b?w=800"
   },
   {
     "id": 2,
-    "name": "Island - Feuer und Eis",
-    "description_short": "Erlebe die atemberaubende Natur Islands mit Vulkanen, Wasserfällen und Nordlichtern.",
-    "image_cover": "https://images.unsplash.com/photo-1504893524553-b855bce32c67?w=800"
+    "name": "Istanbul - Türkei",
+    "description_short": "Metropole zwischen zwei Kontinenten – geschichtsträchtig und lebendig.",
+    "image_cover": "https://images.unsplash.com/photo-1524231757912-21f4fe3a7200?w=800"
   },
   {
     "id": 3,
-    "name": "Japan - Tokyo & Kyoto",
-    "description_short": "Tauche ein in die faszinierende Mischung aus Tradition und Moderne in Japans Metropolen.",
-    "image_cover": "https://images.unsplash.com/photo-1542640244-7e672d6cef4e?w=800"
+    "name": "Saronische Inseln - Griechenland",
+    "description_short": "Charmante Inseln nahe Athen – gemütlich, kulturell & ideal im Winter.",
+    "image_cover": "https://images.unsplash.com/photo-1613395877344-13d4a8e0d49e?w=800"
+  },
+  {
+    "id": 4,
+    "name": "Lissabon & Porto - Portugal",
+    "description_short": "Städtetrip-Kombi voller Kultur, Genuss & Atlantik-Feeling.",
+    "image_cover": "https://images.unsplash.com/photo-1555881400-74d7acaacd8b?w=800"
   }
 ]

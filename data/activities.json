@@ -2,136 +2,181 @@
   {
     "id": 1,
     "destination_id": 1,
-    "title": "Flug nach Barcelona",
-    "description": "Direktflug nach Barcelona. Beinhaltet nur den Transport ohne weitere Services.",
+    "title": "Anreise & Unterkunft (5 Nächte)",
+    "description": "Direktflug nach Marrakesch. Komfortable Unterkunft in Riad-Stil. Inklusive Ballonfahrt und Tagesausflüge.",
     "slider_level_min": 0,
     "slider_level_max": 5,
-    "image_filename": "https://images.unsplash.com/photo-1562883676-8c7feb83f09b?w=800"
+    "image_filename": "https://images.unsplash.com/photo-1597212618440-806262de4f6b?w=800"
   },
   {
     "id": 2,
     "destination_id": 1,
-    "title": "Mietauto & flexibles Erkunden",
-    "description": "Mietauto für maximale Flexibilität. Du entscheidest, wohin die Reise geht.",
+    "title": "Essen",
+    "description": "Streetfood-Tour durch die Medina, Tajine-Kochkurs, Rooftop-Dinner.",
     "slider_level_min": 1,
-    "slider_level_max": 3,
-    "image_filename": "https://images.unsplash.com/photo-1449965408869-eaa3f722e40d?w=800"
+    "slider_level_max": 5,
+    "image_filename": "https://images.unsplash.com/photo-1555939594-58d7cb561ad1?w=800"
   },
   {
     "id": 3,
     "destination_id": 1,
-    "title": "Barcelona City Tour (geführt)",
-    "description": "Geführte Tour durch Barcelona: Sagrada Familia, Park Güell und Gotisches Viertel.",
-    "slider_level_min": 4,
+    "title": "Kultur",
+    "description": "Jardin Majorelle, Yves-Saint-Laurent-Museum, Bahia-Palast, Saadier-Gräber.",
+    "slider_level_min": 2,
     "slider_level_max": 5,
-    "image_filename": "https://images.unsplash.com/photo-1583422409516-2895a77efded?w=800"
+    "image_filename": "https://images.unsplash.com/photo-1513415756775-62b3a2758b61?w=800"
   },
   {
     "id": 4,
     "destination_id": 1,
-    "title": "Strandtag an der Costa Brava",
-    "description": "Entspanne an einem der wunderschönen Strände und schwimme im kristallklaren Wasser.",
-    "slider_level_min": 2,
+    "title": "Erlebnisse",
+    "description": "Sonnenaufgangs-Ballonfahrt, traditionelles Hammam.",
+    "slider_level_min": 4,
     "slider_level_max": 5,
-    "image_filename": "https://images.unsplash.com/photo-1559827260-dc66d52bef19?w=800"
+    "image_filename": "https://images.unsplash.com/photo-1476514525535-07fb3b4ae5f1?w=800"
   },
   {
     "id": 5,
     "destination_id": 1,
-    "title": "Flamenco-Show und Abendessen",
-    "description": "Genieße eine authentische Flamenco-Vorstellung mit traditionellem spanischen Abendessen.",
+    "title": "Ausflüge",
+    "description": "Agafay-Wüste, Atlasgebirge, Ourika-Tal, Essaouira-Tagestrip.",
     "slider_level_min": 5,
     "slider_level_max": 5,
-    "image_filename": "https://images.unsplash.com/photo-1579783902614-a3fb3927b6a5?w=800"
+    "image_filename": "https://images.unsplash.com/photo-1488646953014-85cb44e25828?w=800"
   },
   {
     "id": 6,
     "destination_id": 2,
-    "title": "Flug nach Reykjavik",
-    "description": "Flug nach Island. Nur Transport, keine weiteren Services inklusive.",
+    "title": "Anreise & Unterkunft (5 Nächte)",
+    "description": "Flug nach Istanbul mit optionalem Mietwagen. Zentrale Unterkunft mit Bosporus-Blick. Kulturelle Highlights inklusive.",
     "slider_level_min": 0,
     "slider_level_max": 5,
-    "image_filename": "https://images.unsplash.com/photo-1504893524553-b855bce32c67?w=800"
+    "image_filename": "https://images.unsplash.com/photo-1524231757912-21f4fe3a7200?w=800"
   },
   {
     "id": 7,
     "destination_id": 2,
-    "title": "Mietwagen & Roadtrip",
-    "description": "Mietwagen für einen selbstgeplanten Roadtrip durch Island.",
+    "title": "Essen",
+    "description": "Streetfood-Hopping (Lahmacun, Künefe, Balik Ekmek), Gewürzbasar-Verkostungen.",
     "slider_level_min": 1,
-    "slider_level_max": 2,
-    "image_filename": "https://images.unsplash.com/photo-1531168556467-80aace0d0144?w=800"
+    "slider_level_max": 5,
+    "image_filename": "https://images.unsplash.com/photo-1555939594-58d7cb561ad1?w=800"
   },
   {
     "id": 8,
     "destination_id": 2,
-    "title": "Golden Circle Tagestour (geführt)",
-    "description": "Geführte Tour: Þingvellir-Nationalpark, Gullfoss-Wasserfall und Geysir-Gebiet.",
-    "slider_level_min": 3,
+    "title": "Kultur",
+    "description": "Hagia Sophia, Topkapi-Palast, Blaue Moschee, Basilica Cistern, Galata-Turm.",
+    "slider_level_min": 2,
     "slider_level_max": 5,
-    "image_filename": "https://images.unsplash.com/photo-1519904981063-b0cf448d479e?w=800"
+    "image_filename": "https://images.unsplash.com/photo-1513415756775-62b3a2758b61?w=800"
   },
   {
     "id": 9,
     "destination_id": 2,
-    "title": "Gletscherwanderung",
-    "description": "Unternimm eine geführte Wanderung auf einem echten Gletscher.",
-    "slider_level_min": 4,
+    "title": "Musik",
+    "description": "Sufi-Derwische, Jazz-Clubs, Live-Musik in Kadiköy.",
+    "slider_level_min": 3,
     "slider_level_max": 5,
-    "image_filename": "https://images.unsplash.com/photo-1578996956925-c2af3aa415db?w=800"
+    "image_filename": "https://images.unsplash.com/photo-1514320291840-2e0a9bf2a9ae?w=800"
   },
   {
     "id": 10,
     "destination_id": 2,
-    "title": "Nordlichter-Jagd",
-    "description": "Erlebe das magische Schauspiel der Aurora Borealis am Nachthimmel.",
+    "title": "Ausflüge",
+    "description": "Bosporus-Dinner-Cruise, Prinzeninseln, Schwarzes Meer (Riva), Üsküdar-Promenade.",
     "slider_level_min": 5,
     "slider_level_max": 5,
-    "image_filename": "https://images.unsplash.com/photo-1579033461380-adb47c3eb938?w=800"
+    "image_filename": "https://images.unsplash.com/photo-1488646953014-85cb44e25828?w=800"
   },
   {
     "id": 11,
     "destination_id": 3,
-    "title": "Flug nach Tokyo",
-    "description": "Flug nach Tokyo. Nur Transport ohne weitere Leistungen.",
+    "title": "Anreise & Unterkunft (5 Nächte)",
+    "description": "Flug nach Athen, weiter mit Fähren zu den Inseln. Charmante Unterkünfte auf Aegina, Poros und Hydra. Perfekt für Winter!",
     "slider_level_min": 0,
     "slider_level_max": 5,
-    "image_filename": "https://images.unsplash.com/photo-1542640244-7e672d6cef4e?w=800"
+    "image_filename": "https://images.unsplash.com/photo-1613395877344-13d4a8e0d49e?w=800"
   },
   {
     "id": 12,
     "destination_id": 3,
-    "title": "JR Pass & individuelle Erkundung",
-    "description": "Japan Rail Pass für flexible Zugfahrten. Plane deine eigene Route.",
+    "title": "Essen",
+    "description": "Frischer Fisch in Poros, Mezedes auf Hydra, Pistazien auf Aegina.",
     "slider_level_min": 1,
-    "slider_level_max": 3,
-    "image_filename": "https://images.unsplash.com/photo-1590559899731-a382839e5549?w=800"
+    "slider_level_max": 5,
+    "image_filename": "https://images.unsplash.com/photo-1555939594-58d7cb561ad1?w=800"
   },
   {
     "id": 13,
     "destination_id": 3,
-    "title": "Geführte Tour: Tokyo & Kyoto",
-    "description": "Geführte Tour durch Tokyo (Shibuya, Asakusa) und Kyoto (Goldener Pavillon, Fushimi Inari).",
-    "slider_level_min": 4,
+    "title": "Kultur",
+    "description": "Kloster Agios Nektarios, Hydra-Museum, Altstadt von Poros.",
+    "slider_level_min": 2,
     "slider_level_max": 5,
-    "image_filename": "https://images.unsplash.com/photo-1528360983277-13d401cdc186?w=800"
+    "image_filename": "https://images.unsplash.com/photo-1513415756775-62b3a2758b61?w=800"
   },
   {
     "id": 14,
     "destination_id": 3,
-    "title": "Mount Fuji Ausflug",
-    "description": "Besuche den ikonischen Mount Fuji und die umliegenden fünf Seen.",
+    "title": "Natur",
+    "description": "Küstenwanderungen Hydra–Kamini, Ausflüge zu versteckten Buchten.",
     "slider_level_min": 3,
     "slider_level_max": 5,
-    "image_filename": "https://images.unsplash.com/photo-1570459027562-4a916cc6113f?w=800"
+    "image_filename": "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=800"
   },
   {
     "id": 15,
     "destination_id": 3,
-    "title": "Onsen & Kaiseki-Dinner",
-    "description": "Traditionelles Thermalbad und mehrgängiges Kaiseki-Abendessen in Hakone.",
+    "title": "Ausflüge",
+    "description": "Tempel des Aphaia, kleine Inselhüpfer-Bootstour, Spaziergänge durch traditionelle Dörfer.",
     "slider_level_min": 5,
     "slider_level_max": 5,
-    "image_filename": "https://images.unsplash.com/photo-1540959733332-eab4deabeeaf?w=800"
+    "image_filename": "https://images.unsplash.com/photo-1488646953014-85cb44e25828?w=800"
+  },
+  {
+    "id": 16,
+    "destination_id": 4,
+    "title": "Anreise & Unterkunft (5 Nächte)",
+    "description": "Flug nach Lissabon, Zugfahrt nach Porto. 3 Nächte Lissabon, 2 Nächte Porto. Zentrale Lage in beiden Städten.",
+    "slider_level_min": 0,
+    "slider_level_max": 5,
+    "image_filename": "https://images.unsplash.com/photo-1555881400-74d7acaacd8b?w=800"
+  },
+  {
+    "id": 17,
+    "destination_id": 4,
+    "title": "Essen",
+    "description": "Pastéis de Belém, Francesinha, Portwein-Verkostungen.",
+    "slider_level_min": 1,
+    "slider_level_max": 5,
+    "image_filename": "https://images.unsplash.com/photo-1555939594-58d7cb561ad1?w=800"
+  },
+  {
+    "id": 18,
+    "destination_id": 4,
+    "title": "Kultur",
+    "description": "Torre de Belém, Jerónimos-Kloster, Livraria Lello, Casa da Música.",
+    "slider_level_min": 2,
+    "slider_level_max": 5,
+    "image_filename": "https://images.unsplash.com/photo-1513415756775-62b3a2758b61?w=800"
+  },
+  {
+    "id": 19,
+    "destination_id": 4,
+    "title": "Musik",
+    "description": "Fado-Abend in Alfama oder Bairro Alto.",
+    "slider_level_min": 3,
+    "slider_level_max": 5,
+    "image_filename": "https://images.unsplash.com/photo-1514320291840-2e0a9bf2a9ae?w=800"
+  },
+  {
+    "id": 20,
+    "destination_id": 4,
+    "title": "Ausflüge",
+    "description": "Sintra-Paläste (Pena, Regaleira), Douro-Tal & Weingüter, Strand von Foz do Douro.",
+    "slider_level_min": 5,
+    "slider_level_max": 5,
+    "image_filename": "https://images.unsplash.com/photo-1488646953014-85cb44e25828?w=800"
   }
 ]
