@@ -367,5 +367,181 @@
         "image_filename": "https://images.unsplash.com/photo-1469854523086-cc02fe5d8800?w=600"
       }
     ]
+  },
+  {
+    "id": 20,
+    "destination_id": 3,
+    "title": "Essen & Kulinarik",
+    "description": "Valencianische Spezialitäten und mediterrane Genüsse",
+    "image_filename": "https://images.unsplash.com/photo-1555939594-58d7cb561ad1?w=800",
+    "slider_level_min": 1,
+    "slider_level_max": 5,
+    "default_selected": false,
+    "sub_items": [
+      {
+        "id": "20a",
+        "title": "Original Paella Valenciana am Albufera-See (El Palmar)",
+        "description": "Ein Besuch bei La Albufera-See und im Dörfchen El Palmar bedeutet: Bootsfahrt über stille Gewässer, Fahrt vorbei an Reisfeldern und Abstecher in ein Spezialitäten-Restaurant am Wasser, wo die echte Paella Valenciana serviert wird. Sie stammt genau aus dieser Region - mit Reis aus den Feldern der Albufera, Safran, Hühnchen oder Kaninchen sowie grünen Bohnen.",
+        "points": 25,
+        "default_selected": false,
+        "image_filename": "activities/spa_paella.jpg"
+      },
+      {
+        "id": "20b",
+        "title": "Tapas-Hopping in Ruzafa",
+        "description": "Im hippen Viertel Ruzafa von Valencia mischen sich kreative Bars mit klassischen Tapas-Lokalen. Von kleinen Tellerchen mit Jamón, Oliven, lokalen Käsespezialitäten bis hin zu modernen Interpretationen - ideal für einen genussvollen Abend mit urbanem Flair.",
+        "points": 18,
+        "default_selected": false,
+        "image_filename": "activities/spa_tapas.jpg"
+      },
+      {
+        "id": "20c",
+        "title": "Agua de Valencia Cocktail in einer Rooftop-Bar",
+        "description": "Der legendäre Drink Agua de Valencia (Orangensaft, Cava, Wodka/Gin) gehört zur Stadt wie die Orangenbäume. Genieße ihn auf einer Rooftop-Bar mit Blick über die Dächer Valencias - besonders bei Sonnenuntergang ein stilvoller Moment.",
+        "points": 15,
+        "default_selected": false,
+        "image_filename": "activities/spa_aqua_de_vaencia_rooftop.png"
+      },
+      {
+        "id": "20d",
+        "title": "Horchata + Farton in Alboraya",
+        "description": "Kurz außerhalb des Stadtzentrums liegt Alboraya, wo aus den Erdmandeln ('chufa') die erfrischende Horchata gemacht wird - dazu ein weiches 'Farton'-Gebäck zum Eintauchen. Diese Kombination ist typisch für Valencia und wunderbar für eine süße Pause zwischendurch.",
+        "points": 10,
+        "default_selected": false,
+        "image_filename": "activities/spa_horchata.jpg"
+      },
+      {
+        "id": "20e",
+        "title": "Mercado Central - frische Meeresfrüchte, Jamón, lokale Produkte",
+        "description": "Der Mercado Central in Valencia zählt zu den schönsten Markthallen Europas: Stände mit frischen Meeresfrüchten, Jamón Iberico, Oliven, Käse und Produkten aus der Region laden zum Schlendern, Kosten und Einkaufen ein. Ideal, um lokale Spezialitäten zu entdecken.",
+        "points": 8,
+        "default_selected": false,
+        "image_filename": "activities/spa_mercado_central.jpg"
+      }
+    ]
+  },
+  {
+    "id": 21,
+    "destination_id": 3,
+    "title": "Kultur & Must-Sees",
+    "description": "Historische Schätze und moderne Architektur",
+    "image_filename": "https://images.unsplash.com/photo-1581619420351-e5e6e8715785?w=800",
+    "slider_level_min": 2,
+    "slider_level_max": 5,
+    "default_selected": false,
+    "sub_items": [
+      {
+        "id": "21a",
+        "title": "Ciudad de las Artes y las Ciencias",
+        "description": "Ein architektonisches Meisterwerk am Stadtrand von Valencia: Die Ciudad de las Artes y las Ciencias verbindet futuristische Bauwerke, Wissenschaftsmuseum und Aquarien-Komplex. Ideal für Technik- und Architekturinteressierte - und ein Kontrast zur historischen Altstadt.",
+        "points": 15,
+        "default_selected": false,
+        "image_filename": "activities/spa_ciudad_artes_ciencias.jpg"
+      },
+      {
+        "id": "21b",
+        "title": "Torres de Serranos + Altstadtbummel",
+        "description": "Die mittelalterlichen Türme der Torres de Serranos sind eines der Wahrzeichen Valencias und bieten wunderbare Ausblicke über die Altstadt. Der anschließende Altstadtbummel durch Gassen, Plätze und Cafés lässt die Geschichte der Stadt lebendig werden.",
+        "points": 10,
+        "default_selected": false,
+        "image_filename": "activities/spa_serranos_torres.jpg"
+      },
+      {
+        "id": "21c",
+        "title": "Seidenbörse (Lonja de la Seda, UNESCO)",
+        "description": "Die Lonja de la Seda (Seidenbörse) ist ein spätgotisches Handelsgebäude und UNESCO-Welterbe: beeindruckende Säulenhalle, historisches Handelszentrum für Seide und ein Highlight für Kulturreisen in Valencia.",
+        "points": 10,
+        "default_selected": false,
+        "image_filename": "activities/spa_seidenbörse.webp"
+      },
+      {
+        "id": "21d",
+        "title": "Street-Art-Tour durch El Carmen",
+        "description": "Im Stadtteil El Carmen erwartet dich moderne, urbane Kunst an den Wänden: Street-Art, Graffiti, kreative Szenekultur. Eine geführte Tour oder ein selbstständiger Spaziergang enthüllen versteckte Kunstwerke und zeitgenössischen Flair.",
+        "points": 12,
+        "default_selected": false,
+        "image_filename": "activities/spa_street_art.jpg"
+      }
+    ]
+  },
+  {
+    "id": 22,
+    "destination_id": 3,
+    "title": "Natur, Strände & Erlebnisse",
+    "description": "Entspannung zwischen Strand und Grünflächen",
+    "image_filename": "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=800",
+    "slider_level_min": 3,
+    "slider_level_max": 5,
+    "default_selected": false,
+    "sub_items": [
+      {
+        "id": "22a",
+        "title": "Bootsfahrt durch Albufera bei Sonnenuntergang",
+        "description": "Eine Bootsfahrt über den See der Albufera bei Sonnenuntergang gehört zu den besonderen Momenten in der Region: Spiegelndes Wasser, goldene Lichtstimmung, Reisfelder im Hintergrund - kombiniert mit einem späten Paella-Essen ergibt sich ein unvergessliches Erlebnis.",
+        "points": 20,
+        "default_selected": false,
+        "image_filename": "activities/spa_albufera.webp"
+      },
+      {
+        "id": "22b",
+        "title": "Strandtag an Malvarrosa oder Las Arenas",
+        "description": "Die Strände Playa Malvarrosa und Las Arenas liegen nur wenige Minuten vom Zentrum Valencias entfernt - auch im Winter mit mildem Klima geeignet für Spaziergänge, Frischluft und eventuell ein Café am Meer.",
+        "points": 0,
+        "default_selected": false,
+        "image_filename": "activities/spa_strandtag_malvarrosa.jpg"
+      },
+      {
+        "id": "22c",
+        "title": "Botanischer Garten Valencia",
+        "description": "Der Botanische Garten Valencia (Jardín Botánico) lädt zu Ruhe- und Naturerlebnissen ein: verschiedene Gartenbereiche, Gewächshäuser und schattige Wege - angenehm in der kühleren Jahreszeit.",
+        "points": 8,
+        "default_selected": false,
+        "image_filename": "activities/spa_botanischer_garten.jpg"
+      },
+      {
+        "id": "22d",
+        "title": "Picknick im Parque Cabecera",
+        "description": "Der Parque Cabecera am westlichen Ende des Turia-Parks umfasst Grünflächen, Seen und sogar einen Mini-Nike-Tempel-Nachbau. Perfekt für ein entspanntes Picknick oder eine Pause im Freien - ideal für einen milden Wintertag.",
+        "points": 5,
+        "default_selected": false,
+        "image_filename": "activities/spa_parque_cabecera.jpg"
+      }
+    ]
+  },
+  {
+    "id": 23,
+    "destination_id": 3,
+    "title": "Ausflüge rund um Valencia",
+    "description": "Entdeckungen jenseits der Stadt",
+    "image_filename": "https://images.unsplash.com/photo-1476514525535-07fb3b4ae5f1?w=800",
+    "slider_level_min": 4,
+    "slider_level_max": 5,
+    "default_selected": false,
+    "sub_items": [
+      {
+        "id": "23a",
+        "title": "Xàtiva - Burg & Altstadt mit arabischen Einflüssen (1-2 Übernachtungen)",
+        "description": "Nur etwa 1 Stunde von Valencia entfernt liegt Xàtiva mit seiner imposanten Burg auf einem Bergkamm und einer Altstadt, die von arabischer Geschichte geprägt ist. Ein spannender Tagesausflug zur Mischung aus Natur, Geschichte und Panorama.",
+        "points": 30,
+        "default_selected": false,
+        "image_filename": "activities/spa_xativa.jpg"
+      },
+      {
+        "id": "23b",
+        "title": "Naturpark Cova Negra (Wanderung)",
+        "description": "In der Region von Xàtiva befindet sich der Parc Natural de la Cova Negra - ein wildes Tal mit Schluchten, Felsen, Höhlen und einem Flusslauf. Eine gut machbare Wanderung bietet Natur im Winter, die Ruhe genießen und etwas Aktivität verbinden.",
+        "points": 15,
+        "default_selected": false,
+        "image_filename": "activities/spa_cova_negra.jpg"
+      },
+      {
+        "id": "23c",
+        "title": "Requena - Weinregion & Cava-Verkostungen (1 Übernachtung)",
+        "description": "Requena ist eine traditionsreiche Weinregion nordwestlich von Valencia: Verkostung von Cava und lokalen Rot- & Weißweinen, Besuch von Kelleranlagen.",
+        "points": 35,
+        "default_selected": false,
+        "image_filename": "activities/spa_requena.jpg"
+      }
+    ]
   }
 ]

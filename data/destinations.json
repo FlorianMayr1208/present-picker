@@ -14,5 +14,13 @@
     "image_cover": "https://images.unsplash.com/photo-1524231757912-21f4fe3a7200?w=800",
     "selection_mode": "checkboxes",
     "points_budget": 100
+  },
+  {
+    "id": 3,
+    "name": "Valencia - Spanien",
+    "description_short": "Paella, Kultur und mediterrane Lebensfreude an der spanischen Ostküste.",
+    "image_cover": "https://images.unsplash.com/photo-1589930901924-d2b8d63a6ab2?w=800",
+    "selection_mode": "slider",
+    "points_budget": 100
   }
 ]

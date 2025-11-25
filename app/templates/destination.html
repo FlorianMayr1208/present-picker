@@ -182,31 +182,72 @@
                     </div>
                     {% endfor %}
                 {% else %}
-                    <!-- Slider Mode: Show activities as cards -->
+                    <!-- Slider Mode: Show activities with sub-items -->
                     {% for activity in activities %}
-                    <div class="card mb-3 shadow-sm activity-card" data-level-min="{{ activity.slider_level_min }}" data-level-max="{{ activity.slider_level_max }}">
-                        <div class="row g-0">
-                            {% if activity.image_filename %}
-                            <div class="col-md-4 position-relative" style="min-height: 250px; max-height: 350px; overflow: hidden;">
+                    <div class="mb-4 activity-category activity-card" data-level-min="{{ activity.slider_level_min }}" data-level-max="{{ activity.slider_level_max }}">
+                        <!-- Category Header with Image -->
+                        {% if activity.image_filename %}
+                        <div class="card mb-3 shadow-sm category-header-card">
+                            <div class="position-relative" style="height: 300px; overflow: hidden;">
                                 <img src="{% if activity.image_filename.startswith('http') %}{{ activity.image_filename }}{% else %}{{ url_for('static', filename='images/' + activity.image_filename) }}{% endif %}"
-                                     class="rounded-start h-100 w-100"
+                                     class="w-100 h-100"
                                      alt="{{ activity.title }}"
                                      style="object-fit: cover; object-position: center;">
-                            </div>
-                            {% endif %}
-
-                            <div class="{% if activity.image_filename %}col-md-8{% else %}col-md-12{% endif %}">
-                                <div class="card-body">
-                                    <div class="d-flex justify-content-between align-items-center mb-2">
-                                        <h5 class="card-title mb-0">{{ activity.title }}</h5>
-                                        <span class="badge bg-primary">Level {{ activity.slider_level_min }}-{{ activity.slider_level_max }}</span>
-                                    </div>
+                                <div class="position-absolute bottom-0 start-0 w-100 p-4" style="background: linear-gradient(to top, rgba(0,0,0,0.8), transparent);">
+                                    <h4 class="text-white mb-2">{{ activity.title }}</h4>
                                     {% if activity.description %}
-                                    <p class="card-text">{{ activity.description }}</p>
+                                    <p class="text-white mb-0 small">{{ activity.description }}</p>
                                     {% endif %}
+                                    <span class="badge bg-primary mt-2">Level {{ activity.slider_level_min }}-{{ activity.slider_level_max }}</span>
                                 </div>
                             </div>
                         </div>
+                        {% else %}
+                        <!-- Category Header without Image -->
+                        <div class="card mb-3 shadow-sm">
+                            <div class="card-body">
+                                <div class="d-flex justify-content-between align-items-center">
+                                    <h5 class="mb-2">{{ activity.title }}</h5>
+                                    <span class="badge bg-primary">Level {{ activity.slider_level_min }}-{{ activity.slider_level_max }}</span>
+                                </div>
+                                {% if activity.description %}
+                                <p class="card-text text-muted mb-0">{{ activity.description }}</p>
+                                {% endif %}
+                            </div>
+                        </div>
+                        {% endif %}
+
+                        <!-- Sub-items Container -->
+                        {% if activity.sub_items %}
+                        <div class="sub-items-container">
+                            {% for sub_item in activity.sub_items %}
+                            <div class="card mb-3 sub-item-card shadow-sm">
+                                <div class="row g-0">
+                                    {% if sub_item.image_filename %}
+                                    <div class="col-md-3">
+                                        <img src="{% if sub_item.image_filename.startswith('http') %}{{ sub_item.image_filename }}{% else %}{{ url_for('static', filename='images/' + sub_item.image_filename) }}{% endif %}"
+                                             class="img-fluid rounded-start h-100"
+                                             alt="{{ sub_item.title }}"
+                                             style="object-fit: cover; min-height: 120px;">
+                                    </div>
+                                    {% endif %}
+                                    <div class="{% if sub_item.image_filename %}col-md-9{% else %}col-md-12{% endif %}">
+                                        <div class="card-body py-2 px-3">
+                                            <div class="d-flex justify-content-between align-items-start">
+                                                <div>
+                                                    <strong>{{ sub_item.title }}</strong>
+                                                    {% if sub_item.description %}
+                                                    <br><small class="text-muted">{{ sub_item.description }}</small>
+                                                    {% endif %}
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            {% endfor %}
+                        </div>
+                        {% endif %}
                     </div>
                     {% endfor %}
                 {% endif %}
@@ -379,32 +420,75 @@
         let html = '';
         activities.forEach(activity => {
             const hasImage = activity.image_filename ? true : false;
-            const imageCol = hasImage ? 'col-md-4' : '';
-            const contentCol = hasImage ? 'col-md-8' : 'col-md-12';
 
-            html += `
-                <div class="card mb-3 shadow-sm activity-card" data-level-min="${activity.slider_level_min}" data-level-max="${activity.slider_level_max}" style="animation: fadeIn 0.5s ease-in;">
-                    <div class="row g-0">
-                        ${hasImage ? `
-                        <div class="${imageCol}">
+            // Category container
+            html += `<div class="mb-4 activity-category activity-card" data-level-min="${activity.slider_level_min}" data-level-max="${activity.slider_level_max}" style="animation: fadeIn 0.5s ease-in;">`;
+
+            // Category Header
+            if (hasImage) {
+                html += `
+                    <div class="card mb-3 shadow-sm category-header-card">
+                        <div class="position-relative" style="height: 300px; overflow: hidden;">
                             <img src="${activity.image_filename.startsWith('http') ? activity.image_filename : '/static/images/' + activity.image_filename}"
-                                 class="img-fluid rounded-start h-100"
+                                 class="w-100 h-100"
                                  alt="${escapeHtml(activity.title)}"
-                                 style="object-fit: cover;">
-                        </div>
-                        ` : ''}
-                        <div class="${contentCol}">
-                            <div class="card-body">
-                                <div class="d-flex justify-content-between align-items-center mb-2">
-                                    <h5 class="card-title mb-0">${escapeHtml(activity.title)}</h5>
-                                    <span class="badge bg-primary">Level ${activity.slider_level_min}-${activity.slider_level_max}</span>
-                                </div>
-                                ${activity.description ? `<p class="card-text">${escapeHtml(activity.description)}</p>` : ''}
+                                 style="object-fit: cover; object-position: center;">
+                            <div class="position-absolute bottom-0 start-0 w-100 p-4" style="background: linear-gradient(to top, rgba(0,0,0,0.8), transparent);">
+                                <h4 class="text-white mb-2">${escapeHtml(activity.title)}</h4>
+                                ${activity.description ? `<p class="text-white mb-0 small">${escapeHtml(activity.description)}</p>` : ''}
+                                <span class="badge bg-primary mt-2">Level ${activity.slider_level_min}-${activity.slider_level_max}</span>
                             </div>
                         </div>
                     </div>
-                </div>
-            `;
+                `;
+            } else {
+                html += `
+                    <div class="card mb-3 shadow-sm">
+                        <div class="card-body">
+                            <div class="d-flex justify-content-between align-items-center">
+                                <h5 class="mb-2">${escapeHtml(activity.title)}</h5>
+                                <span class="badge bg-primary">Level ${activity.slider_level_min}-${activity.slider_level_max}</span>
+                            </div>
+                            ${activity.description ? `<p class="card-text text-muted mb-0">${escapeHtml(activity.description)}</p>` : ''}
+                        </div>
+                    </div>
+                `;
+            }
+
+            // Sub-items
+            if (activity.sub_items && activity.sub_items.length > 0) {
+                html += `<div class="sub-items-container">`;
+                activity.sub_items.forEach(subItem => {
+                    const hasSubImage = subItem.image_filename ? true : false;
+                    html += `
+                        <div class="card mb-3 sub-item-card shadow-sm">
+                            <div class="row g-0">
+                                ${hasSubImage ? `
+                                <div class="col-md-3">
+                                    <img src="${subItem.image_filename.startsWith('http') ? subItem.image_filename : '/static/images/' + subItem.image_filename}"
+                                         class="img-fluid rounded-start h-100"
+                                         alt="${escapeHtml(subItem.title)}"
+                                         style="object-fit: cover; min-height: 120px;">
+                                </div>
+                                ` : ''}
+                                <div class="${hasSubImage ? 'col-md-9' : 'col-md-12'}">
+                                    <div class="card-body py-2 px-3">
+                                        <div class="d-flex justify-content-between align-items-start">
+                                            <div>
+                                                <strong>${escapeHtml(subItem.title)}</strong>
+                                                ${subItem.description ? `<br><small class="text-muted">${escapeHtml(subItem.description)}</small>` : ''}
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    `;
+                });
+                html += `</div>`;
+            }
+
+            html += `</div>`; // Close category container
         });
 
         activitiesContainer.innerHTML = html;
