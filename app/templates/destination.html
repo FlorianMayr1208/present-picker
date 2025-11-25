@@ -103,76 +103,82 @@
                 {% if selection_mode == 'checkboxes' %}
                     <!-- Checkbox Mode: Show activities with checkboxes -->
                     {% for activity in activities %}
-                    <div class="card mb-3 shadow-sm activity-card-checkbox">
-                        <div class="row g-0">
-                            {% if activity.image_filename %}
-                            <div class="col-md-4">
+                    <div class="mb-4 activity-category">
+                        <!-- Category Header with Image -->
+                        {% if activity.image_filename %}
+                        <div class="card mb-3 shadow-sm category-header-card">
+                            <div class="position-relative" style="height: 300px; overflow: hidden;">
                                 <img src="{% if activity.image_filename.startswith('http') %}{{ activity.image_filename }}{% else %}{{ url_for('static', filename='images/' + activity.image_filename) }}{% endif %}"
-                                     class="img-fluid rounded-start h-100"
+                                     class="w-100 h-100"
                                      alt="{{ activity.title }}"
-                                     style="object-fit: cover;">
-                            </div>
-                            {% endif %}
-
-                            <div class="{% if activity.image_filename %}col-md-8{% else %}col-md-12{% endif %}">
-                                <div class="card-body">
-                                    <!-- Category Title (no checkbox) -->
-                                    <h5 class="mb-2">{{ activity.title }}</h5>
-
+                                     style="object-fit: cover; object-position: center;">
+                                <div class="position-absolute bottom-0 start-0 w-100 p-4" style="background: linear-gradient(to top, rgba(0,0,0,0.8), transparent);">
+                                    <h4 class="text-white mb-2">{{ activity.title }}</h4>
                                     {% if activity.description %}
-                                    <p class="card-text text-muted mb-3">{{ activity.description }}</p>
-                                    {% endif %}
-
-                                    <!-- Sub-items -->
-                                    {% if activity.sub_items %}
-                                    <div class="sub-items mt-3">
-                                        {% for sub_item in activity.sub_items %}
-                                        <div class="card mb-3 sub-item-card">
-                                            <div class="row g-0">
-                                                {% if sub_item.image_filename %}
-                                                <div class="col-md-3">
-                                                    <img src="{% if sub_item.image_filename.startswith('http') %}{{ sub_item.image_filename }}{% else %}{{ url_for('static', filename='images/' + sub_item.image_filename) }}{% endif %}"
-                                                         class="img-fluid rounded-start h-100"
-                                                         alt="{{ sub_item.title }}"
-                                                         style="object-fit: cover; min-height: 120px;">
-                                                </div>
-                                                {% endif %}
-                                                <div class="{% if sub_item.image_filename %}col-md-9{% else %}col-md-12{% endif %}">
-                                                    <div class="card-body py-2 px-3">
-                                                        <div class="form-check">
-                                                            <input class="form-check-input sub-item-checkbox"
-                                                                   type="checkbox"
-                                                                   id="sub-{{ sub_item.id }}"
-                                                                   data-parent-id="{{ activity.id }}"
-                                                                   data-sub-id="{{ sub_item.id }}"
-                                                                   data-points="{{ sub_item.points|default(0) }}"
-                                                                   {% if sub_item.is_spontaneous %}data-spontaneous="true"{% endif %}
-                                                                   {% if sub_item.default_selected %}checked{% endif %}
-                                                                   {% if sub_item.mandatory %}disabled{% endif %}>
-                                                            <label class="form-check-label w-100" for="sub-{{ sub_item.id }}">
-                                                                <div class="d-flex justify-content-between align-items-start">
-                                                                    <div>
-                                                                        <strong>{{ sub_item.title }}</strong>
-                                                                        {% if sub_item.description %}
-                                                                        <br><small class="text-muted">{{ sub_item.description }}</small>
-                                                                        {% endif %}
-                                                                    </div>
-                                                                    <span class="badge {% if sub_item.is_spontaneous %}bg-info{% else %}bg-secondary{% endif %} ms-2 points-badge" id="badge-sub-{{ sub_item.id }}">
-                                                                        {{ sub_item.points|default(0) }} Pkt
-                                                                    </span>
-                                                                </div>
-                                                            </label>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        {% endfor %}
-                                    </div>
+                                    <p class="text-white mb-0 small">{{ activity.description }}</p>
                                     {% endif %}
                                 </div>
                             </div>
                         </div>
+                        {% else %}
+                        <!-- Category Header without Image -->
+                        <div class="card mb-3 shadow-sm">
+                            <div class="card-body">
+                                <h5 class="mb-2">{{ activity.title }}</h5>
+                                {% if activity.description %}
+                                <p class="card-text text-muted mb-0">{{ activity.description }}</p>
+                                {% endif %}
+                            </div>
+                        </div>
+                        {% endif %}
+
+                        <!-- Sub-items Container -->
+                        {% if activity.sub_items %}
+                        <div class="sub-items-container">
+                            {% for sub_item in activity.sub_items %}
+                            <div class="card mb-3 sub-item-card shadow-sm">
+                                <div class="row g-0">
+                                    {% if sub_item.image_filename %}
+                                    <div class="col-md-3">
+                                        <img src="{% if sub_item.image_filename.startswith('http') %}{{ sub_item.image_filename }}{% else %}{{ url_for('static', filename='images/' + sub_item.image_filename) }}{% endif %}"
+                                             class="img-fluid rounded-start h-100"
+                                             alt="{{ sub_item.title }}"
+                                             style="object-fit: cover; min-height: 120px;">
+                                    </div>
+                                    {% endif %}
+                                    <div class="{% if sub_item.image_filename %}col-md-9{% else %}col-md-12{% endif %}">
+                                        <div class="card-body py-2 px-3">
+                                            <div class="form-check">
+                                                <input class="form-check-input sub-item-checkbox"
+                                                       type="checkbox"
+                                                       id="sub-{{ sub_item.id }}"
+                                                       data-parent-id="{{ activity.id }}"
+                                                       data-sub-id="{{ sub_item.id }}"
+                                                       data-points="{{ sub_item.points|default(0) }}"
+                                                       {% if sub_item.is_spontaneous %}data-spontaneous="true"{% endif %}
+                                                       {% if sub_item.default_selected %}checked{% endif %}
+                                                       {% if sub_item.mandatory %}disabled{% endif %}>
+                                                <label class="form-check-label w-100" for="sub-{{ sub_item.id }}">
+                                                    <div class="d-flex justify-content-between align-items-start">
+                                                        <div>
+                                                            <strong>{{ sub_item.title }}</strong>
+                                                            {% if sub_item.description %}
+                                                            <br><small class="text-muted">{{ sub_item.description }}</small>
+                                                            {% endif %}
+                                                        </div>
+                                                        <span class="badge {% if sub_item.is_spontaneous %}bg-info{% else %}bg-secondary{% endif %} ms-2 points-badge" id="badge-sub-{{ sub_item.id }}">
+                                                            {{ sub_item.points|default(0) }} Pkt
+                                                        </span>
+                                                    </div>
+                                                </label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            {% endfor %}
+                        </div>
+                        {% endif %}
                     </div>
                     {% endfor %}
                 {% else %}
@@ -181,11 +187,11 @@
                     <div class="card mb-3 shadow-sm activity-card" data-level-min="{{ activity.slider_level_min }}" data-level-max="{{ activity.slider_level_max }}">
                         <div class="row g-0">
                             {% if activity.image_filename %}
-                            <div class="col-md-4">
+                            <div class="col-md-4 position-relative" style="min-height: 250px; max-height: 350px; overflow: hidden;">
                                 <img src="{% if activity.image_filename.startswith('http') %}{{ activity.image_filename }}{% else %}{{ url_for('static', filename='images/' + activity.image_filename) }}{% endif %}"
-                                     class="img-fluid rounded-start h-100"
+                                     class="rounded-start h-100 w-100"
                                      alt="{{ activity.title }}"
-                                     style="object-fit: cover;">
+                                     style="object-fit: cover; object-position: center;">
                             </div>
                             {% endif %}
 

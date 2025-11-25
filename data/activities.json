@@ -9,8 +9,8 @@
     "sub_items": [
       {
         "id": "1a",
-        "title": "Direktflug nach Marrakesch",
-        "description": "Flug von Deutschland nach Marrakesch",
+        "title": "Flug nach Marrakesch",
+        "description": "Flug von Wien nach Marrakesch",
         "points": 0,
         "default_selected": true,
         "mandatory": true,
@@ -18,8 +18,8 @@
       },
       {
         "id": "1b",
-        "title": "5 Nächte Unterkunft (Riad-Stil)",
-        "description": "Komfortable Unterkunft in traditionellem Riad",
+        "title": "5 Nächte Unterkunft in Marrakesch",
+        "description": "INSERT DESCRIPTION HERE",
         "points": 0,
         "default_selected": true,
         "mandatory": true,
@@ -27,12 +27,12 @@
       },
       {
         "id": "1c",
-        "title": "Flughafen-Transfer",
-        "description": "Transfer vom/zum Flughafen",
+        "title": "Verpflegung",
+        "description": "Nahrung für 2 Hobbits",
         "points": 0,
         "default_selected": true,
         "mandatory": true,
-        "image_filename": "https://images.unsplash.com/photo-1449965408869-eaa3f722e40d?w=600"
+        "image_filename": "activities/mar_verpflegung.jpeg"
       }
     ]
   },
@@ -46,24 +46,24 @@
     "sub_items": [
       {
         "id": "2a",
-        "title": "Streetfood-Tour durch die Medina",
-        "description": "Entdecke die besten Street-Food-Stände und probiere lokale Spezialitäten",
+        "title": "Rooftop-Dinner",
+        "description": "Ein Essen in einem Rooftop-Restaurant in Marrakesch bietet ein sinnliches Erlebnis, das kulinarische Tradition und orientale Atmosphäre vereint. Hoch über den lebhaften Souks entfaltet sich ein Panorama aus warmen Farben, historischen Dächern und dem Ruf des Muezzins. Marokkanische Spezialitäten wie Tajine, Couscous oder Pastilla werden in einer entspannten, oft modern interpretierten Umgebung serviert, während der Sonnenuntergang die Stadt in goldenes Licht taucht. Die Kombination aus authentischen Aromen, Gastfreundschaft und der einzigartigen Aussicht macht das Rooftop-Dining zu einem unvergesslichen Höhepunkt eines Marrakesch-Besuchs.",
         "points": 12,
         "default_selected": false,
-        "image_filename": "https://images.unsplash.com/photo-1555939594-58d7cb561ad1?w=600"
+        "image_filename": "activities/mar_rooftop.jpg"
       },
       {
         "id": "2b",
-        "title": "Tajine-Kochkurs",
-        "description": "Lerne die traditionelle Zubereitung von Tajine mit einem lokalen Koch",
+        "title": "Streetfood Tour durch die Medina",
+        "description": "Eine Streetfood-Tour durch die Medina von Marrakesch eröffnet einen unmittelbaren Einblick in die kulinarische Vielfalt und das Alltagsleben der Stadt. Zwischen engen Gassen, geschäftigen Marktständen und duftenden Gewürzauslagen entdeckt man traditionelle Snacks wie frisch gebackenes Khobz, gegrillte Spieße, würzige Harira oder süße Gebäcksorten. Die Tour verbindet authentische Geschmackserlebnisse mit kulturellen Begegnungen und zeigt, wie tief verwurzelt Essen im sozialen Gefüge der Medina ist. Sie bietet eine lebendige, sensorische Reise durch die marokkanische Küche – nahbar, abwechslungsreich und voller Charakter.",
         "points": 15,
         "default_selected": false,
-        "image_filename": "https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=600"
+        "image_filename": "activities/mar_street_food.webp"
       },
       {
         "id": "2c",
-        "title": "Rooftop-Dinner",
-        "description": "Exklusives Abendessen mit Blick über die Altstadt",
+        "title": "MAYBE KOCHKURS??",
+        "description": "Kochkurs mit lokalem Koch",
         "points": 18,
         "default_selected": false,
         "image_filename": "https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?w=600"
@@ -73,7 +73,7 @@
   {
     "id": 3,
     "destination_id": 1,
-    "title": "Kultur & Sehenswürdigkeiten",
+    "title": "In der Stadt",
     "description": "Historische und kulturelle Highlights",
     "image_filename": "https://images.unsplash.com/photo-1513415756775-62b3a2758b61?w=800",
     "default_selected": false,
@@ -81,102 +81,76 @@
       {
         "id": "3a",
         "title": "Jardin Majorelle",
-        "description": "Berühmter Garten von Yves Saint Laurent mit exotischen Pflanzen",
+        "description": "Der Jardin Majorelle erstreckt sich über 9.000 m² und ist einer der bezauberndsten und geheimnisvollsten Gärten Marokkos. Über vierzig Jahre hinweg erschaffen, besteht er aus einem Labyrinth sich kreuzender Wege auf verschiedenen Ebenen und kräftig gefärbten Gebäuden, die Art-Déco- und maurische Einflüsse vereinen. Der französische Maler Jacques Majorelle konzipierte diesen üppigen Garten als Zufluchtsort und botanisches 'Labor'. Ab 1922 pflanzte er exotische botanische Exemplare aus allen Ecken der Welt. 1980 kauften Yves Saint Laurent und Pierre Bergé den Jardin Majorelle, um ihn vor der Zerstörung durch Hotelentwickler zu bewahren.",
         "points": 10,
         "default_selected": false,
-        "image_filename": "https://images.unsplash.com/photo-1548013146-72479768bada?w=600"
+        "image_filename": "activities/mar_jardin_majorelle.jpg"
       },
       {
         "id": "3b",
         "title": "Yves-Saint-Laurent-Museum",
-        "description": "Museum des legendären Designers direkt am Jardin Majorelle",
+        "description": "Ein Museum, das vollständig dem Werk des legendären Modedesigners Yves Saint Laurent in Marrakesch, Marokko, gewidmet ist.",
         "points": 12,
         "default_selected": false,
-        "image_filename": "https://images.unsplash.com/photo-1582555172866-f73bb12a2ab3?w=600"
+        "image_filename": "activities/mar_yves-saint-laurent.jpg"
       },
       {
         "id": "3c",
         "title": "Bahia-Palast",
-        "description": "Prachtvoller Palast aus dem 19. Jahrhundert mit maurischen Mosaiken",
+        "description": "Am Rand der südlichen Medina, unweit der Mellah, befindet sich der Bahia-Palast. Die großzügige Anlage wurde in der zweiten Hälfte des 19. Jahrhunderts von den Alawiden erbaut. Der Bahia-Palast zählt heute zu den schönsten Sehenswürdigkeiten, die Marrakesch zu bieten hat. Im Bahia-Palast begegnen sich andalusische und maurische Baukunst. Der Ort erinnert ein bisschen an die Al-Hambra im spanischen Granada. Graziöse Stuckarbeiten und aufwendig geschnitzte Raumdecken aus Zedernholz treffen auf kunstvolle Mosaike und dekorative Arabesken. Durch den faszinierenden Komplex zieht sich ein wunderschön angelegter Garten, der schließlich zu einem beeindruckend großen Hof mit einem komplett marmorierten Boden führt.",
         "points": 10,
         "default_selected": false,
-        "image_filename": "https://images.unsplash.com/photo-1591604129939-f1efa4d9f7fa?w=600"
+        "image_filename": "activities/mar_Bahia.jpg"
       },
       {
         "id": "3d",
-        "title": "Saadier-Gräber",
-        "description": "Historische Gräber der Saadier-Dynastie mit kunstvollen Verzierungen",
+        "title": "Medersa Ben Youssef",
+        "description": "Die Medersa Ben Youssef in Marrakesch wurde im 14. Jahrhundert vom Mariniden-Sultan Abu Inan Faris erbaut. Ursprünglich als religiöse Schule für islamische Studien konzipiert, diente sie auch als Moschee und Bibliothek. Im 16. Jahrhundert wurde die Madrasa von Sultan Ahmad al-Mansur erweitert, der einen großen Innenhof und ein Minarett hinzufügte. Im 18. Jahrhundert wurde sie aufgegeben und verfiel. Im 19. Jahrhundert ließ der alawitische Sultan Moulay Hassan I. sie restaurieren und als islamische Schule wiedereröffnen.",
         "points": 8,
         "default_selected": false,
-        "image_filename": "https://images.unsplash.com/photo-1569019936332-fef7c2034d05?w=600"
+        "image_filename": "activities/mar_ben_youssef.jpg"
+      },
+      {
+        "id": "3e",
+        "title": "Souks",
+        "description": "Souk Semmarine ist der Hauptsouk in Marrakesch, direkt neben dem Jemaa el Fnaa gelegen. Hier findet man fast alles — von Töpferwaren über Stoffe bis hin zu Souvenirs. Es ist wahrscheinlich der touristenfreundlichste Souk in Marrakesch. Souk El Attarine war einst ein Souk für Gewürze und Parfums, ist aber heute für seine Kupfer- und Metallarbeiten bekannt. Teekannen, Spiegel und Laternen sind hier die beliebtesten Artikel. Souk des Bijoutiers ist der beste Souk in Marrakesch für Schmuck. Seine hochwertigen Stücke heben ihn von anderen Souks ab. Souk Chouari ist auf Tischlerei und Holzverarbeitung spezialisiert und perfekt, um Kunsthandwerk in Marrakesch zu erleben.",
+        "points": 0,
+        "default_selected": false,
+        "image_filename": "activities/mar_soukh.jpg"
       }
     ]
   },
   {
     "id": 4,
     "destination_id": 1,
-    "title": "Besondere Erlebnisse",
+    "title": "Ausflüge",
     "description": "Unvergessliche Momente und Abenteuer",
     "image_filename": "https://images.unsplash.com/photo-1476514525535-07fb3b4ae5f1?w=800",
     "default_selected": false,
     "sub_items": [
       {
         "id": "4a",
-        "title": "Sonnenaufgangs-Ballonfahrt",
-        "description": "Atemberaubender Blick über Marrakesch bei Sonnenaufgang mit Champagner-Frühstück",
+        "title": "Ballonfahrt inkl. Frühstück",
+        "description": "Erlebe einen Moment über den wunderschönen Landschaften des Atlas und der Marrakesch-Wüste. Das klassische Flugangebot beinhaltet Hin- und Rücktransport, ein Berber-Frühstück in einer Kasbah aus Südmarokko, den Ballonflug vor dem Atlas und der ockerfarbenen Stadt Marrakesch sowie ein Flugzertifikat. Die Flugdauer beträgt eine Stunde.",
         "points": 35,
         "default_selected": false,
-        "image_filename": "https://images.unsplash.com/photo-1476514525535-07fb3b4ae5f1?w=600"
+        "image_filename": "activities/mar_ballon.jpg"
       },
       {
         "id": "4b",
-        "title": "Traditionelles Hammam",
-        "description": "Entspannung im authentischen marokkanischen Dampfbad mit Massage",
-        "points": 20,
-        "default_selected": false,
-        "image_filename": "https://images.unsplash.com/photo-1544161515-4ab6ce6db874?w=600"
-      }
-    ]
-  },
-  {
-    "id": 5,
-    "destination_id": 1,
-    "title": "Tagesausflüge",
-    "description": "Entdecke die Umgebung von Marrakesch",
-    "image_filename": "https://images.unsplash.com/photo-1488646953014-85cb44e25828?w=800",
-    "default_selected": false,
-    "sub_items": [
-      {
-        "id": "5a",
-        "title": "Agafay-Wüste",
-        "description": "Wüstenerlebnis nahe Marrakesch mit Kamelritt und Sonnenuntergang",
-        "points": 28,
-        "default_selected": false,
-        "image_filename": "https://images.unsplash.com/photo-1469854523086-cc02fe5d8800?w=600"
-      },
-      {
-        "id": "5b",
-        "title": "Atlasgebirge",
-        "description": "Ganztages-Wanderung in den Bergen mit Besuch von Berber-Dörfern",
+        "title": "Agafay-Wüste (mit Dinner & Feuershow)",
+        "description": "Trip in die Agafay-Wüste mit Dinner und Unterhaltung. Teilweise mit Quad oder Kamelritt.",
         "points": 25,
         "default_selected": false,
-        "image_filename": "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=600"
+        "image_filename": "activities/mar_agafay.jpeg"
       },
       {
-        "id": "5c",
-        "title": "Ourika-Tal",
-        "description": "Grünes Tal mit Wasserfällen und traditionellem Berber-Mittagessen",
-        "points": 22,
-        "default_selected": false,
-        "image_filename": "https://images.unsplash.com/photo-1501785888041-af3ef285b470?w=600"
-      },
-      {
-        "id": "5d",
-        "title": "Essaouira-Tagestrip",
-        "description": "Küstenstadt am Atlantik mit UNESCO-geschützter Medina",
+        "id": "4c",
+        "title": "Atlasgebirge (Imlil, Ourika-Tal, Berberdörfer)",
+        "description": "Entdecke Berberdörfer und atemberaubende Landschaften auf dieser ganztägigen Wanderung im Hohen Atlas. Reite auf einem Kamel, wandere durch das Imlil-Tal und genieße das Mittagessen in einem traditionellen Berberhaus.",
         "points": 30,
         "default_selected": false,
-        "image_filename": "https://images.unsplash.com/photo-1488646953014-85cb44e25828?w=600"
+        "image_filename": "activities/mar_atlas.jpeg"
       }
     ]
   },
@@ -200,138 +174,198 @@
     ]
   },
   {
-    "id": 8,
-    "destination_id": 2,
-    "title": "Anreise & Unterkunft (5 Nächte)",
-    "description": "Flug nach Istanbul mit optionalem Mietwagen. Zentrale Unterkunft mit Bosporus-Blick. Kulturelle Highlights inklusive.",
-    "slider_level_min": 0,
-    "slider_level_max": 5,
-    "image_filename": "https://images.unsplash.com/photo-1524231757912-21f4fe3a7200?w=800"
-  },
-  {
-    "id": 8,
-    "destination_id": 2,
-    "title": "Essen",
-    "description": "Streetfood-Hopping (Lahmacun, Künefe, Balik Ekmek), Gewürzbasar-Verkostungen.",
-    "slider_level_min": 1,
-    "slider_level_max": 5,
-    "image_filename": "https://images.unsplash.com/photo-1555939594-58d7cb561ad1?w=800"
-  },
-  {
-    "id": 9,
-    "destination_id": 2,
-    "title": "Kultur",
-    "description": "Hagia Sophia, Topkapi-Palast, Blaue Moschee, Basilica Cistern, Galata-Turm.",
-    "slider_level_min": 2,
-    "slider_level_max": 5,
-    "image_filename": "https://images.unsplash.com/photo-1513415756775-62b3a2758b61?w=800"
-  },
-  {
     "id": 10,
     "destination_id": 2,
-    "title": "Musik",
-    "description": "Sufi-Derwische, Jazz-Clubs, Live-Musik in Kadiköy.",
-    "slider_level_min": 3,
-    "slider_level_max": 5,
-    "image_filename": "https://images.unsplash.com/photo-1514320291840-2e0a9bf2a9ae?w=800"
+    "title": "Essen & Food-Erlebnisse",
+    "description": "Kulinarische Vielfalt zwischen Orient und Okzident",
+    "image_filename": "https://images.unsplash.com/photo-1555939594-58d7cb561ad1?w=800",
+    "default_selected": false,
+    "sub_items": [
+      {
+        "id": "10a",
+        "title": "Streetfood-Hopping",
+        "description": "Ein kulinarischer Spaziergang durch Istanbul: Du springst von einem Streetfood-Stand zum nächsten, probierst den Fisch-Sandwich 'Balık Ekmek' am Wasser, gönnst dir 'Simit' (sesambestreifter Kringel) zum Frühstück, wagst dich an herzhaftes 'Kokoreç' und rundest ab mit einem knusprigen 'Lahmacun'.",
+        "points": 15,
+        "default_selected": false,
+        "image_filename": "activities/ist_streetfood.jpg"
+      },
+      {
+        "id": "10b",
+        "title": "Gewürzbasar-Verkostung",
+        "description": "Farbenprächtig, duftend und voller Geschmack: Im Gewürz- (und Süßigkeiten-)Bazar schnupperst du an getrockneten Früchten, wühlst dich durch Gewürzmischungen und gönnst dir eine Portion 'Lokum'. Ein Erlebnis für alle Sinne - und ideal für Mitbringsel.",
+        "points": 8,
+        "default_selected": false,
+        "image_filename": "activities/ist_gewürzbasar.jpg"
+      },
+      {
+        "id": "10c",
+        "title": "Frühstück (Kahvaltı) in Beşiktaş",
+        "description": "Ein üppiges Frühstück ist in Istanbul nicht bloß ein Mahl, sondern ein Erlebnis: Viele kleine Schälchen mit Käse, Oliven, Honig, Eiern, 'Menemen' und frischem Brot. In Beşiktaş sitzt man gemütlich im Freien, beobachtet das Treiben und startet den Tag genüsslich.",
+        "points": 12,
+        "default_selected": false,
+        "image_filename": "activities/ist_frühstück_besiktas.jpg"
+      }
+    ]
   },
   {
     "id": 11,
     "destination_id": 2,
-    "title": "Ausflüge",
-    "description": "Bosporus-Dinner-Cruise, Prinzeninseln, Schwarzes Meer (Riva), Üsküdar-Promenade.",
-    "slider_level_min": 5,
-    "slider_level_max": 5,
-    "image_filename": "https://images.unsplash.com/photo-1488646953014-85cb44e25828?w=800"
+    "title": "Kultur & Highlights",
+    "description": "Historische Schätze zwischen zwei Kontinenten",
+    "image_filename": "https://images.unsplash.com/photo-1524231757912-21f4fe3a7200?w=800",
+    "default_selected": false,
+    "sub_items": [
+      {
+        "id": "11a",
+        "title": "Hagia Sophia",
+        "description": "Ein Architektur- und Geschichtswunder: Ursprünglich byzantinische Kathedrale, später Moschee, heute bedeutendes Bauwerk von Weltrang. Die riesige Kuppel, Mosaike und religiösen Spuren machen sie zu einem Muss in Istanbul.",
+        "points": 10,
+        "default_selected": false,
+        "image_filename": "activities/ist_hagia_sophia.jpg"
+      },
+      {
+        "id": "11b",
+        "title": "Topkapi-Palast",
+        "description": "Einst Residenz der Sultane - heute Museum voller Prunk, Schatz- und Hofanlagen. Ein Fenster in das höfische Leben des Osmanischen Reichs und ein Spaziergang durch Jahrhunderte höfischer Geschichte.",
+        "points": 12,
+        "default_selected": false,
+        "image_filename": "activities/ist_topkapi_palast.jpg"
+      },
+      {
+        "id": "11c",
+        "title": "Blaue Moschee",
+        "description": "Ein imposantes Gotteshaus mit sechs Minaretten, hunderten Íznik-Fliesen und zentraler Lage gegenüber der Hagia Sophia. Besucher dürfen eintreten - bei respektvoller Kleidung.",
+        "points": 8,
+        "default_selected": false,
+        "image_filename": "activities/ist_blaue_moschee.jpg"
+      },
+      {
+        "id": "11d",
+        "title": "Basilica Cistern",
+        "description": "Unterirdisch, kühl, geheimnisvoll: Diese riesige frühbyzantinische Zisterne mit ihren Säulen und dem Wasser spiegelt eine ganz andere Seite von Istanbul wider - ideal als kurze Pause vom Trubel über Tage.",
+        "points": 8,
+        "default_selected": false,
+        "image_filename": "activities/ist_basilica_cistern.jpg"
+      },
+      {
+        "id": "11e",
+        "title": "Galata-Turm & Galata-Brücke",
+        "description": "Der Turm bietet spektakuläre Aussicht über Stadt und Wasser. Die Brücke verbindet Stadtteile, ist belebt mit Anglern und Straßenständen - beide Orte perfekt für einen Zwischenstopp und Panorama-Fotos.",
+        "points": 10,
+        "default_selected": false,
+        "image_filename": "activities/ist_galata_turm.jpg"
+      },
+      {
+        "id": "11f",
+        "title": "Grand Bazaar & Spice Bazaar",
+        "description": "Der große Basar - ein Labyrinth aus Geschäften, Souvenirs und Altstadt-Atmosphäre. Der Gewürzbasar daneben ein Duft- und Farbenspiel: Gewürze, Tees, Süßigkeiten. Ideal für ein wenig Shopping & Erlebnis.",
+        "points": 0,
+        "default_selected": false,
+        "image_filename": "activities/ist_grand_bazaar.jpg"
+      },
+      {
+        "id": "11g",
+        "title": "Dolmabahçe-Palast",
+        "description": "Ein opulenter Palast am Bosporus mit europäisch inspiriertem Design, großen Prunksälen und prachtvoller Innenausstattung - ein starkes Kontrastprogramm zu älteren osmanischen Bauwerken.",
+        "points": 12,
+        "default_selected": false,
+        "image_filename": "activities/ist_dolmabahce.jpeg"
+      }
+    ]
   },
   {
     "id": 12,
-    "destination_id": 3,
-    "title": "Anreise & Unterkunft (5 Nächte)",
-    "description": "Flug nach Athen, weiter mit Fähren zu den Inseln. Charmante Unterkünfte auf Aegina, Poros und Hydra. Perfekt für Winter!",
-    "slider_level_min": 0,
-    "slider_level_max": 5,
-    "image_filename": "https://images.unsplash.com/photo-1613395877344-13d4a8e0d49e?w=800"
+    "destination_id": 2,
+    "title": "Musik, Kulturleben & Erlebnisse",
+    "description": "Abendliche Unterhaltung und kulturelle Highlights",
+    "image_filename": "https://images.unsplash.com/photo-1514525253161-7a46d19cd819?w=800",
+    "default_selected": false,
+    "sub_items": [
+      {
+        "id": "12a",
+        "title": "Sufi-Derwisch-Zeremonie",
+        "description": "Eine spirituelle Tanzzeremonie, bei der die Derwische wirbeln, begleitet von mystischer Musik. Eine besondere Atmosphäre - ruhig, meditativ und kulturell tief.",
+        "points": 15,
+        "default_selected": false,
+        "image_filename": "activities/ist_sufi_derwisch.jpg"
+      },
+      {
+        "id": "12b",
+        "title": "Jazz-Clubs & Live-Musik in Kadıköy",
+        "description": "Auf der asiatischen Seite von Istanbul gelegen: Bars, Live-Musik, kreative Atmosphäre. Ideal für Abende fernab der klassischen Touristenpfade.",
+        "points": 18,
+        "default_selected": false,
+        "image_filename": "activities/ist_kadikoy_nightlife.jpg"
+      },
+      {
+        "id": "12c",
+        "title": "Bosporus-Dinner-Cruise",
+        "description": "Ein Abend auf dem Wasser mit Dinner, Musik und Blick auf die beleuchtete Stadt: Brücken, Moscheen und Bosporus-Ufer im Schein der Lichter - sehr stimmungsreich.",
+        "points": 35,
+        "default_selected": false,
+        "image_filename": "activities/ist_bosporus_cruise.png.avif"
+      },
+      {
+        "id": "12d",
+        "title": "Rooftop-Bars mit Stadtblick",
+        "description": "Für den Drink zum Sonnenuntergang: Auf einer Dachterrasse mit Blick über Istanbul ein Cocktail in der Hand - lässt den Tag stilvoll ausklingen.",
+        "points": 12,
+        "default_selected": false,
+        "image_filename": "activities/ist_rooftop.jpg"
+      }
+    ]
   },
   {
     "id": 13,
-    "destination_id": 3,
-    "title": "Essen",
-    "description": "Frischer Fisch in Poros, Mezedes auf Hydra, Pistazien auf Aegina.",
-    "slider_level_min": 1,
-    "slider_level_max": 5,
-    "image_filename": "https://images.unsplash.com/photo-1555939594-58d7cb561ad1?w=800"
+    "destination_id": 2,
+    "title": "Ausflüge",
+    "description": "Entdeckungen jenseits der Stadtmauern",
+    "image_filename": "https://images.unsplash.com/photo-1541432901042-2d8bd64b4a9b?w=800",
+    "default_selected": false,
+    "sub_items": [
+      {
+        "id": "13a",
+        "title": "Prinzeninseln (Adalar)",
+        "description": "Nur mit Fahrrad oder zu Fuß - keine Autos: Diese Inselgruppe vor Istanbul bietet Ruhe, Natur und charmante Holzhäuser. Ein schöner Kontrast zum Stadt-Trubel.",
+        "points": 20,
+        "default_selected": false,
+        "image_filename": "activities/ist_prinzeninseln.jpg"
+      },
+      {
+        "id": "13b",
+        "title": "Üsküdar-Promenade & Maiden's Tower",
+        "description": "Ein Spaziergang auf der asiatischen Seite – von der Küste bei Üsküdar mit Blick auf den kleinen berühmten Turm im Wasser (Maiden's Tower). Sehr fotogen und ruhig.",
+        "points": 8,
+        "default_selected": false,
+        "image_filename": "activities/ist_üsküdar_promenade.jpg"
+      },
+      {
+        "id": "13c",
+        "title": "Ortaköy-Moschee + Waffeln",
+        "description": "Die Moschee direkt am Wasser, dazu Straße mit Waffelständen: Perfekter Snack-Stopp beim Ausflug ans Wasser oder für einen gemütlichen Nachmittags-Moment.",
+        "points": 10,
+        "default_selected": false,
+        "image_filename": "activities/ist_ortaköy_moschee.jpg"
+      }
+    ]
   },
   {
     "id": 14,
-    "destination_id": 3,
-    "title": "Kultur",
-    "description": "Kloster Agios Nektarios, Hydra-Museum, Altstadt von Poros.",
-    "slider_level_min": 2,
-    "slider_level_max": 5,
-    "image_filename": "https://images.unsplash.com/photo-1513415756775-62b3a2758b61?w=800"
-  },
-  {
-    "id": 15,
-    "destination_id": 3,
-    "title": "Natur",
-    "description": "Küstenwanderungen Hydra–Kamini, Ausflüge zu versteckten Buchten.",
-    "slider_level_min": 3,
-    "slider_level_max": 5,
-    "image_filename": "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=800"
-  },
-  {
-    "id": 16,
-    "destination_id": 3,
-    "title": "Ausflüge",
-    "description": "Tempel des Aphaia, kleine Inselhüpfer-Bootstour, Spaziergänge durch traditionelle Dörfer.",
-    "slider_level_min": 5,
-    "slider_level_max": 5,
-    "image_filename": "https://images.unsplash.com/photo-1488646953014-85cb44e25828?w=800"
-  },
-  {
-    "id": 17,
-    "destination_id": 4,
-    "title": "Anreise & Unterkunft (5 Nächte)",
-    "description": "Flug nach Lissabon, Zugfahrt nach Porto. 3 Nächte Lissabon, 2 Nächte Porto. Zentrale Lage in beiden Städten.",
-    "slider_level_min": 0,
-    "slider_level_max": 5,
-    "image_filename": "https://images.unsplash.com/photo-1555881400-74d7acaacd8b?w=800"
-  },
-  {
-    "id": 18,
-    "destination_id": 4,
-    "title": "Essen",
-    "description": "Pastéis de Belém, Francesinha, Portwein-Verkostungen.",
-    "slider_level_min": 1,
-    "slider_level_max": 5,
-    "image_filename": "https://images.unsplash.com/photo-1555939594-58d7cb561ad1?w=800"
-  },
-  {
-    "id": 19,
-    "destination_id": 4,
-    "title": "Kultur",
-    "description": "Torre de Belém, Jerónimos-Kloster, Livraria Lello, Casa da Música.",
-    "slider_level_min": 2,
-    "slider_level_max": 5,
-    "image_filename": "https://images.unsplash.com/photo-1513415756775-62b3a2758b61?w=800"
-  },
-  {
-    "id": 20,
-    "destination_id": 4,
-    "title": "Musik",
-    "description": "Fado-Abend in Alfama oder Bairro Alto.",
-    "slider_level_min": 3,
-    "slider_level_max": 5,
-    "image_filename": "https://images.unsplash.com/photo-1514320291840-2e0a9bf2a9ae?w=800"
-  },
-  {
-    "id": 21,
-    "destination_id": 4,
-    "title": "Ausflüge",
-    "description": "Sintra-Paläste (Pena, Regaleira), Douro-Tal & Weingüter, Strand von Foz do Douro.",
-    "slider_level_min": 5,
-    "slider_level_max": 5,
-    "image_filename": "https://images.unsplash.com/photo-1488646953014-85cb44e25828?w=800"
+    "destination_id": 2,
+    "title": "Flexibilität",
+    "description": "Nutze die restlichen Punkte für spontane Entscheidungen vor Ort",
+    "image_filename": "https://images.unsplash.com/photo-1488646953014-85cb44e25828?w=800",
+    "default_selected": false,
+    "sub_items": [
+      {
+        "id": "14a",
+        "title": "Den Rest spontan",
+        "description": "Nutze alle verbleibenden Punkte flexibel vor Ort - für spontane Aktivitäten, zusätzliche Mahlzeiten oder besondere Momente",
+        "points": 0,
+        "default_selected": false,
+        "is_spontaneous": true,
+        "image_filename": "https://images.unsplash.com/photo-1469854523086-cc02fe5d8800?w=600"
+      }
+    ]
   }
 ]

@@ -10,22 +10,9 @@
   {
     "id": 2,
     "name": "Istanbul - Türkei",
-    "description_short": "Metropole zwischen zwei Kontinenten – geschichtsträchtig und lebendig.",
+    "description_short": "Wo Ost auf West trifft: Kultur, Kulinarik und Bosporus-Magie.",
     "image_cover": "https://images.unsplash.com/photo-1524231757912-21f4fe3a7200?w=800",
-    "selection_mode": "slider"
-  },
-  {
-    "id": 3,
-    "name": "Saronische Inseln - Griechenland",
-    "description_short": "Charmante Inseln nahe Athen – gemütlich, kulturell & ideal im Winter.",
-    "image_cover": "https://images.unsplash.com/photo-1613395877344-13d4a8e0d49e?w=800",
-    "selection_mode": "slider"
-  },
-  {
-    "id": 4,
-    "name": "Lissabon & Porto - Portugal",
-    "description_short": "Städtetrip-Kombi voller Kultur, Genuss & Atlantik-Feeling.",
-    "image_cover": "https://images.unsplash.com/photo-1555881400-74d7acaacd8b?w=800",
-    "selection_mode": "slider"
+    "selection_mode": "checkboxes",
+    "points_budget": 100
   }
 ]
