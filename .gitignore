@@ -30,9 +30,12 @@ database.db
 .DS_Store
 Thumbs.db
 
-# Uploaded images (keep structure, ignore content)
-app/static/images/*
-!app/static/images/.gitkeep
+# User-uploaded images (keep structure, ignore content)
+app/static/images/uploads/*
+!app/static/images/uploads/.gitkeep
+
+# Activity images are part of the app and should be in git
+# (app/static/images/activities/ is NOT ignored)
 
 # Logs
 *.log
