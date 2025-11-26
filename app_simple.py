@@ -64,11 +64,21 @@ def get_activities_by_destination(dest_id, slider_value=None):
     filtered = [a for a in activities if a['destination_id'] == dest_id]
 
     if slider_value is not None:
+        # Filter categories by slider level
         filtered = [
             a for a in filtered
             if 'slider_level_min' in a and 'slider_level_max' in a
             and a['slider_level_min'] <= slider_value <= a['slider_level_max']
         ]
+
+        # Also filter sub-items by their slider level
+        for activity in filtered:
+            if 'sub_items' in activity and activity['sub_items']:
+                activity['sub_items'] = [
+                    sub for sub in activity['sub_items']
+                    if 'slider_level_min' in sub and 'slider_level_max' in sub
+                    and sub['slider_level_min'] <= slider_value <= sub['slider_level_max']
+                ]
 
     # Sortiere nach min level (nur für Slider-Aktivitäten)
     # Für Checkbox-Aktivitäten behalte die ID-Reihenfolge
@@ -78,6 +88,26 @@ def get_activities_by_destination(dest_id, slider_value=None):
         filtered.sort(key=lambda x: x['id'])
 
     return filtered
+
+
+def get_parents_activities_by_destination(dest_id):
+    """Hole alle Aktivitäten, die von den Eltern übernommen werden"""
+    activities = load_activities()
+    all_activities = [a for a in activities if a['destination_id'] == dest_id]
+
+    parents_activities = []
+
+    for activity in all_activities:
+        if 'sub_items' in activity and activity['sub_items']:
+            for sub_item in activity['sub_items']:
+                if sub_item.get('from_parents', False):
+                    parents_activities.append({
+                        'activity_id': activity['id'],
+                        'activity_title': activity['title'],
+                        'sub_item': sub_item
+                    })
+
+    return parents_activities
 
 
 @app.route('/')
@@ -105,6 +135,9 @@ def show_destination(id):
         slider_value = request.args.get('slider', 0, type=int)
         activities = get_activities_by_destination(id, slider_value)
 
+    # Hole Eltern-Aktivitäten
+    parents_activities = get_parents_activities_by_destination(id)
+
     return render_template(
         'destination.html',
         destination=destination,
@@ -112,7 +145,8 @@ def show_destination(id):
         slider_value=request.args.get('slider', 0, type=int),
         slider_max=app.config['SLIDER_MAX'],
         selection_mode=selection_mode,
-        points_budget=destination.get('points_budget', 0)
+        points_budget=destination.get('points_budget', 0),
+        parents_activities=parents_activities
     )
 
 
@@ -209,6 +243,7 @@ def export_pdf(id):
     for item in selected_items:
         activity_id = int(item['activity_id'])
         sub_id = item['sub_id']
+        from_parents = item.get('from_parents', False)
 
         # Find the activity
         activity = next((a for a in all_activities if a['id'] == activity_id and a['destination_id'] == id), None)
@@ -223,7 +258,8 @@ def export_pdf(id):
                     'title': sub_item['title'],
                     'description': sub_item.get('description', ''),
                     'points': sub_item.get('points', 0),
-                    'image_url': sub_item.get('image_filename', '')
+                    'image_url': sub_item.get('image_filename', ''),
+                    'from_parents': from_parents
                 })
 
     # Calculate total points
