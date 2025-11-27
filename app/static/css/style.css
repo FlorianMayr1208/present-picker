@@ -72,18 +72,10 @@ main {
     background: white;
 }
 
-.activity-card::before {
-    content: '';
-    position: absolute;
-    left: 0;
-    top: 0;
-    bottom: 0;
-    width: 5px;
-    background: var(--gradient-primary);
-}
+/* Removed the purple border artifact */
 
 .activity-card:hover {
-    transform: translateX(5px);
+    transform: translateY(-5px);
     box-shadow: 0 0.5rem 2rem rgba(102, 126, 234, 0.15);
 }
 
@@ -92,15 +84,22 @@ main {
     height: 12px;
     background: linear-gradient(to right, #e0e7ff 0%, var(--primary-color) 100%);
     border-radius: 10px;
+    appearance: none;
+    -webkit-appearance: none;
 }
 
 .form-range::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
     width: 28px;
     height: 28px;
     cursor: pointer;
     background: var(--gradient-primary);
     border: 3px solid white;
     box-shadow: 0 4px 12px rgba(102, 126, 234, 0.4);
+    border-radius: 50%;
+    margin-top: -8px; /* Vertically center the thumb */
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
 .form-range::-webkit-slider-thumb:hover {
@@ -116,11 +115,18 @@ main {
     border: 3px solid white;
     box-shadow: 0 4px 12px rgba(102, 126, 234, 0.4);
     border-radius: 50%;
+    border: none;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
 .form-range::-moz-range-thumb:hover {
     transform: scale(1.1);
     box-shadow: 0 6px 16px rgba(102, 126, 234, 0.6);
+}
+
+.form-range::-moz-range-track {
+    background: transparent;
+    border: none;
 }
 
 /* Animations */

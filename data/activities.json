@@ -14,24 +14,30 @@
         "points": 0,
         "default_selected": true,
         "mandatory": true,
+        "from_parents": false,
+        "is_spontaneous": false,
         "image_filename": "https://images.unsplash.com/photo-1436491865332-7a61a109cc05?w=600"
       },
       {
         "id": "1b",
-        "title": "5 Nächte Unterkunft in Marrakesch",
+        "title": "Unterkunft in Marrakesch",
         "description": "INSERT DESCRIPTION HERE",
         "points": 0,
         "default_selected": true,
         "mandatory": true,
+        "from_parents": false,
+        "is_spontaneous": false,
         "image_filename": "https://images.unsplash.com/photo-1564501049412-61c2a3083791?w=600"
       },
       {
         "id": "1c",
         "title": "Verpflegung",
-        "description": "Nahrung für 2 Hobbits",
+        "description": "",
         "points": 0,
         "default_selected": true,
         "mandatory": true,
+        "from_parents": false,
+        "is_spontaneous": false,
         "image_filename": "activities/mar_verpflegung.jpeg"
       }
     ]
@@ -47,25 +53,34 @@
       {
         "id": "2a",
         "title": "Rooftop-Dinner",
-        "description": "Ein Essen in einem Rooftop-Restaurant in Marrakesch bietet ein sinnliches Erlebnis, das kulinarische Tradition und orientale Atmosphäre vereint. Hoch über den lebhaften Souks entfaltet sich ein Panorama aus warmen Farben, historischen Dächern und dem Ruf des Muezzins. Marokkanische Spezialitäten wie Tajine, Couscous oder Pastilla werden in einer entspannten, oft modern interpretierten Umgebung serviert, während der Sonnenuntergang die Stadt in goldenes Licht taucht. Die Kombination aus authentischen Aromen, Gastfreundschaft und der einzigartigen Aussicht macht das Rooftop-Dining zu einem unvergesslichen Höhepunkt eines Marrakesch-Besuchs.",
-        "points": 12,
+        "description": "Ein Essen in einem Rooftop-Restaurant in Marrakesch bietet ein sinnliches Erlebnis, das kulinarische Tradition und orientale Atmosphäre vereint. Hoch über den lebhaften Souks entfaltet sich ein Panorama aus warmen Farben, historischen Dächern und dem Ruf des Muezzins.",
+        "points": 10,
         "default_selected": false,
+        "mandatory": false,
+        "from_parents": false,
+        "is_spontaneous": false,
         "image_filename": "activities/mar_rooftop.jpg"
       },
       {
         "id": "2b",
         "title": "Streetfood Tour durch die Medina",
-        "description": "Eine Streetfood-Tour durch die Medina von Marrakesch eröffnet einen unmittelbaren Einblick in die kulinarische Vielfalt und das Alltagsleben der Stadt. Zwischen engen Gassen, geschäftigen Marktständen und duftenden Gewürzauslagen entdeckt man traditionelle Snacks wie frisch gebackenes Khobz, gegrillte Spieße, würzige Harira oder süße Gebäcksorten. Die Tour verbindet authentische Geschmackserlebnisse mit kulturellen Begegnungen und zeigt, wie tief verwurzelt Essen im sozialen Gefüge der Medina ist. Sie bietet eine lebendige, sensorische Reise durch die marokkanische Küche – nahbar, abwechslungsreich und voller Charakter.",
+        "description": "Eine Streetfood-Tour durch die Medina von Marrakesch eröffnet einen unmittelbaren Einblick in die kulinarische Vielfalt und das Alltagsleben der Stadt. Zwischen engen Gassen, geschäftigen Marktständen und duftenden Gewürzauslagen entdeckt man traditionelle Snacks wie frisch gebackenes Khobz, gegrillte Spieße, würzige Harira oder süße Gebäcksorten.",
         "points": 15,
         "default_selected": false,
+        "mandatory": false,
+        "from_parents": false,
+        "is_spontaneous": false,
         "image_filename": "activities/mar_street_food.webp"
       },
       {
         "id": "2c",
         "title": "MAYBE KOCHKURS??",
-        "description": "Kochkurs mit lokalem Koch",
+        "description": "Lerne die Marokkanische Küche mit ihren Gerichten und Traditionen kennen. Kochkurs mit einem professionellen Koch",
         "points": 18,
         "default_selected": false,
+        "mandatory": false,
+        "from_parents": false,
+        "is_spontaneous": false,
         "image_filename": "https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?w=600"
       }
     ]
@@ -73,7 +88,7 @@
   {
     "id": 3,
     "destination_id": 1,
-    "title": "In der Stadt",
+    "title": "Kultur & Must-Sees",
     "description": "Historische und kulturelle Highlights",
     "image_filename": "https://images.unsplash.com/photo-1513415756775-62b3a2758b61?w=800",
     "default_selected": false,
@@ -81,25 +96,34 @@
       {
         "id": "3a",
         "title": "Jardin Majorelle",
-        "description": "Der Jardin Majorelle erstreckt sich über 9.000 m² und ist einer der bezauberndsten und geheimnisvollsten Gärten Marokkos. Über vierzig Jahre hinweg erschaffen, besteht er aus einem Labyrinth sich kreuzender Wege auf verschiedenen Ebenen und kräftig gefärbten Gebäuden, die Art-Déco- und maurische Einflüsse vereinen. Der französische Maler Jacques Majorelle konzipierte diesen üppigen Garten als Zufluchtsort und botanisches 'Labor'. Ab 1922 pflanzte er exotische botanische Exemplare aus allen Ecken der Welt. 1980 kauften Yves Saint Laurent und Pierre Bergé den Jardin Majorelle, um ihn vor der Zerstörung durch Hotelentwickler zu bewahren.",
+        "description": "Der Jardin Majorelle erstreckt sich über 9.000 m² und ist einer der bezauberndsten und geheimnisvollsten Gärten Marokkos. Über vierzig Jahre hinweg erschaffen, besteht er aus einem Labyrinth sich kreuzender Wege auf verschiedenen Ebenen und kräftig gefärbten Gebäuden, die Art-Déco- und maurische Einflüsse vereinen. Der französische Maler Jacques Majorelle konzipierte diesen üppigen Garten als Zufluchtsort und botanisches 'Labor'. Ab 1922 pflanzte er exotische botanische Exemplare aus allen Ecken der Welt..",
         "points": 10,
         "default_selected": false,
+        "mandatory": false,
+        "from_parents": false,
+        "is_spontaneous": false,
         "image_filename": "activities/mar_jardin_majorelle.jpg"
       },
       {
         "id": "3b",
         "title": "Yves-Saint-Laurent-Museum",
-        "description": "Ein Museum, das vollständig dem Werk des legendären Modedesigners Yves Saint Laurent in Marrakesch, Marokko, gewidmet ist.",
+        "description": "Ein Museum, das vollständig dem Werk des legendären Modedesigners Yves Saint Laurent gewidmet ist.",
         "points": 12,
         "default_selected": false,
+        "mandatory": false,
+        "from_parents": false,
+        "is_spontaneous": false,
         "image_filename": "activities/mar_yves-saint-laurent.jpg"
       },
       {
         "id": "3c",
         "title": "Bahia-Palast",
-        "description": "Am Rand der südlichen Medina, unweit der Mellah, befindet sich der Bahia-Palast. Die großzügige Anlage wurde in der zweiten Hälfte des 19. Jahrhunderts von den Alawiden erbaut. Der Bahia-Palast zählt heute zu den schönsten Sehenswürdigkeiten, die Marrakesch zu bieten hat. Im Bahia-Palast begegnen sich andalusische und maurische Baukunst. Der Ort erinnert ein bisschen an die Al-Hambra im spanischen Granada. Graziöse Stuckarbeiten und aufwendig geschnitzte Raumdecken aus Zedernholz treffen auf kunstvolle Mosaike und dekorative Arabesken. Durch den faszinierenden Komplex zieht sich ein wunderschön angelegter Garten, der schließlich zu einem beeindruckend großen Hof mit einem komplett marmorierten Boden führt.",
+        "description": "Am Rand der südlichen Medina, unweit der Mellah, befindet sich der Bahia-Palast. Die großzügige Anlage wurde in der zweiten Hälfte des 19. Jahrhunderts von den Alawiden erbaut. Der Bahia-Palast zählt heute zu den schönsten Sehenswürdigkeiten, die Marrakesch zu bieten hat. Im Bahia-Palast begegnen sich andalusische und maurische Baukunst. Graziöse Stuckarbeiten und aufwendig geschnitzte Raumdecken aus Zedernholz treffen auf kunstvolle Mosaike und dekorative Arabesken. Durch den faszinierenden Komplex zieht sich ein wunderschön angelegter Garten, der schließlich zu einem beeindruckend großen Hof mit einem komplett marmorierten Boden führt.",
         "points": 10,
         "default_selected": false,
+        "mandatory": false,
+        "from_parents": false,
+        "is_spontaneous": false,
         "image_filename": "activities/mar_Bahia.jpg"
       },
       {
@@ -108,6 +132,9 @@
         "description": "Die Medersa Ben Youssef in Marrakesch wurde im 14. Jahrhundert vom Mariniden-Sultan Abu Inan Faris erbaut. Ursprünglich als religiöse Schule für islamische Studien konzipiert, diente sie auch als Moschee und Bibliothek. Im 16. Jahrhundert wurde die Madrasa von Sultan Ahmad al-Mansur erweitert, der einen großen Innenhof und ein Minarett hinzufügte. Im 18. Jahrhundert wurde sie aufgegeben und verfiel. Im 19. Jahrhundert ließ der alawitische Sultan Moulay Hassan I. sie restaurieren und als islamische Schule wiedereröffnen.",
         "points": 8,
         "default_selected": false,
+        "mandatory": false,
+        "from_parents": false,
+        "is_spontaneous": false,
         "image_filename": "activities/mar_ben_youssef.jpg"
       },
       {
@@ -116,6 +143,9 @@
         "description": "Souk Semmarine ist der Hauptsouk in Marrakesch, direkt neben dem Jemaa el Fnaa gelegen. Hier findet man fast alles — von Töpferwaren über Stoffe bis hin zu Souvenirs. Es ist wahrscheinlich der touristenfreundlichste Souk in Marrakesch. Souk El Attarine war einst ein Souk für Gewürze und Parfums, ist aber heute für seine Kupfer- und Metallarbeiten bekannt. Teekannen, Spiegel und Laternen sind hier die beliebtesten Artikel. Souk des Bijoutiers ist der beste Souk in Marrakesch für Schmuck. Seine hochwertigen Stücke heben ihn von anderen Souks ab. Souk Chouari ist auf Tischlerei und Holzverarbeitung spezialisiert und perfekt, um Kunsthandwerk in Marrakesch zu erleben.",
         "points": 0,
         "default_selected": false,
+        "mandatory": false,
+        "from_parents": false,
+        "is_spontaneous": false,
         "image_filename": "activities/mar_soukh.jpg"
       }
     ]
@@ -131,28 +161,34 @@
       {
         "id": "4a",
         "title": "Ballonfahrt inkl. Frühstück",
-        "description": "Erlebe einen Moment über den wunderschönen Landschaften des Atlas und der Marrakesch-Wüste. Das klassische Flugangebot beinhaltet Hin- und Rücktransport, ein Berber-Frühstück in einer Kasbah aus Südmarokko, den Ballonflug vor dem Atlas und der ockerfarbenen Stadt Marrakesch sowie ein Flugzertifikat. Die Flugdauer beträgt eine Stunde.",
+        "description": "Erlebe einen Moment über den wunderschönen Landschaften des Atlas und der Marrakesch-Wüste. Hin- und Rücktransport und teilweise auch Frühstück inkludiert. Die meisten Anbieter holen dich vom Hotel ab und bringen dich wieder dort hin.",
         "points": 35,
         "default_selected": false,
+        "mandatory": false,
         "from_parents": true,
+        "is_spontaneous": false,
         "image_filename": "activities/mar_ballon.jpg"
       },
       {
         "id": "4b",
         "title": "Agafay-Wüste (mit Dinner & Feuershow)",
-        "description": "Trip in die Agafay-Wüste mit Dinner und Unterhaltung. Teilweise mit Quad oder Kamelritt.",
+        "description": "Trip in die Agafay-Wüste mit Dinner und Unterhaltung. Teilweise mit Quad oder Kamelritt ;)",
         "points": 25,
         "default_selected": false,
+        "mandatory": false,
         "from_parents": true,
+        "is_spontaneous": false,
         "image_filename": "activities/mar_agafay.jpeg"
       },
       {
         "id": "4c",
         "title": "Atlasgebirge (Imlil, Ourika-Tal, Berberdörfer)",
-        "description": "Entdecke Berberdörfer und atemberaubende Landschaften auf dieser ganztägigen Wanderung im Hohen Atlas. Reite auf einem Kamel, wandere durch das Imlil-Tal und genieße das Mittagessen in einem traditionellen Berberhaus.",
+        "description": "Entdecke Berberdörfer und atemberaubende Landschaften auf einer ganztägigen Wanderung im Hohen Atlas. Wandere durch das Imlil-Tal und genieße ein Mittagessen in einem traditionellen Berberhaus.",
         "points": 30,
         "default_selected": false,
+        "mandatory": false,
         "from_parents": true,
+        "is_spontaneous": false,
         "image_filename": "activities/mar_atlas.jpeg"
       }
     ]
@@ -171,6 +207,8 @@
         "description": "Nutze alle verbleibenden Punkte flexibel vor Ort - für spontane Aktivitäten, zusätzliche Mahlzeiten oder besondere Momente",
         "points": 0,
         "default_selected": false,
+        "mandatory": false,
+        "from_parents": false,
         "is_spontaneous": true,
         "image_filename": "https://images.unsplash.com/photo-1469854523086-cc02fe5d8800?w=600"
       }
@@ -179,7 +217,7 @@
   {
     "id": 10,
     "destination_id": 2,
-    "title": "Essen & Food-Erlebnisse",
+    "title": "Essen & Kulinarik",
     "description": "Kulinarische Vielfalt zwischen Orient und Okzident",
     "image_filename": "https://images.unsplash.com/photo-1555939594-58d7cb561ad1?w=800",
     "default_selected": false,
@@ -190,6 +228,9 @@
         "description": "Ein kulinarischer Spaziergang durch Istanbul: Du springst von einem Streetfood-Stand zum nächsten, probierst den Fisch-Sandwich 'Balık Ekmek' am Wasser, gönnst dir 'Simit' (sesambestreifter Kringel) zum Frühstück, wagst dich an herzhaftes 'Kokoreç' und rundest ab mit einem knusprigen 'Lahmacun'.",
         "points": 15,
         "default_selected": false,
+        "mandatory": false,
+        "from_parents": false,
+        "is_spontaneous": false,
         "image_filename": "activities/ist_streetfood.jpg"
       },
       {
@@ -198,6 +239,9 @@
         "description": "Farbenprächtig, duftend und voller Geschmack: Im Gewürz- (und Süßigkeiten-)Bazar schnupperst du an getrockneten Früchten, wühlst dich durch Gewürzmischungen und gönnst dir eine Portion 'Lokum'. Ein Erlebnis für alle Sinne - und ideal für Mitbringsel.",
         "points": 8,
         "default_selected": false,
+        "mandatory": false,
+        "from_parents": false,
+        "is_spontaneous": false,
         "image_filename": "activities/ist_gewürzbasar.jpg"
       },
       {
@@ -206,6 +250,9 @@
         "description": "Ein üppiges Frühstück ist in Istanbul nicht bloß ein Mahl, sondern ein Erlebnis: Viele kleine Schälchen mit Käse, Oliven, Honig, Eiern, 'Menemen' und frischem Brot. In Beşiktaş sitzt man gemütlich im Freien, beobachtet das Treiben und startet den Tag genüsslich.",
         "points": 12,
         "default_selected": false,
+        "mandatory": false,
+        "from_parents": false,
+        "is_spontaneous": false,
         "image_filename": "activities/ist_frühstück_besiktas.jpg"
       }
     ]
@@ -213,7 +260,7 @@
   {
     "id": 11,
     "destination_id": 2,
-    "title": "Kultur & Highlights",
+    "title": "Kultur & Must-Sees",
     "description": "Historische Schätze zwischen zwei Kontinenten",
     "image_filename": "https://images.unsplash.com/photo-1524231757912-21f4fe3a7200?w=800",
     "default_selected": false,
@@ -224,6 +271,9 @@
         "description": "Ein Architektur- und Geschichtswunder: Ursprünglich byzantinische Kathedrale, später Moschee, heute bedeutendes Bauwerk von Weltrang. Die riesige Kuppel, Mosaike und religiösen Spuren machen sie zu einem Muss in Istanbul.",
         "points": 10,
         "default_selected": false,
+        "mandatory": false,
+        "from_parents": false,
+        "is_spontaneous": false,
         "image_filename": "activities/ist_hagia_sophia.jpg"
       },
       {
@@ -232,6 +282,9 @@
         "description": "Einst Residenz der Sultane - heute Museum voller Prunk, Schatz- und Hofanlagen. Ein Fenster in das höfische Leben des Osmanischen Reichs und ein Spaziergang durch Jahrhunderte höfischer Geschichte.",
         "points": 12,
         "default_selected": false,
+        "mandatory": false,
+        "from_parents": false,
+        "is_spontaneous": false,
         "image_filename": "activities/ist_topkapi_palast.jpg"
       },
       {
@@ -240,6 +293,9 @@
         "description": "Ein imposantes Gotteshaus mit sechs Minaretten, hunderten Íznik-Fliesen und zentraler Lage gegenüber der Hagia Sophia. Besucher dürfen eintreten - bei respektvoller Kleidung.",
         "points": 8,
         "default_selected": false,
+        "mandatory": false,
+        "from_parents": false,
+        "is_spontaneous": false,
         "image_filename": "activities/ist_blaue_moschee.jpg"
       },
       {
@@ -248,6 +304,9 @@
         "description": "Unterirdisch, kühl, geheimnisvoll: Diese riesige frühbyzantinische Zisterne mit ihren Säulen und dem Wasser spiegelt eine ganz andere Seite von Istanbul wider - ideal als kurze Pause vom Trubel über Tage.",
         "points": 8,
         "default_selected": false,
+        "mandatory": false,
+        "from_parents": false,
+        "is_spontaneous": false,
         "image_filename": "activities/ist_basilica_cistern.jpg"
       },
       {
@@ -256,14 +315,20 @@
         "description": "Der Turm bietet spektakuläre Aussicht über Stadt und Wasser. Die Brücke verbindet Stadtteile, ist belebt mit Anglern und Straßenständen - beide Orte perfekt für einen Zwischenstopp und Panorama-Fotos.",
         "points": 10,
         "default_selected": false,
+        "mandatory": false,
+        "from_parents": false,
+        "is_spontaneous": false,
         "image_filename": "activities/ist_galata_turm.jpg"
       },
       {
         "id": "11f",
-        "title": "Grand Bazaar & Spice Bazaar",
+        "title": "Grand Bazaar & Gewürz Bazaar",
         "description": "Der große Basar - ein Labyrinth aus Geschäften, Souvenirs und Altstadt-Atmosphäre. Der Gewürzbasar daneben ein Duft- und Farbenspiel: Gewürze, Tees, Süßigkeiten. Ideal für ein wenig Shopping & Erlebnis.",
         "points": 0,
         "default_selected": false,
+        "mandatory": false,
+        "from_parents": false,
+        "is_spontaneous": false,
         "image_filename": "activities/ist_grand_bazaar.jpg"
       },
       {
@@ -272,6 +337,9 @@
         "description": "Ein opulenter Palast am Bosporus mit europäisch inspiriertem Design, großen Prunksälen und prachtvoller Innenausstattung - ein starkes Kontrastprogramm zu älteren osmanischen Bauwerken.",
         "points": 12,
         "default_selected": false,
+        "mandatory": false,
+        "from_parents": false,
+        "is_spontaneous": false,
         "image_filename": "activities/ist_dolmabahce.jpeg"
       }
     ]
@@ -290,6 +358,9 @@
         "description": "Eine spirituelle Tanzzeremonie, bei der die Derwische wirbeln, begleitet von mystischer Musik. Eine besondere Atmosphäre - ruhig, meditativ und kulturell tief.",
         "points": 15,
         "default_selected": false,
+        "mandatory": false,
+        "from_parents": false,
+        "is_spontaneous": false,
         "image_filename": "activities/ist_sufi_derwisch.jpg"
       },
       {
@@ -298,6 +369,9 @@
         "description": "Auf der asiatischen Seite von Istanbul gelegen: Bars, Live-Musik, kreative Atmosphäre. Ideal für Abende fernab der klassischen Touristenpfade.",
         "points": 18,
         "default_selected": false,
+        "mandatory": false,
+        "from_parents": false,
+        "is_spontaneous": false,
         "image_filename": "activities/ist_kadikoy_nightlife.jpg"
       },
       {
@@ -306,15 +380,20 @@
         "description": "Ein Abend auf dem Wasser mit Dinner, Musik und Blick auf die beleuchtete Stadt: Brücken, Moscheen und Bosporus-Ufer im Schein der Lichter - sehr stimmungsreich.",
         "points": 35,
         "default_selected": false,
+        "mandatory": false,
         "from_parents": true,
+        "is_spontaneous": false,
         "image_filename": "activities/ist_bosporus_cruise.png.avif"
       },
       {
         "id": "12d",
-        "title": "Rooftop-Bars mit Stadtblick",
+        "title": "Rooftop-Bar mit Stadtblick",
         "description": "Für den Drink zum Sonnenuntergang: Auf einer Dachterrasse mit Blick über Istanbul ein Cocktail in der Hand - lässt den Tag stilvoll ausklingen.",
         "points": 12,
         "default_selected": false,
+        "mandatory": false,
+        "from_parents": false,
+        "is_spontaneous": false,
         "image_filename": "activities/ist_rooftop.jpg"
       }
     ]
@@ -333,7 +412,9 @@
         "description": "Nur mit Fahrrad oder zu Fuß - keine Autos: Diese Inselgruppe vor Istanbul bietet Ruhe, Natur und charmante Holzhäuser. Ein schöner Kontrast zum Stadt-Trubel.",
         "points": 20,
         "default_selected": false,
+        "mandatory": false,
         "from_parents": true,
+        "is_spontaneous": false,
         "image_filename": "activities/ist_prinzeninseln.jpg"
       },
       {
@@ -342,6 +423,9 @@
         "description": "Ein Spaziergang auf der asiatischen Seite – von der Küste bei Üsküdar mit Blick auf den kleinen berühmten Turm im Wasser (Maiden's Tower). Sehr fotogen und ruhig.",
         "points": 8,
         "default_selected": false,
+        "mandatory": false,
+        "from_parents": false,
+        "is_spontaneous": false,
         "image_filename": "activities/ist_üsküdar_promenade.jpg"
       },
       {
@@ -350,6 +434,9 @@
         "description": "Die Moschee direkt am Wasser, dazu Straße mit Waffelständen: Perfekter Snack-Stopp beim Ausflug ans Wasser oder für einen gemütlichen Nachmittags-Moment.",
         "points": 10,
         "default_selected": false,
+        "mandatory": false,
+        "from_parents": false,
+        "is_spontaneous": false,
         "image_filename": "activities/ist_ortaköy_moschee.jpg"
       }
     ]
@@ -368,32 +455,37 @@
         "description": "Nutze alle verbleibenden Punkte flexibel vor Ort - für spontane Aktivitäten, zusätzliche Mahlzeiten oder besondere Momente",
         "points": 0,
         "default_selected": false,
+        "mandatory": false,
+        "from_parents": false,
         "is_spontaneous": true,
         "image_filename": "https://images.unsplash.com/photo-1469854523086-cc02fe5d8800?w=600"
       }
     ]
   },
   {
-    "id": 24,
+    "id": 19,
     "destination_id": 3,
-    "title": "Reiseplanung Basis",
-    "description": "Die Grundlagen für deine Valencia-Reise",
-    "image_filename": "https://images.unsplash.com/photo-1436491865332-7a61a109cc05?w=800",
-    "slider_level_min": 0,
-    "slider_level_max": 5,
+    "title": "Flexibilität",
+    "description": "Nichts geplant außer die Basics",
+    "image_filename": "",
     "default_selected": false,
     "sub_items": [
       {
-        "id": "24a",
-        "title": "Flug, Auto und Quartier in Valencia",
-        "description": "Die essentiellen Reisevorbereitungen: Flug nach Valencia buchen, Mietwagen organisieren und Unterkunft reservieren.",
-        "points": 0,
-        "default_selected": true,
+        "id": "19a",
+        "title": "Was auch immer uns einfällt",
+        "description": "Nur Quartier in Valencia, den Flug dort hin und ein Auto. Den Rest überlegen wir uns dort ",
+        "points": 100,
+        "default_selected": false,
+        "mandatory": false,
+        "from_parents": false,
+        "is_spontaneous": true,
+        "image_filename": "",
         "slider_level_min": 0,
-        "slider_level_max": 5,
-        "image_filename": "https://images.unsplash.com/photo-1436491865332-7a61a109cc05?w=800"
+        "slider_level_max": 0
       }
-    ]
+    ],
+    "slider_level_min": 0,
+    "slider_level_max": 0
   },
   {
     "id": 20,
@@ -401,8 +493,6 @@
     "title": "Essen & Kulinarik",
     "description": "Valencianische Spezialitäten und mediterrane Genüsse",
     "image_filename": "https://images.unsplash.com/photo-1555939594-58d7cb561ad1?w=800",
-    "slider_level_min": 1,
-    "slider_level_max": 5,
     "default_selected": false,
     "sub_items": [
       {
@@ -411,19 +501,25 @@
         "description": "Ein Besuch bei La Albufera-See und im Dörfchen El Palmar bedeutet: Bootsfahrt über stille Gewässer, Fahrt vorbei an Reisfeldern und Abstecher in ein Spezialitäten-Restaurant am Wasser, wo die echte Paella Valenciana serviert wird. Sie stammt genau aus dieser Region - mit Reis aus den Feldern der Albufera, Safran, Hühnchen oder Kaninchen sowie grünen Bohnen.",
         "points": 25,
         "default_selected": false,
+        "mandatory": false,
+        "from_parents": false,
+        "is_spontaneous": false,
+        "image_filename": "activities/spa_paella.jpg",
         "slider_level_min": 2,
-        "slider_level_max": 5,
-        "image_filename": "activities/spa_paella.jpg"
+        "slider_level_max": 5
       },
       {
         "id": "20b",
         "title": "Tapas-Hopping in Ruzafa",
-        "description": "Im hippen Viertel Ruzafa von Valencia mischen sich kreative Bars mit klassischen Tapas-Lokalen. Von kleinen Tellerchen mit Jamón, Oliven, lokalen Käsespezialitäten bis hin zu modernen Interpretationen - ideal für einen genussvollen Abend mit urbanem Flair.",
+        "description": "Das gastronomische Angebot war zweifellos ein Grund für den Aufschwung des Viertels. Große valencianische Köche haben Ruzafa gewählt, um ungewöhnliche Restaurants aufzumachen. Wie die Nozomi Sushi Bar, das Bouet, das Fierro oder die Taquería la Llorona zeigen, gibt es hier Speisen aus aller Welt. Beliebt sind hier auch die Cervecerías (Bierstuben) mit Craft Beer wie Olhöps oder Ruzanovol und Cafeterías wie Dulce de Leche,  La Más Bonita und Bluebell Coffee mit einem verlockenden Angebot an Feingebäck.",
         "points": 18,
         "default_selected": false,
+        "mandatory": false,
+        "from_parents": false,
+        "is_spontaneous": false,
+        "image_filename": "activities/spa_tapas.jpg",
         "slider_level_min": 1,
-        "slider_level_max": 5,
-        "image_filename": "activities/spa_tapas.jpg"
+        "slider_level_max": 5
       },
       {
         "id": "20c",
@@ -431,9 +527,12 @@
         "description": "Der legendäre Drink Agua de Valencia (Orangensaft, Cava, Wodka/Gin) gehört zur Stadt wie die Orangenbäume. Genieße ihn auf einer Rooftop-Bar mit Blick über die Dächer Valencias - besonders bei Sonnenuntergang ein stilvoller Moment.",
         "points": 15,
         "default_selected": false,
+        "mandatory": false,
+        "from_parents": false,
+        "is_spontaneous": false,
+        "image_filename": "activities/spa_aqua_de_vaencia_rooftop.png",
         "slider_level_min": 3,
-        "slider_level_max": 5,
-        "image_filename": "activities/spa_aqua_de_vaencia_rooftop.png"
+        "slider_level_max": 5
       },
       {
         "id": "20d",
@@ -441,9 +540,12 @@
         "description": "Kurz außerhalb des Stadtzentrums liegt Alboraya, wo aus den Erdmandeln ('chufa') die erfrischende Horchata gemacht wird - dazu ein weiches 'Farton'-Gebäck zum Eintauchen. Diese Kombination ist typisch für Valencia und wunderbar für eine süße Pause zwischendurch.",
         "points": 10,
         "default_selected": false,
+        "mandatory": false,
+        "from_parents": false,
+        "is_spontaneous": false,
+        "image_filename": "activities/spa_horchata.jpg",
         "slider_level_min": 3,
-        "slider_level_max": 5,
-        "image_filename": "activities/spa_horchata.jpg"
+        "slider_level_max": 5
       },
       {
         "id": "20e",
@@ -451,11 +553,29 @@
         "description": "Der Mercado Central in Valencia zählt zu den schönsten Markthallen Europas: Stände mit frischen Meeresfrüchten, Jamón Iberico, Oliven, Käse und Produkten aus der Region laden zum Schlendern, Kosten und Einkaufen ein. Ideal, um lokale Spezialitäten zu entdecken.",
         "points": 8,
         "default_selected": false,
+        "mandatory": false,
+        "from_parents": false,
+        "is_spontaneous": false,
+        "image_filename": "activities/spa_mercado_central.jpg",
         "slider_level_min": 2,
-        "slider_level_max": 5,
-        "image_filename": "activities/spa_mercado_central.jpg"
+        "slider_level_max": 5
+      },
+      {
+        "id": "20f",
+        "title": "Picknick im Parque Cabecera",
+        "description": "Der Parque Cabecera am westlichen Ende des Turia-Parks umfasst Grünflächen, Seen und sogar einen Mini-Nike-Tempel-Nachbau. Perfekt für ein entspanntes Picknick oder eine Pause im Freien - ideal für einen milden Wintertag.",
+        "points": 5,
+        "default_selected": false,
+        "mandatory": false,
+        "from_parents": false,
+        "is_spontaneous": false,
+        "image_filename": "activities/spa_parque_cabecera.jpg",
+        "slider_level_min": 4,
+        "slider_level_max": 5
       }
-    ]
+    ],
+    "slider_level_min": 2,
+    "slider_level_max": 5
   },
   {
     "id": 21,
@@ -463,8 +583,6 @@
     "title": "Kultur & Must-Sees",
     "description": "Historische Schätze und moderne Architektur",
     "image_filename": "https://images.unsplash.com/photo-1581619420351-e5e6e8715785?w=800",
-    "slider_level_min": 2,
-    "slider_level_max": 5,
     "default_selected": false,
     "sub_items": [
       {
@@ -473,9 +591,12 @@
         "description": "Ein architektonisches Meisterwerk am Stadtrand von Valencia: Die Ciudad de las Artes y las Ciencias verbindet futuristische Bauwerke, Wissenschaftsmuseum und Aquarien-Komplex. Ideal für Technik- und Architekturinteressierte - und ein Kontrast zur historischen Altstadt.",
         "points": 15,
         "default_selected": false,
+        "mandatory": false,
+        "from_parents": false,
+        "is_spontaneous": false,
+        "image_filename": "activities/spa_ciudad_artes_ciencias.jpg",
         "slider_level_min": 3,
-        "slider_level_max": 5,
-        "image_filename": "activities/spa_ciudad_artes_ciencias.jpg"
+        "slider_level_max": 5
       },
       {
         "id": "21b",
@@ -483,9 +604,12 @@
         "description": "Die mittelalterlichen Türme der Torres de Serranos sind eines der Wahrzeichen Valencias und bieten wunderbare Ausblicke über die Altstadt. Der anschließende Altstadtbummel durch Gassen, Plätze und Cafés lässt die Geschichte der Stadt lebendig werden.",
         "points": 10,
         "default_selected": false,
+        "mandatory": false,
+        "from_parents": false,
+        "is_spontaneous": false,
+        "image_filename": "activities/spa_serranos_torres.jpg",
         "slider_level_min": 2,
-        "slider_level_max": 5,
-        "image_filename": "activities/spa_serranos_torres.jpg"
+        "slider_level_max": 5
       },
       {
         "id": "21c",
@@ -493,9 +617,12 @@
         "description": "Die Lonja de la Seda (Seidenbörse) ist ein spätgotisches Handelsgebäude und UNESCO-Welterbe: beeindruckende Säulenhalle, historisches Handelszentrum für Seide und ein Highlight für Kulturreisen in Valencia.",
         "points": 10,
         "default_selected": false,
+        "mandatory": false,
+        "from_parents": false,
+        "is_spontaneous": false,
+        "image_filename": "activities/spa_seidenbörse.webp",
         "slider_level_min": 4,
-        "slider_level_max": 5,
-        "image_filename": "activities/spa_seidenbörse.webp"
+        "slider_level_max": 5
       },
       {
         "id": "21d",
@@ -503,20 +630,36 @@
         "description": "Im Stadtteil El Carmen erwartet dich moderne, urbane Kunst an den Wänden: Street-Art, Graffiti, kreative Szenekultur. Eine geführte Tour oder ein selbstständiger Spaziergang enthüllen versteckte Kunstwerke und zeitgenössischen Flair.",
         "points": 12,
         "default_selected": false,
+        "mandatory": false,
+        "from_parents": false,
+        "is_spontaneous": false,
+        "image_filename": "activities/spa_street_art.jpg",
         "slider_level_min": 4,
-        "slider_level_max": 5,
-        "image_filename": "activities/spa_street_art.jpg"
+        "slider_level_max": 5
+      },
+      {
+        "id": "21e",
+        "title": "Botanischer Garten Valencia",
+        "description": "Der Botanische Garten Valencia (Jardín Botánico) lädt zu Ruhe- und Naturerlebnissen ein: verschiedene Gartenbereiche, Gewächshäuser und schattige Wege - angenehm in der kühleren Jahreszeit.",
+        "points": 8,
+        "default_selected": false,
+        "mandatory": false,
+        "from_parents": false,
+        "is_spontaneous": false,
+        "image_filename": "activities/spa_botanischer_garten.jpg",
+        "slider_level_min": 3,
+        "slider_level_max": 5
       }
-    ]
+    ],
+    "slider_level_min": 3,
+    "slider_level_max": 5
   },
   {
     "id": 22,
     "destination_id": 3,
-    "title": "Natur, Strände & Erlebnisse",
+    "title": "Ausflüge rund um Valencia",
     "description": "Entspannung zwischen Strand und Grünflächen",
     "image_filename": "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=800",
-    "slider_level_min": 3,
-    "slider_level_max": 5,
     "default_selected": false,
     "sub_items": [
       {
@@ -525,9 +668,12 @@
         "description": "Eine Bootsfahrt über den See der Albufera bei Sonnenuntergang gehört zu den besonderen Momenten in der Region: Spiegelndes Wasser, goldene Lichtstimmung, Reisfelder im Hintergrund - kombiniert mit einem späten Paella-Essen ergibt sich ein unvergessliches Erlebnis.",
         "points": 20,
         "default_selected": false,
+        "mandatory": false,
+        "from_parents": false,
+        "is_spontaneous": false,
+        "image_filename": "activities/spa_albufera.webp",
         "slider_level_min": 4,
-        "slider_level_max": 5,
-        "image_filename": "activities/spa_albufera.webp"
+        "slider_level_max": 5
       },
       {
         "id": "22b",
@@ -535,72 +681,79 @@
         "description": "Die Strände Playa Malvarrosa und Las Arenas liegen nur wenige Minuten vom Zentrum Valencias entfernt - auch im Winter mit mildem Klima geeignet für Spaziergänge, Frischluft und eventuell ein Café am Meer.",
         "points": 0,
         "default_selected": false,
+        "mandatory": false,
+        "from_parents": false,
+        "is_spontaneous": false,
+        "image_filename": "activities/spa_strandtag_malvarrosa.jpg",
         "slider_level_min": 1,
-        "slider_level_max": 5,
-        "image_filename": "activities/spa_strandtag_malvarrosa.jpg"
+        "slider_level_max": 5
       },
       {
         "id": "22c",
-        "title": "Botanischer Garten Valencia",
-        "description": "Der Botanische Garten Valencia (Jardín Botánico) lädt zu Ruhe- und Naturerlebnissen ein: verschiedene Gartenbereiche, Gewächshäuser und schattige Wege - angenehm in der kühleren Jahreszeit.",
-        "points": 8,
-        "default_selected": false,
-        "slider_level_min": 3,
-        "slider_level_max": 5,
-        "image_filename": "activities/spa_botanischer_garten.jpg"
-      },
-      {
-        "id": "22d",
-        "title": "Picknick im Parque Cabecera",
-        "description": "Der Parque Cabecera am westlichen Ende des Turia-Parks umfasst Grünflächen, Seen und sogar einen Mini-Nike-Tempel-Nachbau. Perfekt für ein entspanntes Picknick oder eine Pause im Freien - ideal für einen milden Wintertag.",
-        "points": 5,
-        "default_selected": false,
-        "slider_level_min": 4,
-        "slider_level_max": 5,
-        "image_filename": "activities/spa_parque_cabecera.jpg"
-      }
-    ]
-  },
-  {
-    "id": 23,
-    "destination_id": 3,
-    "title": "Ausflüge rund um Valencia",
-    "description": "Entdeckungen jenseits der Stadt",
-    "image_filename": "https://images.unsplash.com/photo-1476514525535-07fb3b4ae5f1?w=800",
-    "slider_level_min": 4,
-    "slider_level_max": 5,
-    "default_selected": false,
-    "sub_items": [
-      {
-        "id": "23a",
         "title": "Xàtiva - Burg & Altstadt mit arabischen Einflüssen (1-2 Übernachtungen)",
         "description": "Nur etwa 1 Stunde von Valencia entfernt liegt Xàtiva mit seiner imposanten Burg auf einem Bergkamm und einer Altstadt, die von arabischer Geschichte geprägt ist. Ein spannender Tagesausflug zur Mischung aus Natur, Geschichte und Panorama.",
         "points": 30,
         "default_selected": false,
+        "mandatory": false,
+        "from_parents": false,
+        "is_spontaneous": false,
+        "image_filename": "activities/spa_xativa.jpg",
         "slider_level_min": 5,
-        "slider_level_max": 5,
-        "image_filename": "activities/spa_xativa.jpg"
+        "slider_level_max": 5
       },
       {
-        "id": "23b",
+        "id": "22d",
         "title": "Naturpark Cova Negra (Wanderung)",
         "description": "In der Region von Xàtiva befindet sich der Parc Natural de la Cova Negra - ein wildes Tal mit Schluchten, Felsen, Höhlen und einem Flusslauf. Eine gut machbare Wanderung bietet Natur im Winter, die Ruhe genießen und etwas Aktivität verbinden.",
         "points": 15,
         "default_selected": false,
+        "mandatory": false,
+        "from_parents": false,
+        "is_spontaneous": false,
+        "image_filename": "activities/spa_cova_negra.jpg",
         "slider_level_min": 5,
-        "slider_level_max": 5,
-        "image_filename": "activities/spa_cova_negra.jpg"
+        "slider_level_max": 5
       },
       {
-        "id": "23c",
+        "id": "22e",
         "title": "Requena - Weinregion & Cava-Verkostungen (1 Übernachtung)",
         "description": "Requena ist eine traditionsreiche Weinregion nordwestlich von Valencia: Verkostung von Cava und lokalen Rot- & Weißweinen, Besuch von Kelleranlagen.",
         "points": 35,
         "default_selected": false,
+        "mandatory": false,
+        "from_parents": false,
+        "is_spontaneous": false,
+        "image_filename": "activities/spa_requena.jpg",
         "slider_level_min": 5,
-        "slider_level_max": 5,
-        "image_filename": "activities/spa_requena.jpg"
+        "slider_level_max": 5
       }
-    ]
+    ],
+    "slider_level_min": 4,
+    "slider_level_max": 5
+  },
+  {
+    "id": 24,
+    "destination_id": 3,
+    "title": "Reiseplanung Basis",
+    "description": "Die Grundlagen für deine Valencia-Reise",
+    "image_filename": "https://images.unsplash.com/photo-1436491865332-7a61a109cc05?w=800",
+    "default_selected": false,
+    "sub_items": [
+      {
+        "id": "24a",
+        "title": "Flug, Auto und Quartier in Valencia",
+        "description": "Die essentiellen Reisevorbereitungen: Flug nach Valencia buchen, Mietwagen organisieren und Unterkunft reservieren.",
+        "points": 0,
+        "default_selected": true,
+        "mandatory": false,
+        "from_parents": false,
+        "is_spontaneous": false,
+        "image_filename": "https://images.unsplash.com/photo-1436491865332-7a61a109cc05?w=800",
+        "slider_level_min": 0,
+        "slider_level_max": 5
+      }
+    ],
+    "slider_level_min": 0,
+    "slider_level_max": 5
   }
 ]
