@@ -3,7 +3,7 @@
     "id": 1,
     "name": "Marrakesch - Marokko",
     "description_short": "Orientalische Stadt voller Farben, Souks und Wüstenabenteuer.",
-    "image_cover": "https://images.unsplash.com/photo-1597212618440-806262de4f6b?w=800",
+    "image_cover": "destinations/mar_header.jpeg",
     "selection_mode": "checkboxes",
     "points_budget": 100
   },
@@ -11,7 +11,7 @@
     "id": 2,
     "name": "Istanbul - Türkei",
     "description_short": "Wo Ost auf West trifft: Kultur, Kulinarik und Bosporus-Magie.",
-    "image_cover": "https://images.unsplash.com/photo-1524231757912-21f4fe3a7200?w=800",
+    "image_cover": "destinations/ist_header.jpeg",
     "selection_mode": "checkboxes",
     "points_budget": 100
   },
@@ -19,7 +19,7 @@
     "id": 3,
     "name": "Valencia - Spanien",
     "description_short": "Paella, Kultur und mediterrane Lebensfreude an der spanischen Ostküste.",
-    "image_cover": "https://images.unsplash.com/photo-1589930901924-d2b8d63a6ab2?w=800",
+    "image_cover": "destinations/spa_header.jpeg",
     "selection_mode": "slider",
     "points_budget": 100
   }
