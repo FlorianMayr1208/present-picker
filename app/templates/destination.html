@@ -240,74 +240,62 @@
                     </div>
                     {% endfor %}
                 {% else %}
-                    <!-- Slider Mode: Show activities with sub-items -->
+                    <!-- Slider Mode: Show activities as card grid -->
+                    <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-3">
                     {% for activity in activities %}
-                    <div class="mb-4 activity-category activity-card" data-level-min="{{ activity.slider_level_min }}" data-level-max="{{ activity.slider_level_max }}">
-                        <!-- Category Header with Image -->
-                        {% if activity.image_filename %}
-                        <div class="card mb-3 shadow-sm category-header-card">
-                            <div class="position-relative" style="height: 300px; overflow: hidden;">
-                                <img src="{% if activity.image_filename.startswith('http') %}{{ activity.image_filename }}{% else %}{{ url_for('static', filename='images/' + activity.image_filename) }}{% endif %}"
-                                     class="w-100 h-100"
-                                     alt="{{ activity.title }}"
-                                     style="object-fit: cover; object-position: center;">
-                                <div class="position-absolute bottom-0 start-0 w-100 p-4" style="background: linear-gradient(to top, rgba(0,0,0,0.8), transparent);">
-                                    <h4 class="text-white mb-2">{{ activity.title }}</h4>
-                                    {% if activity.description %}
-                                    <p class="text-white mb-0 small">{{ activity.description }}</p>
-                                    {% endif %}
-                                    <span class="badge bg-primary mt-2">Level {{ activity.slider_level_min }}-{{ activity.slider_level_max }}</span>
+                        <div class="col activity-card" data-level-min="{{ activity.slider_level_min }}" data-level-max="{{ activity.slider_level_max }}">
+                            <div class="card h-100 shadow-sm activity-grid-card" onclick="toggleActivityDetails(this)" style="cursor: pointer;">
+                                {% if activity.image_filename %}
+                                <div class="position-relative">
+                                    <img src="{% if activity.image_filename.startswith('http') %}{{ activity.image_filename }}{% else %}{{ url_for('static', filename='images/' + activity.image_filename) }}{% endif %}"
+                                         class="card-img-top"
+                                         alt="{{ activity.title }}"
+                                         style="height: 180px; object-fit: cover;">
+                                    <span class="badge bg-primary position-absolute top-0 end-0 m-2" style="font-size: 0.7rem;">Level {{ activity.slider_level_min }}-{{ activity.slider_level_max }}</span>
                                 </div>
-                            </div>
-                        </div>
-                        {% else %}
-                        <!-- Category Header without Image -->
-                        <div class="card mb-3 shadow-sm">
-                            <div class="card-body">
-                                <div class="d-flex justify-content-between align-items-center">
-                                    <h5 class="mb-2">{{ activity.title }}</h5>
-                                    <span class="badge bg-primary">Level {{ activity.slider_level_min }}-{{ activity.slider_level_max }}</span>
-                                </div>
-                                {% if activity.description %}
-                                <p class="card-text text-muted mb-0">{{ activity.description }}</p>
                                 {% endif %}
-                            </div>
-                        </div>
-                        {% endif %}
-
-                        <!-- Sub-items Container -->
-                        {% if activity.sub_items %}
-                        <div class="sub-items-container">
-                            {% for sub_item in activity.sub_items %}
-                            <div class="card mb-3 sub-item-card shadow-sm">
-                                <div class="row g-0">
-                                    {% if sub_item.image_filename %}
-                                    <div class="col-md-3">
-                                        <img src="{% if sub_item.image_filename.startswith('http') %}{{ sub_item.image_filename }}{% else %}{{ url_for('static', filename='images/' + sub_item.image_filename) }}{% endif %}"
-                                             class="img-fluid rounded-start h-100"
-                                             alt="{{ sub_item.title }}"
-                                             style="object-fit: cover; min-height: 120px;">
+                                <div class="card-body">
+                                    <div class="d-flex justify-content-between align-items-start">
+                                        <h6 class="card-title mb-2">{{ activity.title }}</h6>
+                                        <i class="bi bi-chevron-down expand-icon" style="transition: transform 0.3s;"></i>
                                     </div>
+
+                                    {% if activity.description %}
+                                    <p class="card-text small text-muted mb-3" style="font-size: 0.8rem; line-height: 1.4;">{{ activity.description }}</p>
                                     {% endif %}
-                                    <div class="{% if sub_item.image_filename %}col-md-9{% else %}col-md-12{% endif %}">
-                                        <div class="card-body py-2 px-3">
-                                            <div class="d-flex justify-content-between align-items-start">
-                                                <div>
-                                                    <strong>{{ sub_item.title }}</strong>
+
+                                    {% if activity.sub_items %}
+                                    <div class="sub-items-list">
+                                        <strong class="small d-block mb-2">Enthält:</strong>
+                                        {% for sub_item in activity.sub_items %}
+                                        <div class="d-flex align-items-start gap-2 mb-2">
+                                            {% if sub_item.image_filename %}
+                                            <img src="{% if sub_item.image_filename.startswith('http') %}{{ sub_item.image_filename }}{% else %}{{ url_for('static', filename='images/' + sub_item.image_filename) }}{% endif %}"
+                                                 alt="{{ sub_item.title }}"
+                                                 style="width: 40px; height: 40px; object-fit: cover; border-radius: 4px; flex-shrink: 0;">
+                                            {% endif %}
+                                            <div class="flex-grow-1">
+                                                <div class="d-flex align-items-center gap-2">
+                                                    <small class="fw-bold" style="font-size: 0.85rem;">{{ sub_item.title }}</small>
+                                                    {% if sub_item.from_parents %}
+                                                    <span style="font-size: 0.9rem;">🎁👴👵</span>
+                                                    {% endif %}
+                                                </div>
+                                                <div class="sub-item-description" style="display: none;">
                                                     {% if sub_item.description %}
-                                                    <br><small class="text-muted">{{ sub_item.description }}</small>
+                                                    <small class="text-muted" style="font-size: 0.75rem;">{{ sub_item.description }}</small>
                                                     {% endif %}
                                                 </div>
                                             </div>
                                         </div>
+                                        {% endfor %}
                                     </div>
+                                    {% endif %}
                                 </div>
                             </div>
-                            {% endfor %}
                         </div>
-                        {% endif %}
-                    </div>
                     {% endfor %}
+                    </div>
                 {% endif %}
             {% else %}
                 <div class="alert alert-info" role="alert" id="noActivitiesMessage">
@@ -444,6 +432,39 @@
     .parents-gift-card .form-check {
         min-height: unset;
     }
+
+    /* Activity Grid Card Styling */
+    .activity-grid-card {
+        transition: all 0.3s ease;
+        border: 1px solid #e0e0e0;
+    }
+
+    .activity-grid-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15) !important;
+    }
+
+    .sub-items-list {
+        max-height: 250px;
+        overflow-y: auto;
+    }
+
+    .sub-items-list::-webkit-scrollbar {
+        width: 4px;
+    }
+
+    .sub-items-list::-webkit-scrollbar-track {
+        background: #f1f1f1;
+    }
+
+    .sub-items-list::-webkit-scrollbar-thumb {
+        background: #888;
+        border-radius: 2px;
+    }
+
+    .sub-items-list::-webkit-scrollbar-thumb:hover {
+        background: #555;
+    }
 </style>
 {% endblock %}
 
@@ -502,80 +523,62 @@
             return;
         }
 
-        let html = '';
+        let html = '<div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-3">';
+
         activities.forEach(activity => {
             const hasImage = activity.image_filename ? true : false;
 
-            // Category container
-            html += `<div class="mb-4 activity-category activity-card" data-level-min="${activity.slider_level_min}" data-level-max="${activity.slider_level_max}" style="animation: fadeIn 0.5s ease-in;">`;
-
-            // Category Header
-            if (hasImage) {
-                html += `
-                    <div class="card mb-3 shadow-sm category-header-card">
-                        <div class="position-relative" style="height: 300px; overflow: hidden;">
+            html += `
+                <div class="col activity-card" data-level-min="${activity.slider_level_min}" data-level-max="${activity.slider_level_max}" style="animation: fadeIn 0.5s ease-in;">
+                    <div class="card h-100 shadow-sm activity-grid-card" onclick="toggleActivityDetails(this)" style="cursor: pointer;">
+                        ${hasImage ? `
+                        <div class="position-relative">
                             <img src="${activity.image_filename.startsWith('http') ? activity.image_filename : '/static/images/' + activity.image_filename}"
-                                 class="w-100 h-100"
+                                 class="card-img-top"
                                  alt="${escapeHtml(activity.title)}"
-                                 style="object-fit: cover; object-position: center;">
-                            <div class="position-absolute bottom-0 start-0 w-100 p-4" style="background: linear-gradient(to top, rgba(0,0,0,0.8), transparent);">
-                                <h4 class="text-white mb-2">${escapeHtml(activity.title)}</h4>
-                                ${activity.description ? `<p class="text-white mb-0 small">${escapeHtml(activity.description)}</p>` : ''}
-                                <span class="badge bg-primary mt-2">Level ${activity.slider_level_min}-${activity.slider_level_max}</span>
-                            </div>
+                                 style="height: 180px; object-fit: cover;">
+                            <span class="badge bg-primary position-absolute top-0 end-0 m-2" style="font-size: 0.7rem;">Level ${activity.slider_level_min}-${activity.slider_level_max}</span>
                         </div>
-                    </div>
-                `;
-            } else {
-                html += `
-                    <div class="card mb-3 shadow-sm">
+                        ` : ''}
                         <div class="card-body">
-                            <div class="d-flex justify-content-between align-items-center">
-                                <h5 class="mb-2">${escapeHtml(activity.title)}</h5>
-                                <span class="badge bg-primary">Level ${activity.slider_level_min}-${activity.slider_level_max}</span>
+                            <div class="d-flex justify-content-between align-items-start">
+                                <h6 class="card-title mb-2">${escapeHtml(activity.title)}</h6>
+                                <i class="bi bi-chevron-down expand-icon" style="transition: transform 0.3s;"></i>
                             </div>
-                            ${activity.description ? `<p class="card-text text-muted mb-0">${escapeHtml(activity.description)}</p>` : ''}
-                        </div>
-                    </div>
-                `;
-            }
 
-            // Sub-items
-            if (activity.sub_items && activity.sub_items.length > 0) {
-                html += `<div class="sub-items-container">`;
-                activity.sub_items.forEach(subItem => {
-                    const hasSubImage = subItem.image_filename ? true : false;
-                    html += `
-                        <div class="card mb-3 sub-item-card shadow-sm">
-                            <div class="row g-0">
-                                ${hasSubImage ? `
-                                <div class="col-md-3">
-                                    <img src="${subItem.image_filename.startsWith('http') ? subItem.image_filename : '/static/images/' + subItem.image_filename}"
-                                         class="img-fluid rounded-start h-100"
-                                         alt="${escapeHtml(subItem.title)}"
-                                         style="object-fit: cover; min-height: 120px;">
-                                </div>
-                                ` : ''}
-                                <div class="${hasSubImage ? 'col-md-9' : 'col-md-12'}">
-                                    <div class="card-body py-2 px-3">
-                                        <div class="d-flex justify-content-between align-items-start">
-                                            <div>
-                                                <strong>${escapeHtml(subItem.title)}</strong>
-                                                ${subItem.description ? `<br><small class="text-muted">${escapeHtml(subItem.description)}</small>` : ''}
+                            ${activity.description ? `<p class="card-text small text-muted mb-3" style="font-size: 0.8rem; line-height: 1.4;">${escapeHtml(activity.description)}</p>` : ''}
+
+                            ${activity.sub_items && activity.sub_items.length > 0 ? `
+                            <div class="sub-items-list">
+                                <strong class="small d-block mb-2">Enthält:</strong>
+                                ${activity.sub_items.map(subItem => {
+                                    return `
+                                    <div class="d-flex align-items-start gap-2 mb-2">
+                                        ${subItem.image_filename ? `
+                                        <img src="${subItem.image_filename.startsWith('http') ? subItem.image_filename : '/static/images/' + subItem.image_filename}"
+                                             alt="${escapeHtml(subItem.title)}"
+                                             style="width: 40px; height: 40px; object-fit: cover; border-radius: 4px; flex-shrink: 0;">
+                                        ` : ''}
+                                        <div class="flex-grow-1">
+                                            <div class="d-flex align-items-center gap-2">
+                                                <small class="fw-bold" style="font-size: 0.85rem;">${escapeHtml(subItem.title)}</small>
+                                                ${subItem.from_parents ? `<span style="font-size: 0.9rem;">🎁👴👵</span>` : ''}
+                                            </div>
+                                            <div class="sub-item-description" style="display: none;">
+                                                ${subItem.description ? `<small class="text-muted" style="font-size: 0.75rem;">${escapeHtml(subItem.description)}</small>` : ''}
                                             </div>
                                         </div>
                                     </div>
-                                </div>
+                                `}).join('')}
                             </div>
+                            ` : ''}
                         </div>
-                    `;
-                });
-                html += `</div>`;
-            }
-
-            html += `</div>`; // Close category container
+                    </div>
+                </div>
+            `;
         });
 
+        html += '</div>';
         activitiesContainer.innerHTML = html;
     }
 
@@ -817,6 +820,31 @@
             "'": '&#039;'
         };
         return text.replace(/[&<>"']/g, m => map[m]);
+    }
+
+    // Toggle activity details expansion/collapse
+    function toggleActivityDetails(cardElement) {
+        const subItemDescriptions = cardElement.querySelectorAll('.sub-item-description');
+        const icon = cardElement.querySelector('.expand-icon');
+
+        if (!icon) return;
+
+        // Check if currently expanded
+        const isExpanded = subItemDescriptions.length > 0 && subItemDescriptions[0].style.display !== 'none';
+
+        if (isExpanded) {
+            // Collapse - hide all sub-item descriptions
+            subItemDescriptions.forEach(desc => {
+                desc.style.display = 'none';
+            });
+            icon.style.transform = 'rotate(0deg)';
+        } else {
+            // Expand - show all sub-item descriptions
+            subItemDescriptions.forEach(desc => {
+                desc.style.display = 'block';
+            });
+            icon.style.transform = 'rotate(180deg)';
+        }
     }
 </script>
 {% endblock %}
