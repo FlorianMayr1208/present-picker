@@ -21,7 +21,7 @@
       {
         "id": "1b",
         "title": "Unterkunft in Marrakesch",
-        "description": "INSERT DESCRIPTION HERE",
+        "description": "Ein gemütliches Bett wo man Bauch und Geist ausruhen kann nach einem anstregenden Tag :)",
         "points": 0,
         "default_selected": true,
         "mandatory": true,
@@ -32,7 +32,7 @@
       {
         "id": "1c",
         "title": "Verpflegung",
-        "description": "",
+        "description": "Essen und sonstige Verpflegung für 2 Hobbits.",
         "points": 0,
         "default_selected": true,
         "mandatory": true,
@@ -81,7 +81,7 @@
         "mandatory": false,
         "from_parents": false,
         "is_spontaneous": false,
-        "image_filename": "https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?w=600"
+        "image_filename": "activities/mar_kochkurs.jpg"
       }
     ]
   },
@@ -741,14 +741,27 @@
     "sub_items": [
       {
         "id": "24a",
-        "title": "Flug, Auto und Quartier in Valencia",
-        "description": "Die essentiellen Reisevorbereitungen: Flug nach Valencia buchen, Mietwagen organisieren und Unterkunft reservieren.",
+        "title": "Flug und Quartier in Valencia",
+        "description": "Die essentiellen Reisevorbereitungen: Flug nach Valencia buchen und Unterkunft reservieren.",
         "points": 0,
         "default_selected": true,
         "mandatory": false,
         "from_parents": false,
         "is_spontaneous": false,
         "image_filename": "https://images.unsplash.com/photo-1436491865332-7a61a109cc05?w=800",
+        "slider_level_min": 0,
+        "slider_level_max": 5
+      },
+      {
+        "id": "24b",
+        "title": "Mietwagen in Valencia",
+        "description": "Mietwagen für die gesamte Reisedauer - ermöglicht flexible Ausflüge in die Umgebung.",
+        "points": 0,
+        "default_selected": true,
+        "mandatory": true,
+        "from_parents": true,
+        "is_spontaneous": false,
+        "image_filename": "https://images.unsplash.com/photo-1449965408869-eaa3f722e40d?w=800",
         "slider_level_min": 0,
         "slider_level_max": 5
       }
