@@ -58,8 +58,15 @@ def get_destination_by_id(dest_id):
     return None
 
 
-def get_activities_by_destination(dest_id, slider_value=None):
-    """Hole Aktivitäten für eine Destination, optional gefiltert nach Slider-Level"""
+def get_activities_by_destination(dest_id, slider_value=None, filter_gifts=True):
+    """Hole Aktivitäten für eine Destination, optional gefiltert nach Slider-Level
+
+    Args:
+        dest_id: Destination ID
+        slider_value: Slider level (None for checkbox mode)
+        filter_gifts: If True, filter out from_parents/from_friends items (checkbox mode).
+                     If False, keep them visible with icons (slider mode).
+    """
     activities = load_activities()
     filtered = [a for a in activities if a['destination_id'] == dest_id]
 
@@ -80,13 +87,15 @@ def get_activities_by_destination(dest_id, slider_value=None):
                     and sub['slider_level_min'] <= slider_value <= sub['slider_level_max']
                 ]
 
-    # Filter out sub-items with from_parents=true or from_friends=true (they should only appear in special gift sections)
-    for activity in filtered:
-        if 'sub_items' in activity and activity['sub_items']:
-            activity['sub_items'] = [
-                sub for sub in activity['sub_items']
-                if not sub.get('from_parents', False) and not sub.get('from_friends', False)
-            ]
+    # Filter out sub-items with from_parents=true or from_friends=true
+    # (only in checkbox mode, not in slider mode)
+    if filter_gifts:
+        for activity in filtered:
+            if 'sub_items' in activity and activity['sub_items']:
+                activity['sub_items'] = [
+                    sub for sub in activity['sub_items']
+                    if not sub.get('from_parents', False) and not sub.get('from_friends', False)
+                ]
 
     # Remove activities with no sub-items (empty categories)
     filtered = [a for a in filtered if a.get('sub_items')]
@@ -159,12 +168,12 @@ def show_destination(id):
     selection_mode = destination.get('selection_mode', 'slider')
 
     if selection_mode == 'checkboxes':
-        # Checkbox-Modus: Alle Aktivitäten laden
-        activities = get_activities_by_destination(id, slider_value=None)
+        # Checkbox-Modus: Alle Aktivitäten laden, Geschenke filtern
+        activities = get_activities_by_destination(id, slider_value=None, filter_gifts=True)
     else:
-        # Slider-Modus: Aktivitäten nach Slider-Level filtern
+        # Slider-Modus: Aktivitäten nach Slider-Level filtern, Geschenke NICHT filtern (nur visuell markieren)
         slider_value = request.args.get('slider', 0, type=int)
-        activities = get_activities_by_destination(id, slider_value)
+        activities = get_activities_by_destination(id, slider_value, filter_gifts=False)
 
     # Hole Eltern-Aktivitäten und Freunde-Aktivitäten
     parents_activities = get_parents_activities_by_destination(id)
@@ -192,7 +201,9 @@ def api_get_activities(id):
     if not destination:
         return jsonify({'error': 'Destination not found'}), 404
 
-    activities = get_activities_by_destination(id, slider_value)
+    # Für Slider-Modus: filter_gifts=False (Geschenke bleiben sichtbar mit Icon)
+    # Diese API wird nur im Slider-Modus verwendet
+    activities = get_activities_by_destination(id, slider_value, filter_gifts=False)
 
     return jsonify({
         'activities': activities,
