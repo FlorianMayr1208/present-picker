@@ -58,6 +58,7 @@
         "default_selected": false,
         "mandatory": false,
         "from_parents": false,
+        "from_friends": true,
         "is_spontaneous": false,
         "image_filename": "activities/mar_rooftop.jpg"
       },
@@ -393,6 +394,7 @@
         "default_selected": false,
         "mandatory": false,
         "from_parents": false,
+        "from_friends": true,
         "is_spontaneous": false,
         "image_filename": "activities/ist_rooftop.jpg"
       }
@@ -529,6 +531,7 @@
         "default_selected": false,
         "mandatory": false,
         "from_parents": false,
+        "from_friends": true,
         "is_spontaneous": false,
         "image_filename": "activities/spa_aqua_de_vaencia_rooftop.png",
         "slider_level_min": 3,

@@ -80,12 +80,12 @@ def get_activities_by_destination(dest_id, slider_value=None):
                     and sub['slider_level_min'] <= slider_value <= sub['slider_level_max']
                 ]
 
-    # Filter out sub-items with from_parents=true (they should only appear in Parents' Gift section)
+    # Filter out sub-items with from_parents=true or from_friends=true (they should only appear in special gift sections)
     for activity in filtered:
         if 'sub_items' in activity and activity['sub_items']:
             activity['sub_items'] = [
                 sub for sub in activity['sub_items']
-                if not sub.get('from_parents', False)
+                if not sub.get('from_parents', False) and not sub.get('from_friends', False)
             ]
 
     # Remove activities with no sub-items (empty categories)
@@ -121,6 +121,26 @@ def get_parents_activities_by_destination(dest_id):
     return parents_activities
 
 
+def get_friends_activities_by_destination(dest_id):
+    """Hole alle Aktivitäten, die von Freunden übernommen werden"""
+    activities = load_activities()
+    all_activities = [a for a in activities if a['destination_id'] == dest_id]
+
+    friends_activities = []
+
+    for activity in all_activities:
+        if 'sub_items' in activity and activity['sub_items']:
+            for sub_item in activity['sub_items']:
+                if sub_item.get('from_friends', False):
+                    friends_activities.append({
+                        'activity_id': activity['id'],
+                        'activity_title': activity['title'],
+                        'sub_item': sub_item
+                    })
+
+    return friends_activities
+
+
 @app.route('/')
 def index():
     """Startseite mit allen Destinationen"""
@@ -146,8 +166,9 @@ def show_destination(id):
         slider_value = request.args.get('slider', 0, type=int)
         activities = get_activities_by_destination(id, slider_value)
 
-    # Hole Eltern-Aktivitäten
+    # Hole Eltern-Aktivitäten und Freunde-Aktivitäten
     parents_activities = get_parents_activities_by_destination(id)
+    friends_activities = get_friends_activities_by_destination(id)
 
     return render_template(
         'destination.html',
@@ -157,7 +178,8 @@ def show_destination(id):
         slider_max=app.config['SLIDER_MAX'],
         selection_mode=selection_mode,
         points_budget=destination.get('points_budget', 0),
-        parents_activities=parents_activities
+        parents_activities=parents_activities,
+        friends_activities=friends_activities
     )
 
 

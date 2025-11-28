@@ -151,6 +151,64 @@
 </div>
 {% endif %}
 
+<!-- Friends' Gift Section -->
+{% if friends_activities and friends_activities|length > 0 and selection_mode == 'checkboxes' %}
+<div class="row mb-5">
+    <div class="col">
+        <div class="card shadow-sm border-0" style="background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);">
+            <div class="card-body text-white text-center">
+                <h4 class="mb-2" style="font-size: 2.5rem;">🎁 👫</h4>
+                <p class="mb-0 small">Wähle 1 von {{ friends_activities|length }} Aktivitäten</p>
+            </div>
+        </div>
+
+        <div class="mt-3">
+            {% for item in friends_activities %}
+            <div class="card mb-3 shadow-sm friends-gift-card">
+                <div class="row g-0">
+                    {% if item.sub_item.image_filename %}
+                    <div class="col-md-3">
+                        <img src="{% if item.sub_item.image_filename.startswith('http') %}{{ item.sub_item.image_filename }}{% else %}{{ url_for('static', filename='images/' + item.sub_item.image_filename) }}{% endif %}"
+                             class="img-fluid rounded-start h-100"
+                             alt="{{ item.sub_item.title }}"
+                             style="object-fit: cover; min-height: 180px;">
+                    </div>
+                    {% endif %}
+                    <div class="{% if item.sub_item.image_filename %}col-md-9{% else %}col-md-12{% endif %}">
+                        <div class="card-body">
+                            <div class="form-check d-flex align-items-start gap-3">
+                                <input class="form-check-input friends-gift-radio flex-shrink-0 mt-1"
+                                       type="radio"
+                                       name="friends_gift"
+                                       id="friends-{{ item.sub_item.id }}"
+                                       data-friend-id="{{ item.activity_id }}"
+                                       data-sub-id="{{ item.sub_item.id }}"
+                                       data-points="{{ item.sub_item.points|default(0) }}">
+                                <label class="form-check-label flex-grow-1" for="friends-{{ item.sub_item.id }}">
+                                    <div class="d-flex justify-content-between align-items-start">
+                                        <div>
+                                            <strong>{{ item.sub_item.title }}</strong>
+                                            <br><small class="text-muted">{{ item.activity_title }}</small>
+                                            {% if item.sub_item.description %}
+                                            <br><small class="text-muted">{{ item.sub_item.description }}</small>
+                                            {% endif %}
+                                        </div>
+                                        <span class="badge bg-gradient flex-shrink-0 ms-2" style="background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%); font-size: 1.2rem;">
+                                            🎁👫
+                                        </span>
+                                    </div>
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</div>
+{% endif %}
+
 <!-- Activities Section -->
 <div class="row">
     <div class="col">
@@ -419,17 +477,20 @@
         box-shadow: 0 8px 16px rgba(102, 126, 234, 0.3) !important;
     }
 
-    .parents-gift-radio {
+    .parents-gift-radio,
+    .friends-gift-radio {
         width: 1.8em;
         height: 1.8em;
         cursor: pointer;
     }
 
-    .parents-gift-radio:checked + label {
+    .parents-gift-radio:checked + label,
+    .friends-gift-radio:checked + label {
         font-weight: 600;
     }
 
-    .parents-gift-card .form-check {
+    .parents-gift-card .form-check,
+    .friends-gift-card .form-check {
         min-height: unset;
     }
 
@@ -612,6 +673,19 @@
                 totalPoints += points;
             }
         });
+
+        // Add parents' gift points if selected
+        const parentsGiftRadio = document.querySelector('.parents-gift-radio:checked');
+        if (parentsGiftRadio) {
+            totalPoints += parseInt(parentsGiftRadio.dataset.points) || 0;
+        }
+
+        // Add friends' gift points if selected
+        const friendsGiftRadio = document.querySelector('.friends-gift-radio:checked');
+        if (friendsGiftRadio) {
+            totalPoints += parseInt(friendsGiftRadio.dataset.points) || 0;
+        }
+
         return totalPoints;
     }
 
@@ -741,6 +815,13 @@
         // TODO: Save to session/cookie or API
     }
 
+    // Gift radio button change handlers
+    document.querySelectorAll('.parents-gift-radio, .friends-gift-radio').forEach(radio => {
+        radio.addEventListener('change', function() {
+            updatePointsDisplay();
+        });
+    });
+
     // Initialize points display on page load
     updatePointsDisplay();
 
@@ -771,6 +852,17 @@
                 sub_id: parentsGiftRadio.dataset.subId,
                 points: parseInt(parentsGiftRadio.dataset.points) || 0,
                 from_parents: true
+            });
+        }
+
+        // Add friends' gift selection if any
+        const friendsGiftRadio = document.querySelector('.friends-gift-radio:checked');
+        if (friendsGiftRadio) {
+            selectedItems.push({
+                activity_id: friendsGiftRadio.dataset.friendId,
+                sub_id: friendsGiftRadio.dataset.subId,
+                points: parseInt(friendsGiftRadio.dataset.points) || 0,
+                from_friends: true
             });
         }
 
