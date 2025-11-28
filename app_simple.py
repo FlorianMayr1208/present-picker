@@ -88,6 +88,9 @@ def get_activities_by_destination(dest_id, slider_value=None):
                 if not sub.get('from_parents', False)
             ]
 
+    # Remove activities with no sub-items (empty categories)
+    filtered = [a for a in filtered if a.get('sub_items')]
+
     # Sortiere nach min level (nur für Slider-Aktivitäten)
     # Für Checkbox-Aktivitäten behalte die ID-Reihenfolge
     if filtered and 'slider_level_min' in filtered[0]:

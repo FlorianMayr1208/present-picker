@@ -283,7 +283,7 @@
         "points": 12,
         "default_selected": false,
         "mandatory": false,
-        "from_parents": false,
+        "from_parents": true,
         "is_spontaneous": false,
         "image_filename": "activities/ist_topkapi_palast.jpg"
       },
@@ -377,7 +377,7 @@
       {
         "id": "12c",
         "title": "Bosporus-Dinner-Cruise",
-        "description": "Ein Abend auf dem Wasser mit Dinner, Musik und Blick auf die beleuchtete Stadt: Brücken, Moscheen und Bosporus-Ufer im Schein der Lichter - sehr stimmungsreich.",
+        "description": "Ein Abend auf dem Wasser mit Dinner, Musik und Blick auf die beleuchtete Stadt: Brücken, Moscheen und Bosporus-Ufer im Schein der Lichter.",
         "points": 35,
         "default_selected": false,
         "mandatory": false,
@@ -408,8 +408,8 @@
     "sub_items": [
       {
         "id": "13a",
-        "title": "Prinzeninseln (Adalar)",
-        "description": "Nur mit Fahrrad oder zu Fuß - keine Autos: Diese Inselgruppe vor Istanbul bietet Ruhe, Natur und charmante Holzhäuser. Ein schöner Kontrast zum Stadt-Trubel.",
+        "title": "Ein Tag auf den Prinzeninseln (Adalar)",
+        "description": "Nur mit Fahrrad oder zu Fuß - keine Autos: Diese Inselgruppe vor Istanbul bietet Ruhe, Natur und charmante Holzhäuser. Ein schöner Kontrast zum Stadt-Trubel. Inkludiert sind natürlich auch das ausgiebige Essen.",
         "points": 20,
         "default_selected": false,
         "mandatory": false,
