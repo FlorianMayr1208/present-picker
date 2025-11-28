@@ -664,7 +664,7 @@
     // Find spontaneous checkbox
     const spontaneousCheckbox = document.querySelector('.sub-item-checkbox[data-spontaneous="true"]');
 
-    // Calculate current points (excluding spontaneous option)
+    // Calculate current points (excluding spontaneous option and gift items)
     function calculatePoints() {
         let totalPoints = 0;
         subCheckboxes.forEach(checkbox => {
@@ -674,17 +674,8 @@
             }
         });
 
-        // Add parents' gift points if selected
-        const parentsGiftRadio = document.querySelector('.parents-gift-radio:checked');
-        if (parentsGiftRadio) {
-            totalPoints += parseInt(parentsGiftRadio.dataset.points) || 0;
-        }
-
-        // Add friends' gift points if selected
-        const friendsGiftRadio = document.querySelector('.friends-gift-radio:checked');
-        if (friendsGiftRadio) {
-            totalPoints += parseInt(friendsGiftRadio.dataset.points) || 0;
-        }
+        // Note: Parents' and friends' gift items do NOT count towards the points budget
+        // They are separate selections that don't cost points
 
         return totalPoints;
     }
