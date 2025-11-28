@@ -74,7 +74,7 @@
       },
       {
         "id": "2c",
-        "title": "MAYBE KOCHKURS??",
+        "title": "Kochkurs - Marokkanische Küche",
         "description": "Lerne die Marokkanische Küche mit ihren Gerichten und Traditionen kennen. Kochkurs mit einem professionellen Koch",
         "points": 18,
         "default_selected": false,
@@ -90,7 +90,7 @@
     "destination_id": 1,
     "title": "Kultur & Must-Sees",
     "description": "Historische und kulturelle Highlights",
-    "image_filename": "https://images.unsplash.com/photo-1513415756775-62b3a2758b61?w=800",
+    "image_filename": "activities/mar_must_sees.jpg",
     "default_selected": false,
     "sub_items": [
       {
@@ -182,8 +182,8 @@
       },
       {
         "id": "4c",
-        "title": "Atlasgebirge (Imlil, Ourika-Tal, Berberdörfer)",
-        "description": "Entdecke Berberdörfer und atemberaubende Landschaften auf einer ganztägigen Wanderung im Hohen Atlas. Wandere durch das Imlil-Tal und genieße ein Mittagessen in einem traditionellen Berberhaus.",
+        "title": "Ausflug in das Atlasgebirge und Hinterland (Imlil, Ourika-Tal, Berberdörfer, Aït Benhaddou)",
+        "description": "Entdecke Berberdörfer und atemberaubende Landschaften im Hohen Atlas. Wandere durch das Imlil-Tal und genieße ein Mittagessen in einem traditionellen Berberhaus. Besichtige UNESCO-Welterbestätten und die Kulissen vieler Filme",
         "points": 30,
         "default_selected": false,
         "mandatory": false,
@@ -582,7 +582,7 @@
     "destination_id": 3,
     "title": "Kultur & Must-Sees",
     "description": "Historische Schätze und moderne Architektur",
-    "image_filename": "https://images.unsplash.com/photo-1581619420351-e5e6e8715785?w=800",
+    "image_filename": "https://images.unsplash.com/photo-1559827260-dc66d52bef19?w=800",
     "default_selected": false,
     "sub_items": [
       {

@@ -80,6 +80,14 @@ def get_activities_by_destination(dest_id, slider_value=None):
                     and sub['slider_level_min'] <= slider_value <= sub['slider_level_max']
                 ]
 
+    # Filter out sub-items with from_parents=true (they should only appear in Parents' Gift section)
+    for activity in filtered:
+        if 'sub_items' in activity and activity['sub_items']:
+            activity['sub_items'] = [
+                sub for sub in activity['sub_items']
+                if not sub.get('from_parents', False)
+            ]
+
     # Sortiere nach min level (nur für Slider-Aktivitäten)
     # Für Checkbox-Aktivitäten behalte die ID-Reihenfolge
     if filtered and 'slider_level_min' in filtered[0]:
