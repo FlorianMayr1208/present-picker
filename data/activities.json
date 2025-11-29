@@ -770,8 +770,8 @@
       },
       {
         "id": "24c",
-        "title": "Cocktail trinken mit Lolo als Sponsor",
-        "description": "Wir haben einen Sponsor gefunden, der uns einen Cocktail auf unserer Reise finanzieren möchte. Wäre ja eigentlich schon fast unhöflich, dem nicht nachzukommen ;)",
+        "title": "Cocktail trinken mit Sponsor",
+        "description": "Wir haben einen Sponsor gefunden (Lolo), der uns einen Cocktail auf unserer Reise finanzieren möchte. Wäre ja eigentlich schon fast unhöflich, dem nicht nachzukommen ;)",
         "points": 0,
         "default_selected": true,
         "mandatory": true,

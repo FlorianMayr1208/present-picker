@@ -117,7 +117,7 @@
                     </div>
                     {% endif %}
                     <div class="{% if item.sub_item.image_filename %}col-md-9{% else %}col-md-12{% endif %}">
-                        <div class="card-body">
+                        <div class="card-body py-3 px-4">
                             <div class="form-check d-flex align-items-start gap-3">
                                 <input class="form-check-input parents-gift-radio flex-shrink-0 mt-1"
                                        type="radio"
@@ -131,7 +131,7 @@
                                         <div>
                                             <strong>{{ item.sub_item.title }}</strong>
                                             {% if item.sub_item.description %}
-                                            <br><small class="text-muted">{{ item.sub_item.description }}</small>
+                                            <br><small class="text-muted" style="line-height: 1.6;">{{ item.sub_item.description }}</small>
                                             {% endif %}
                                         </div>
                                         <span class="badge bg-gradient flex-shrink-0 ms-2" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); font-size: 1.2rem;">
@@ -156,7 +156,9 @@
     <div class="col">
         <div class="card shadow-sm border-0" style="background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);">
             <div class="card-body text-white text-center">
-                <h4 class="mb-2" style="font-size: 2.5rem;">🎁 👫</h4>
+                <h4 class="mb-2" style="font-size: 2.5rem;">
+                    <img src="{{ url_for('static', filename='assets/lolo.png') }}" alt="Geschenk von Freunden" style="width: 60px; height: 60px; object-fit: contain; vertical-align: middle;">
+                </h4>
                 <p class="mb-0 small">Wähle 1 von {{ friends_activities|length }} Aktivitäten</p>
             </div>
         </div>
@@ -174,7 +176,7 @@
                     </div>
                     {% endif %}
                     <div class="{% if item.sub_item.image_filename %}col-md-9{% else %}col-md-12{% endif %}">
-                        <div class="card-body">
+                        <div class="card-body py-3 px-4">
                             <div class="form-check d-flex align-items-start gap-3">
                                 <input class="form-check-input friends-gift-radio flex-shrink-0 mt-1"
                                        type="radio"
@@ -188,12 +190,10 @@
                                         <div>
                                             <strong>{{ item.sub_item.title }}</strong>
                                             {% if item.sub_item.description %}
-                                            <br><small class="text-muted">{{ item.sub_item.description }}</small>
+                                            <br><small class="text-muted" style="line-height: 1.6;">{{ item.sub_item.description }}</small>
                                             {% endif %}
                                         </div>
-                                        <span class="badge bg-gradient flex-shrink-0 ms-2" style="background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%); font-size: 1.2rem;">
-                                            🎁👫
-                                        </span>
+                                        <img src="{{ url_for('static', filename='assets/lolo.png') }}" alt="Geschenk von Freunden" class="flex-shrink-0 ms-2" style="width: 50px; height: 50px; object-fit: contain;">
                                     </div>
                                 </label>
                             </div>
@@ -237,10 +237,10 @@
                         {% else %}
                         <!-- Category Header without Image -->
                         <div class="card mb-3 shadow-sm">
-                            <div class="card-body">
+                            <div class="card-body p-4">
                                 <h5 class="mb-2">{{ activity.title }}</h5>
                                 {% if activity.description %}
-                                <p class="card-text text-muted mb-0">{{ activity.description }}</p>
+                                <p class="card-text text-muted mb-0" style="line-height: 1.6;">{{ activity.description }}</p>
                                 {% endif %}
                             </div>
                         </div>
@@ -261,7 +261,7 @@
                                     </div>
                                     {% endif %}
                                     <div class="{% if sub_item.image_filename %}col-md-9{% else %}col-md-12{% endif %}">
-                                        <div class="card-body py-2 px-3">
+                                        <div class="card-body py-3 px-4">
                                             <div class="form-check">
                                                 <input class="form-check-input sub-item-checkbox"
                                                        type="checkbox"
@@ -277,7 +277,7 @@
                                                         <div>
                                                             <strong>{{ sub_item.title }}</strong>
                                                             {% if sub_item.description %}
-                                                            <br><small class="text-muted">{{ sub_item.description }}</small>
+                                                            <br><small class="text-muted" style="line-height: 1.6;">{{ sub_item.description }}</small>
                                                             {% endif %}
                                                         </div>
                                                         <span class="badge {% if sub_item.is_spontaneous %}bg-info{% else %}bg-secondary{% endif %} ms-2 points-badge" id="badge-sub-{{ sub_item.id }}">
@@ -300,35 +300,35 @@
                     <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-3">
                     {% for activity in activities %}
                         <div class="col activity-card" data-level-min="{{ activity.slider_level_min }}" data-level-max="{{ activity.slider_level_max }}">
-                            <div class="card h-100 shadow-sm activity-grid-card" onclick="toggleActivityDetails(this)" style="cursor: pointer;">
+                            <div class="card h-100 shadow-sm activity-grid-card">
                                 {% if activity.image_filename %}
-                                <div class="position-relative">
+                                <div class="slider-image-container">
                                     <img src="{% if activity.image_filename.startswith('http') %}{{ activity.image_filename }}{% else %}{{ url_for('static', filename='images/' + activity.image_filename) }}{% endif %}"
                                          class="card-img-top"
                                          alt="{{ activity.title }}"
                                          style="height: 180px; object-fit: cover;">
-                                    <span class="badge bg-primary position-absolute top-0 end-0 m-2" style="font-size: 0.7rem;">Level {{ activity.slider_level_min }}-{{ activity.slider_level_max }}</span>
+                                    <span class="badge bg-primary position-absolute top-0 end-0 m-2" style="font-size: 0.7rem; z-index: 10;">Level {{ activity.slider_level_min }}-{{ activity.slider_level_max }}</span>
                                 </div>
                                 {% endif %}
-                                <div class="card-body">
+                                <div class="card-body p-4">
                                     <div class="d-flex justify-content-between align-items-start">
                                         <h6 class="card-title mb-2">{{ activity.title }}</h6>
-                                        <i class="bi bi-chevron-down expand-icon" style="transition: transform 0.3s;"></i>
                                     </div>
 
                                     {% if activity.description %}
-                                    <p class="card-text small text-muted mb-3" style="font-size: 0.8rem; line-height: 1.4;">{{ activity.description }}</p>
+                                    <p class="card-text small text-muted mb-3" style="font-size: 0.8rem; line-height: 1.6;">{{ activity.description }}</p>
                                     {% endif %}
 
                                     {% if activity.sub_items %}
                                     <div class="sub-items-list">
-                                        <strong class="small d-block mb-2">Enthält:</strong>
                                         {% for sub_item in activity.sub_items %}
-                                        <div class="d-flex align-items-start gap-2 mb-2">
+                                        <div class="sub-item-row d-flex align-items-start gap-2 mb-2" onclick="toggleSubItemDescription(this)" style="cursor: pointer;">
                                             {% if sub_item.image_filename %}
                                             <img src="{% if sub_item.image_filename.startswith('http') %}{{ sub_item.image_filename }}{% else %}{{ url_for('static', filename='images/' + sub_item.image_filename) }}{% endif %}"
                                                  alt="{{ sub_item.title }}"
-                                                 style="width: 40px; height: 40px; object-fit: cover; border-radius: 4px; flex-shrink: 0;">
+                                                 class="sub-item-image-zoom"
+                                                 onclick="openImageModal('{% if sub_item.image_filename.startswith('http') %}{{ sub_item.image_filename }}{% else %}{{ url_for('static', filename='images/' + sub_item.image_filename) }}{% endif %}', event)"
+                                                 style="width: 40px; height: 40px; object-fit: cover; flex-shrink: 0;">
                                             {% endif %}
                                             <div class="flex-grow-1">
                                                 <div class="d-flex align-items-center gap-2">
@@ -336,10 +336,14 @@
                                                     {% if sub_item.from_parents %}
                                                     <span style="font-size: 0.9rem;">🎁👴👵</span>
                                                     {% endif %}
+                                                    {% if sub_item.from_friends %}
+                                                    <img src="{{ url_for('static', filename='assets/lolo.png') }}" alt="Geschenk von Freunden" style="width: 30px; height: 30px; object-fit: contain;">
+                                                    {% endif %}
+                                                    <i class="bi bi-chevron-down sub-item-icon" style="font-size: 0.75rem; transition: transform 0.3s; margin-left: auto;"></i>
                                                 </div>
-                                                <div class="sub-item-description" style="display: none;">
+                                                <div class="sub-item-description" style="display: none; margin-top: 0.5rem;">
                                                     {% if sub_item.description %}
-                                                    <small class="text-muted" style="font-size: 0.75rem;">{{ sub_item.description }}</small>
+                                                    <small class="text-muted" style="font-size: 0.75rem; line-height: 1.6;">{{ sub_item.description }}</small>
                                                     {% endif %}
                                                 </div>
                                             </div>
@@ -360,6 +364,12 @@
             {% endif %}
         </div>
     </div>
+</div>
+
+<!-- Image Modal for Slider Mode -->
+<div id="imageModal" class="image-modal" onclick="closeImageModal()">
+    <span class="image-modal-close" onclick="closeImageModal()">&times;</span>
+    <img id="modalImage" src="" alt="Vergrößerte Ansicht">
 </div>
 {% endblock %}
 
@@ -494,13 +504,89 @@
 
     /* Activity Grid Card Styling */
     .activity-grid-card {
-        transition: all 0.3s ease;
         border: 1px solid #e0e0e0;
     }
 
+    /* Disable hover effects on activity cards in slider mode */
+    .activity-card:hover {
+        transform: none !important;
+        box-shadow: none !important;
+    }
+
     .activity-grid-card:hover {
-        transform: translateY(-5px);
-        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15) !important;
+        transform: none !important;
+        box-shadow: 0 .125rem .25rem rgba(0,0,0,.075) !important;
+    }
+
+    /* Category image container for slider mode */
+    .slider-image-container {
+        position: relative;
+        overflow: hidden;
+    }
+
+    /* Sub-item image zoom in slider mode */
+    .sub-item-image-zoom {
+        cursor: zoom-in;
+        transition: transform 0.2s ease, box-shadow 0.2s ease;
+        border-radius: 4px;
+    }
+
+    .sub-item-image-zoom:hover {
+        transform: scale(1.1);
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    }
+
+    /* Sub-item row hover effect */
+    .sub-item-row {
+        padding: 0.5rem;
+        border-radius: 4px;
+        transition: background-color 0.2s ease;
+    }
+
+    .sub-item-row:hover {
+        background-color: rgba(0, 0, 0, 0.02);
+    }
+
+    /* Image modal */
+    .image-modal {
+        display: none;
+        position: fixed;
+        z-index: 9999;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.9);
+        cursor: zoom-out;
+    }
+
+    .image-modal.active {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        animation: fadeIn 0.3s ease;
+    }
+
+    .image-modal img {
+        max-width: 90%;
+        max-height: 90%;
+        object-fit: contain;
+        box-shadow: 0 0 50px rgba(0, 0, 0, 0.5);
+    }
+
+    .image-modal-close {
+        position: absolute;
+        top: 20px;
+        right: 40px;
+        color: white;
+        font-size: 40px;
+        font-weight: bold;
+        cursor: pointer;
+        z-index: 10000;
+    }
+
+    .image-modal-close:hover {
+        color: #ccc;
     }
 
     .sub-items-list {
@@ -589,42 +675,44 @@
 
             html += `
                 <div class="col activity-card" data-level-min="${activity.slider_level_min}" data-level-max="${activity.slider_level_max}" style="animation: fadeIn 0.5s ease-in;">
-                    <div class="card h-100 shadow-sm activity-grid-card" onclick="toggleActivityDetails(this)" style="cursor: pointer;">
+                    <div class="card h-100 shadow-sm activity-grid-card">
                         ${hasImage ? `
-                        <div class="position-relative">
+                        <div class="slider-image-container">
                             <img src="${activity.image_filename.startsWith('http') ? activity.image_filename : '/static/images/' + activity.image_filename}"
                                  class="card-img-top"
                                  alt="${escapeHtml(activity.title)}"
                                  style="height: 180px; object-fit: cover;">
-                            <span class="badge bg-primary position-absolute top-0 end-0 m-2" style="font-size: 0.7rem;">Level ${activity.slider_level_min}-${activity.slider_level_max}</span>
+                            <span class="badge bg-primary position-absolute top-0 end-0 m-2" style="font-size: 0.7rem; z-index: 10;">Level ${activity.slider_level_min}-${activity.slider_level_max}</span>
                         </div>
                         ` : ''}
-                        <div class="card-body">
+                        <div class="card-body p-4">
                             <div class="d-flex justify-content-between align-items-start">
                                 <h6 class="card-title mb-2">${escapeHtml(activity.title)}</h6>
-                                <i class="bi bi-chevron-down expand-icon" style="transition: transform 0.3s;"></i>
                             </div>
 
-                            ${activity.description ? `<p class="card-text small text-muted mb-3" style="font-size: 0.8rem; line-height: 1.4;">${escapeHtml(activity.description)}</p>` : ''}
+                            ${activity.description ? `<p class="card-text small text-muted mb-3" style="font-size: 0.8rem; line-height: 1.6;">${escapeHtml(activity.description)}</p>` : ''}
 
                             ${activity.sub_items && activity.sub_items.length > 0 ? `
                             <div class="sub-items-list">
-                                <strong class="small d-block mb-2">Enthält:</strong>
                                 ${activity.sub_items.map(subItem => {
                                     return `
-                                    <div class="d-flex align-items-start gap-2 mb-2">
+                                    <div class="sub-item-row d-flex align-items-start gap-2 mb-2" onclick="toggleSubItemDescription(this)" style="cursor: pointer;">
                                         ${subItem.image_filename ? `
                                         <img src="${subItem.image_filename.startsWith('http') ? subItem.image_filename : '/static/images/' + subItem.image_filename}"
                                              alt="${escapeHtml(subItem.title)}"
-                                             style="width: 40px; height: 40px; object-fit: cover; border-radius: 4px; flex-shrink: 0;">
+                                             class="sub-item-image-zoom"
+                                             onclick="openImageModal('${subItem.image_filename.startsWith('http') ? subItem.image_filename : '/static/images/' + subItem.image_filename}', event)"
+                                             style="width: 40px; height: 40px; object-fit: cover; flex-shrink: 0;">
                                         ` : ''}
                                         <div class="flex-grow-1">
                                             <div class="d-flex align-items-center gap-2">
                                                 <small class="fw-bold" style="font-size: 0.85rem;">${escapeHtml(subItem.title)}</small>
                                                 ${subItem.from_parents ? `<span style="font-size: 0.9rem;">🎁👴👵</span>` : ''}
+                                                ${subItem.from_friends ? `<img src="/static/assets/lolo.png" alt="Geschenk von Freunden" style="width: 30px; height: 30px; object-fit: contain;">` : ''}
+                                                <i class="bi bi-chevron-down sub-item-icon" style="font-size: 0.75rem; transition: transform 0.3s; margin-left: auto;"></i>
                                             </div>
-                                            <div class="sub-item-description" style="display: none;">
-                                                ${subItem.description ? `<small class="text-muted" style="font-size: 0.75rem;">${escapeHtml(subItem.description)}</small>` : ''}
+                                            <div class="sub-item-description" style="display: none; margin-top: 0.5rem;">
+                                                ${subItem.description ? `<small class="text-muted" style="font-size: 0.75rem; line-height: 1.6;">${escapeHtml(subItem.description)}</small>` : ''}
                                             </div>
                                         </div>
                                     </div>
@@ -903,29 +991,53 @@
         return text.replace(/[&<>"']/g, m => map[m]);
     }
 
-    // Toggle activity details expansion/collapse
-    function toggleActivityDetails(cardElement) {
-        const subItemDescriptions = cardElement.querySelectorAll('.sub-item-description');
-        const icon = cardElement.querySelector('.expand-icon');
+    // Toggle individual sub-item description expansion/collapse
+    function toggleSubItemDescription(subItemRow) {
+        const description = subItemRow.querySelector('.sub-item-description');
+        const icon = subItemRow.querySelector('.sub-item-icon');
 
-        if (!icon) return;
+        if (!description) return;
 
         // Check if currently expanded
-        const isExpanded = subItemDescriptions.length > 0 && subItemDescriptions[0].style.display !== 'none';
+        const isExpanded = description.style.display === 'block';
 
         if (isExpanded) {
-            // Collapse - hide all sub-item descriptions
-            subItemDescriptions.forEach(desc => {
-                desc.style.display = 'none';
-            });
-            icon.style.transform = 'rotate(0deg)';
+            // Collapse
+            description.style.display = 'none';
+            if (icon) icon.style.transform = 'rotate(0deg)';
         } else {
-            // Expand - show all sub-item descriptions
-            subItemDescriptions.forEach(desc => {
-                desc.style.display = 'block';
-            });
-            icon.style.transform = 'rotate(180deg)';
+            // Expand
+            description.style.display = 'block';
+            if (icon) icon.style.transform = 'rotate(180deg)';
         }
     }
+
+    // Image modal functions
+    function openImageModal(imageSrc, event) {
+        event.stopPropagation(); // Prevent card expansion when clicking image
+        const modal = document.getElementById('imageModal');
+        const modalImg = document.getElementById('modalImage');
+
+        modalImg.src = imageSrc;
+        modal.classList.add('active');
+
+        // Prevent body scroll when modal is open
+        document.body.style.overflow = 'hidden';
+    }
+
+    function closeImageModal() {
+        const modal = document.getElementById('imageModal');
+        modal.classList.remove('active');
+
+        // Re-enable body scroll
+        document.body.style.overflow = 'auto';
+    }
+
+    // Close modal with Escape key
+    document.addEventListener('keydown', function(event) {
+        if (event.key === 'Escape') {
+            closeImageModal();
+        }
+    });
 </script>
 {% endblock %}
