@@ -14,31 +14,32 @@
 <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
     {% for destination in destinations %}
     <div class="col">
-        <div class="card h-100 shadow-sm destination-card">
-            {% if destination.image_cover %}
-            <img src="{% if destination.image_cover.startswith('http') %}{{ destination.image_cover }}{% else %}{{ url_for('static', filename='images/' + destination.image_cover) }}{% endif %}"
-                 class="card-img-top"
-                 alt="{{ destination.name }}"
-                 style="height: 250px; object-fit: cover;">
-            {% else %}
-            <div class="card-img-top bg-secondary d-flex align-items-center justify-content-center"
-                 style="height: 250px;">
-                <span class="text-white fs-1">{{ destination.name[0] }}</span>
-            </div>
-            {% endif %}
-
-            <div class="card-body p-4">
-                <h5 class="card-title">{{ destination.name }}</h5>
-                {% if destination.description_short %}
-                <p class="card-text text-muted" style="line-height: 1.6;">{{ destination.description_short[:100] }}{% if destination.description_short|length > 100 %}...{% endif %}</p>
+        <a href="{{ url_for('show_destination', id=destination.id, slider=0) }}" class="text-decoration-none">
+            <div class="card h-100 shadow-sm destination-card">
+                {% if destination.image_cover %}
+                <img src="{% if destination.image_cover.startswith('http') %}{{ destination.image_cover }}{% else %}{{ url_for('static', filename='images/' + destination.image_cover) }}{% endif %}"
+                     class="card-img-top"
+                     alt="{{ destination.name }}"
+                     style="height: 250px; object-fit: cover;">
+                {% else %}
+                <div class="card-img-top bg-secondary d-flex align-items-center justify-content-center"
+                     style="height: 250px;">
+                    <span class="text-white fs-1">{{ destination.name[0] }}</span>
+                </div>
                 {% endif %}
-            </div>
 
-            <div class="card-footer bg-transparent border-0">
-                <a href="{{ url_for('show_destination', id=destination.id, slider=0) }}"
-                   class="btn btn-primary w-100">Details anzeigen</a>
+                <div class="card-body p-4">
+                    <h5 class="card-title">{{ destination.name }}</h5>
+                    {% if destination.description_short %}
+                    <p class="card-text text-muted" style="line-height: 1.6;">{{ destination.description_short[:100] }}{% if destination.description_short|length > 100 %}...{% endif %}</p>
+                    {% endif %}
+                </div>
+
+                <div class="card-footer bg-transparent border-0">
+                    <span class="btn btn-primary w-100">Details anzeigen</span>
+                </div>
             </div>
-        </div>
+        </a>
     </div>
     {% endfor %}
 </div>
