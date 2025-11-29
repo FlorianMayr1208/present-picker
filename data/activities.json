@@ -469,19 +469,19 @@
     "destination_id": 3,
     "title": "Flexibilität",
     "description": "Nichts geplant außer die Basics",
-    "image_filename": "",
+    "image_filename": "activities/spa_flex.jpg",
     "default_selected": false,
     "sub_items": [
       {
         "id": "19a",
         "title": "Was auch immer uns einfällt",
-        "description": "Nur Quartier in Valencia, den Flug dort hin und ein Auto. Den Rest überlegen wir uns dort ",
+        "description": "Nur den Flug dort hin und ein Auto. Dann schlagen wir für den Anfang unser Hauptquartier in Valencia auf und den Rest überlegen wir uns dort ",
         "points": 100,
         "default_selected": false,
         "mandatory": false,
         "from_parents": false,
         "is_spontaneous": true,
-        "image_filename": "",
+        "image_filename": "activities/spa_flex_small.jpg",
         "slider_level_min": 0,
         "slider_level_max": 0
       }
@@ -758,13 +758,27 @@
       {
         "id": "24b",
         "title": "Mietwagen in Valencia",
-        "description": "Mietwagen für die gesamte Reisedauer - ermöglicht flexible Ausflüge in die Umgebung.",
+        "description": "Mietwagen für unsere Ausflüge oder Weiterreise von Valencia weg.",
         "points": 0,
         "default_selected": true,
         "mandatory": true,
         "from_parents": true,
         "is_spontaneous": false,
         "image_filename": "https://images.unsplash.com/photo-1449965408869-eaa3f722e40d?w=800",
+        "slider_level_min": 0,
+        "slider_level_max": 5
+      },
+      {
+        "id": "24c",
+        "title": "Cocktail trinken mit Lolo als Sponsor",
+        "description": "Wir haben einen Sponsor gefunden, der uns einen Cocktail auf unserer Reise finanzieren möchte. Wäre ja eigentlich schon fast unhöflich, dem nicht nachzukommen ;)",
+        "points": 0,
+        "default_selected": true,
+        "mandatory": true,
+        "from_parents": false,
+        "from_friends": true,
+        "is_spontaneous": false,
+        "image_filename": "activities/spa_cocktail.jpg",
         "slider_level_min": 0,
         "slider_level_max": 5
       }
