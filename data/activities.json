@@ -243,7 +243,7 @@
         "mandatory": false,
         "from_parents": false,
         "is_spontaneous": false,
-        "image_filename": "activities/ist_gewürzbasar.jpg"
+        "image_filename": "activities/ist_gewuerzbasar.jpg"
       },
       {
         "id": "10c",
@@ -254,7 +254,7 @@
         "mandatory": false,
         "from_parents": false,
         "is_spontaneous": false,
-        "image_filename": "activities/ist_frühstück_besiktas.jpg"
+        "image_filename": "activities/ist_fruehstueck_besiktas.jpg"
       }
     ]
   },
@@ -428,7 +428,7 @@
         "mandatory": false,
         "from_parents": false,
         "is_spontaneous": false,
-        "image_filename": "activities/ist_üsküdar_promenade.jpg"
+        "image_filename": "activities/ist_ueskuedar_promenade.jpg"
       },
       {
         "id": "13c",
@@ -439,7 +439,7 @@
         "mandatory": false,
         "from_parents": false,
         "is_spontaneous": false,
-        "image_filename": "activities/ist_ortaköy_moschee.jpg"
+        "image_filename": "activities/ist_ortakoey_moschee.jpg"
       }
     ]
   },
@@ -623,7 +623,7 @@
         "mandatory": false,
         "from_parents": false,
         "is_spontaneous": false,
-        "image_filename": "activities/spa_seidenbörse.webp",
+        "image_filename": "activities/spa_seidenboerse.webp",
         "slider_level_min": 4,
         "slider_level_max": 5
       },
