@@ -369,6 +369,11 @@ footer {
     background-color: rgba(102, 126, 234, 0.05);
 }
 
+.fw-bold {
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
+
+}
 /* Custom scrollbar */
 ::-webkit-scrollbar {
     width: 10px;
@@ -386,3 +391,4 @@ footer {
 ::-webkit-scrollbar-thumb:hover {
     background: var(--primary-dark);
 }
+

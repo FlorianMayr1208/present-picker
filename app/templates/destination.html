@@ -344,7 +344,7 @@
                                                         {% endif %}
                                                         <i class="bi bi-chevron-down sub-item-icon" style="font-size: 0.75rem; transition: transform 0.3s; margin-left: auto;"></i>
                                                     </div>
-                                                    <div class="sub-item-description" style="display: none; margin-top: 0.5rem;">
+                                                    <div class="sub-item-description" style="display: none; margin-top: 0.5rem; padding: 0.5rem;">
                                                         {% if sub_item.description %}
                                                         <small class="text-muted" style="font-size: 0.75rem; line-height: 1.6;">{{ sub_item.description }}</small>
                                                         {% endif %}
@@ -526,6 +526,16 @@
     .slider-image-container {
         position: relative;
         overflow: hidden;
+        transition: all 0.3s ease;
+    }
+
+    .slider-image-container img {
+        transition: all 0.3s ease;
+    }
+
+    /* Shrink category image when any sub-item is expanded */
+    .activity-grid-card:has(.sub-item-row.expanded) .slider-image-container img {
+        height: 80px !important;
     }
 
     /* Sub-item image zoom in slider mode */
@@ -589,9 +599,17 @@
         margin-bottom: 0.75rem;
     }
 
+    .sub-item-row.expanded .sub-item-content {
+        width: 100%;
+    }
+
+    .sub-item-row.expanded .sub-item-content > .d-flex {
+        justify-content: center !important;
+    }
+
     .sub-item-row.expanded .sub-item-image-zoom {
-        width: 80px !important;
-        height: 80px !important;
+        width: 220px !important;
+        height: 120px !important;
         transition: all 0.3s ease;
     }
 
@@ -644,6 +662,12 @@
     .sub-items-list {
         max-height: 250px;
         overflow-y: auto;
+        transition: max-height 0.3s ease;
+    }
+
+    /* Increase max-height when any sub-item is expanded */
+    .activity-grid-card:has(.sub-item-row.expanded) .sub-items-list {
+        max-height: 450px;
     }
 
     .sub-items-list::-webkit-scrollbar {
@@ -766,7 +790,7 @@
                                                     ${subItem.from_friends ? `<img src="/static/assets/lolo.png" alt="Geschenk von Freunden" style="width: 30px; height: 30px; object-fit: contain;">` : ''}
                                                     <i class="bi bi-chevron-down sub-item-icon" style="font-size: 0.75rem; transition: transform 0.3s; margin-left: auto;"></i>
                                                 </div>
-                                                <div class="sub-item-description" style="display: none; margin-top: 0.5rem;">
+                                                <div class="sub-item-description" style="display: none; margin-top: 0.5rem; padding: 0.5rem;">
                                                     ${subItem.description ? `<small class="text-muted" style="font-size: 0.75rem; line-height: 1.6;">${escapeHtml(subItem.description)}</small>` : ''}
                                                 </div>
                                             </div>
