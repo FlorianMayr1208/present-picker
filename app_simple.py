@@ -2,12 +2,11 @@
 Vereinfachte Flask App ohne Datenbank
 Nutzt JSON-Dateien für Datenspeicherung
 """
-from flask import Flask, render_template, request, jsonify, session, redirect, url_for, flash
+from flask import Flask, render_template, request, jsonify
 import json
 import os
 from datetime import datetime
 from dotenv import load_dotenv
-from functools import wraps
 
 # Load environment variables
 load_dotenv()
@@ -18,18 +17,8 @@ app = Flask(__name__,
 
 # Konfiguration
 app.config['SECRET_KEY'] = os.environ.get('SECRET_KEY', 'dev-secret-key')
-app.config['ADMIN_PASSWORD'] = os.environ.get('ADMIN_PASSWORD', 'admin123')
 app.config['SLIDER_MIN'] = 0
 app.config['SLIDER_MAX'] = 5
-
-# Admin authentication decorator
-def admin_required(f):
-    @wraps(f)
-    def decorated_function(*args, **kwargs):
-        if not session.get('admin_logged_in'):
-            return redirect(url_for('admin_login'))
-        return f(*args, **kwargs)
-    return decorated_function
 
 # Pfade zu JSON-Dateien
 BASE_DIR = os.path.abspath(os.path.dirname(__file__))
@@ -209,61 +198,6 @@ def api_get_activities(id):
         'activities': activities,
         'count': len(activities)
     })
-
-
-@app.route('/admin/login', methods=['GET', 'POST'])
-def admin_login():
-    """Admin-Login"""
-    if request.method == 'POST':
-        password = request.form.get('password')
-        if password == app.config['ADMIN_PASSWORD']:
-            session['admin_logged_in'] = True
-            flash('Erfolgreich eingeloggt!', 'success')
-            return redirect(url_for('admin'))
-        else:
-            flash('Falsches Passwort!', 'danger')
-
-    return render_template('admin_login.html')
-
-
-@app.route('/admin/logout')
-def admin_logout():
-    """Admin-Logout"""
-    session.pop('admin_logged_in', None)
-    flash('Erfolgreich ausgeloggt.', 'info')
-    return redirect(url_for('admin_login'))
-
-
-@app.route('/admin')
-@admin_required
-def admin():
-    """Admin-Übersicht (Read-Only)"""
-    destinations = load_destinations()
-    all_activities = load_activities()
-
-    return render_template(
-        'admin_simple.html',
-        destinations=destinations,
-        total_activities=len(all_activities)
-    )
-
-
-@app.route('/admin/destination/<int:destination_id>/activities')
-@admin_required
-def admin_activities(destination_id):
-    """Aktivitäten einer Destination anzeigen (Read-Only)"""
-    destination = get_destination_by_id(destination_id)
-
-    if not destination:
-        return "Destination nicht gefunden", 404
-
-    activities = get_activities_by_destination(destination_id)
-
-    return render_template(
-        'admin_activities_simple.html',
-        destination=destination,
-        activities=activities
-    )
 
 
 @app.route('/destination/<int:id>/export-pdf', methods=['POST'])

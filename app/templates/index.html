@@ -45,9 +45,7 @@
 {% else %}
 <div class="alert alert-info" role="alert">
     <h4 class="alert-heading">Keine Destinationen vorhanden</h4>
-    <p>Es wurden noch keine Reiseziele angelegt. Bitte verwende den Admin-Bereich, um Destinationen hinzuzufügen.</p>
-    <hr>
-    <a href="{{ url_for('admin') }}" class="btn btn-info">Zum Admin-Bereich</a>
+    <p>Es wurden noch keine Reiseziele angelegt. Bitte füge Destinationen in der destinations.json Datei hinzu.</p>
 </div>
 {% endif %}
 {% endblock %}
