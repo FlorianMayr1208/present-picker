@@ -322,29 +322,33 @@
                                     {% if activity.sub_items %}
                                     <div class="sub-items-list">
                                         {% for sub_item in activity.sub_items %}
-                                        <div class="sub-item-row d-flex align-items-start gap-2 mb-2" onclick="toggleSubItemDescription(this)" style="cursor: pointer;">
-                                            {% if sub_item.image_filename %}
-                                            <img src="{% if sub_item.image_filename.startswith('http') %}{{ sub_item.image_filename }}{% else %}{{ url_for('static', filename='images/' + sub_item.image_filename) }}{% endif %}"
-                                                 alt="{{ sub_item.title }}"
-                                                 class="sub-item-image-zoom"
-                                                 onclick="openImageModal('{% if sub_item.image_filename.startswith('http') %}{{ sub_item.image_filename }}{% else %}{{ url_for('static', filename='images/' + sub_item.image_filename) }}{% endif %}', event)"
-                                                 style="width: 40px; height: 40px; object-fit: cover; flex-shrink: 0;">
-                                            {% endif %}
-                                            <div class="flex-grow-1">
-                                                <div class="d-flex align-items-center gap-2">
-                                                    <small class="fw-bold" style="font-size: 0.85rem;">{{ sub_item.title }}</small>
-                                                    {% if sub_item.from_parents %}
-                                                    <span style="font-size: 0.9rem;">🎁👴👵</span>
-                                                    {% endif %}
-                                                    {% if sub_item.from_friends %}
-                                                    <img src="{{ url_for('static', filename='assets/lolo.png') }}" alt="Geschenk von Freunden" style="width: 30px; height: 30px; object-fit: contain;">
-                                                    {% endif %}
-                                                    <i class="bi bi-chevron-down sub-item-icon" style="font-size: 0.75rem; transition: transform 0.3s; margin-left: auto;"></i>
+                                        <div class="sub-item-row mb-2" onclick="toggleSubItemDescription(this)" style="cursor: pointer;">
+                                            <div class="sub-item-wrapper">
+                                                {% if sub_item.image_filename %}
+                                                <div class="sub-item-image-container">
+                                                    <img src="{% if sub_item.image_filename.startswith('http') %}{{ sub_item.image_filename }}{% else %}{{ url_for('static', filename='images/' + sub_item.image_filename) }}{% endif %}"
+                                                         alt="{{ sub_item.title }}"
+                                                         class="sub-item-image-zoom"
+                                                         onclick="openImageModal('{% if sub_item.image_filename.startswith('http') %}{{ sub_item.image_filename }}{% else %}{{ url_for('static', filename='images/' + sub_item.image_filename) }}{% endif %}', event)"
+                                                         style="width: 40px; height: 40px; object-fit: cover;">
                                                 </div>
-                                                <div class="sub-item-description" style="display: none; margin-top: 0.5rem;">
-                                                    {% if sub_item.description %}
-                                                    <small class="text-muted" style="font-size: 0.75rem; line-height: 1.6;">{{ sub_item.description }}</small>
-                                                    {% endif %}
+                                                {% endif %}
+                                                <div class="sub-item-content">
+                                                    <div class="d-flex align-items-center gap-2">
+                                                        <small class="fw-bold" style="font-size: 0.85rem;">{{ sub_item.title }}</small>
+                                                        {% if sub_item.from_parents %}
+                                                        <span style="font-size: 0.9rem;">🎁👴👵</span>
+                                                        {% endif %}
+                                                        {% if sub_item.from_friends %}
+                                                        <img src="{{ url_for('static', filename='assets/lolo.png') }}" alt="Geschenk von Freunden" style="width: 30px; height: 30px; object-fit: contain;">
+                                                        {% endif %}
+                                                        <i class="bi bi-chevron-down sub-item-icon" style="font-size: 0.75rem; transition: transform 0.3s; margin-left: auto;"></i>
+                                                    </div>
+                                                    <div class="sub-item-description" style="display: none; margin-top: 0.5rem;">
+                                                        {% if sub_item.description %}
+                                                        <small class="text-muted" style="font-size: 0.75rem; line-height: 1.6;">{{ sub_item.description }}</small>
+                                                        {% endif %}
+                                                    </div>
                                                 </div>
                                             </div>
                                         </div>
@@ -539,12 +543,60 @@
     /* Sub-item row hover effect */
     .sub-item-row {
         padding: 0.5rem;
-        border-radius: 4px;
-        transition: background-color 0.2s ease;
+        border-radius: 8px;
+        transition: all 0.3s ease;
     }
 
     .sub-item-row:hover {
         background-color: rgba(0, 0, 0, 0.02);
+    }
+
+    /* Sub-item wrapper - default horizontal layout */
+    .sub-item-wrapper {
+        display: flex;
+        align-items: start;
+        gap: 0.75rem;
+        transition: all 0.3s ease;
+    }
+
+    /* Sub-item image container */
+    .sub-item-image-container {
+        flex-shrink: 0;
+        transition: all 0.3s ease;
+    }
+
+    /* Sub-item content container */
+    .sub-item-content {
+        flex-grow: 1;
+        transition: all 0.3s ease;
+    }
+
+    /* Expanded sub-item styling - vertical layout with centered image */
+    .sub-item-row.expanded {
+        background-color: rgba(13, 110, 253, 0.05);
+        padding: 1rem;
+        margin: 0.5rem -0.5rem;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    }
+
+    .sub-item-row.expanded .sub-item-wrapper {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .sub-item-row.expanded .sub-item-image-container {
+        text-align: center;
+        margin-bottom: 0.75rem;
+    }
+
+    .sub-item-row.expanded .sub-item-image-zoom {
+        width: 80px !important;
+        height: 80px !important;
+        transition: all 0.3s ease;
+    }
+
+    .sub-item-row .sub-item-image-zoom {
+        transition: all 0.3s ease;
     }
 
     /* Image modal */
@@ -696,23 +748,27 @@
                             <div class="sub-items-list">
                                 ${activity.sub_items.map(subItem => {
                                     return `
-                                    <div class="sub-item-row d-flex align-items-start gap-2 mb-2" onclick="toggleSubItemDescription(this)" style="cursor: pointer;">
-                                        ${subItem.image_filename ? `
-                                        <img src="${subItem.image_filename.startsWith('http') ? subItem.image_filename : '/static/images/' + subItem.image_filename}"
-                                             alt="${escapeHtml(subItem.title)}"
-                                             class="sub-item-image-zoom"
-                                             onclick="openImageModal('${subItem.image_filename.startsWith('http') ? subItem.image_filename : '/static/images/' + subItem.image_filename}', event)"
-                                             style="width: 40px; height: 40px; object-fit: cover; flex-shrink: 0;">
-                                        ` : ''}
-                                        <div class="flex-grow-1">
-                                            <div class="d-flex align-items-center gap-2">
-                                                <small class="fw-bold" style="font-size: 0.85rem;">${escapeHtml(subItem.title)}</small>
-                                                ${subItem.from_parents ? `<span style="font-size: 0.9rem;">🎁👴👵</span>` : ''}
-                                                ${subItem.from_friends ? `<img src="/static/assets/lolo.png" alt="Geschenk von Freunden" style="width: 30px; height: 30px; object-fit: contain;">` : ''}
-                                                <i class="bi bi-chevron-down sub-item-icon" style="font-size: 0.75rem; transition: transform 0.3s; margin-left: auto;"></i>
+                                    <div class="sub-item-row mb-2" onclick="toggleSubItemDescription(this)" style="cursor: pointer;">
+                                        <div class="sub-item-wrapper">
+                                            ${subItem.image_filename ? `
+                                            <div class="sub-item-image-container">
+                                                <img src="${subItem.image_filename.startsWith('http') ? subItem.image_filename : '/static/images/' + subItem.image_filename}"
+                                                     alt="${escapeHtml(subItem.title)}"
+                                                     class="sub-item-image-zoom"
+                                                     onclick="openImageModal('${subItem.image_filename.startsWith('http') ? subItem.image_filename : '/static/images/' + subItem.image_filename}', event)"
+                                                     style="width: 40px; height: 40px; object-fit: cover;">
                                             </div>
-                                            <div class="sub-item-description" style="display: none; margin-top: 0.5rem;">
-                                                ${subItem.description ? `<small class="text-muted" style="font-size: 0.75rem; line-height: 1.6;">${escapeHtml(subItem.description)}</small>` : ''}
+                                            ` : ''}
+                                            <div class="sub-item-content">
+                                                <div class="d-flex align-items-center gap-2">
+                                                    <small class="fw-bold" style="font-size: 0.85rem;">${escapeHtml(subItem.title)}</small>
+                                                    ${subItem.from_parents ? `<span style="font-size: 0.9rem;">🎁👴👵</span>` : ''}
+                                                    ${subItem.from_friends ? `<img src="/static/assets/lolo.png" alt="Geschenk von Freunden" style="width: 30px; height: 30px; object-fit: contain;">` : ''}
+                                                    <i class="bi bi-chevron-down sub-item-icon" style="font-size: 0.75rem; transition: transform 0.3s; margin-left: auto;"></i>
+                                                </div>
+                                                <div class="sub-item-description" style="display: none; margin-top: 0.5rem;">
+                                                    ${subItem.description ? `<small class="text-muted" style="font-size: 0.75rem; line-height: 1.6;">${escapeHtml(subItem.description)}</small>` : ''}
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
@@ -1005,10 +1061,17 @@
             // Collapse
             description.style.display = 'none';
             if (icon) icon.style.transform = 'rotate(0deg)';
+            subItemRow.classList.remove('expanded');
         } else {
             // Expand
             description.style.display = 'block';
             if (icon) icon.style.transform = 'rotate(180deg)';
+            subItemRow.classList.add('expanded');
+
+            // Scroll to the item smoothly
+            setTimeout(() => {
+                subItemRow.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+            }, 100);
         }
     }
 
