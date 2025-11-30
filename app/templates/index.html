@@ -121,7 +121,7 @@
                 <img src="{% if destination.image_cover.startswith('http') %}{{ destination.image_cover }}{% else %}{{ url_for('static', filename='images/' + destination.image_cover) }}{% endif %}"
                      class="card-img-top"
                      alt="{{ destination.name }}"
-                     style="height: 250px; object-fit: cover;">
+                     style="height: 250px; object-fit: cover; object-position: center;">
                 {% else %}
                 <div class="card-img-top bg-secondary d-flex align-items-center justify-content-center"
                      style="height: 250px;">

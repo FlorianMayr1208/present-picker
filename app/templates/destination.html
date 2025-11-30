@@ -111,9 +111,9 @@
                     {% if item.sub_item.image_filename %}
                     <div class="col-md-3">
                         <img src="{% if item.sub_item.image_filename.startswith('http') %}{{ item.sub_item.image_filename }}{% else %}{{ url_for('static', filename='images/' + item.sub_item.image_filename) }}{% endif %}"
-                             class="img-fluid rounded-start h-100"
+                             class="img-fluid rounded-start"
                              alt="{{ item.sub_item.title }}"
-                             style="object-fit: cover; min-height: 180px;">
+                             style="object-fit: cover; width: 100%; height: 100%; max-height: 250px; min-height: 180px;">
                     </div>
                     {% endif %}
                     <div class="{% if item.sub_item.image_filename %}col-md-9{% else %}col-md-12{% endif %}">
@@ -170,9 +170,9 @@
                     {% if item.sub_item.image_filename %}
                     <div class="col-md-3">
                         <img src="{% if item.sub_item.image_filename.startswith('http') %}{{ item.sub_item.image_filename }}{% else %}{{ url_for('static', filename='images/' + item.sub_item.image_filename) }}{% endif %}"
-                             class="img-fluid rounded-start h-100"
+                             class="img-fluid rounded-start"
                              alt="{{ item.sub_item.title }}"
-                             style="object-fit: cover; min-height: 180px;">
+                             style="object-fit: cover; width: 100%; height: 100%; max-height: 250px; min-height: 180px;">
                     </div>
                     {% endif %}
                     <div class="{% if item.sub_item.image_filename %}col-md-9{% else %}col-md-12{% endif %}">
@@ -255,9 +255,9 @@
                                     {% if sub_item.image_filename %}
                                     <div class="col-md-3">
                                         <img src="{% if sub_item.image_filename.startswith('http') %}{{ sub_item.image_filename }}{% else %}{{ url_for('static', filename='images/' + sub_item.image_filename) }}{% endif %}"
-                                             class="img-fluid rounded-start h-100"
+                                             class="img-fluid rounded-start"
                                              alt="{{ sub_item.title }}"
-                                             style="object-fit: cover; min-height: 120px;">
+                                             style="object-fit: cover; width: 100%; height: 100%; max-height: 200px; min-height: 120px;">
                                     </div>
                                     {% endif %}
                                     <div class="{% if sub_item.image_filename %}col-md-9{% else %}col-md-12{% endif %}">

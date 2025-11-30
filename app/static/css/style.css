@@ -354,10 +354,11 @@ footer {
 /* Image overlays */
 .card-img-top {
     transition: transform 0.5s ease;
+    object-position: center;
 }
 
 .destination-card:hover .card-img-top {
-    transform: scale(1.05);
+    transform: scale(1.03);
 }
 
 /* Button group improvements */
