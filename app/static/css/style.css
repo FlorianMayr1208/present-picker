@@ -259,6 +259,12 @@ footer {
     font-size: 1.5rem;
     color: white !important;
     text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: none !important;
+}
+
+.navbar-brand:hover {
+    transform: none !important;
+    color: white !important;
 }
 
 /* Table improvements */
@@ -488,6 +494,21 @@ footer {
     box-shadow: 0 8px 16px rgba(102, 126, 234, 0.3) !important;
 }
 
+/* Disable hover effects on gift section header cards */
+.row.mb-5 > .col > .card.shadow-sm.border-0:hover {
+    transform: none !important;
+    box-shadow: none !important;
+}
+
+.friends-gift-card {
+    transition: all 0.3s ease;
+}
+
+.friends-gift-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 16px rgba(245, 87, 108, 0.3) !important;
+}
+
 .parents-gift-radio,
 .friends-gift-radio {
     width: 1.8em;
@@ -519,6 +540,22 @@ footer {
 .activity-grid-card:hover {
     transform: none !important;
     box-shadow: 0 .125rem .25rem rgba(0,0,0,.075) !important;
+}
+
+/* Disable hover effects on category header cards */
+.category-header-card {
+    transition: none !important;
+}
+
+.category-header-card:hover {
+    transform: none !important;
+    box-shadow: none !important;
+}
+
+/* Disable hover effects on destination header and control sections */
+.row.mb-4 > .col > .card:hover {
+    transform: none !important;
+    box-shadow: 0 0.5rem 2rem rgba(102, 126, 234, 0.2) !important;
 }
 
 /* Category image container for slider mode */
