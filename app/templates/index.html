@@ -10,6 +10,107 @@
     </div>
 </div>
 
+<!-- Anleitung & Regeln -->
+<div class="row mb-5">
+    <div class="col-lg-10 offset-lg-1">
+        <div class="card border-0 shadow-lg">
+            <div class="card-body p-4 p-md-5">
+                <div class="row align-items-center mb-4">
+                    <div class="col-md-8">
+                        <h2 class="h3 mb-3">So funktioniert die Reiseplanung</h2>
+                        <p class="text-muted mb-0">Gestalte deine perfekte Reise mit einem flexiblen Punktesystem</p>
+                    </div>
+                </div>
+
+                <div class="row g-4">
+                    <div class="col-md-6">
+                        <div class="d-flex">
+                            <div class="flex-shrink-0">
+                                <div class="rounded-circle bg-primary bg-opacity-10 d-flex align-items-center justify-content-center" style="width: 50px; height: 50px;">
+                                    <span class="text-primary fw-bold fs-5">1</span>
+                                </div>
+                            </div>
+                            <div class="ms-3">
+                                <h5 class="mb-2">Destination wählen</h5>
+                                <p class="text-muted mb-0">Wähle aus den verfügbaren Reisezielen dein Wunschziel aus. Manche Destinationen kannst du flexibel zusammenstellen, andere haben einen Slider der von "nix geplan" bis zu "alles durchgeplant" geht.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-6">
+                        <div class="d-flex">
+                            <div class="flex-shrink-0">
+                                <div class="rounded-circle bg-primary bg-opacity-10 d-flex align-items-center justify-content-center" style="width: 50px; height: 50px;">
+                                    <span class="text-primary fw-bold fs-5">2</span>
+                                </div>
+                            </div>
+                            <div class="ms-3">
+                                <h5 class="mb-2">Aktivitäten auswählen</h5>
+                                <p class="text-muted mb-0">Stelle deine Reise individuell zusammen. Jede Aktivität kostet Punkte. Du hast die möglichkeit Restpunkte zu behalten für spontane Aktivitäten. </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-6">
+                        <div class="d-flex">
+                            <div class="flex-shrink-0">
+                                <div class="rounded-circle bg-primary bg-opacity-10 d-flex align-items-center justify-content-center" style="width: 50px; height: 50px;">
+                                    <span class="text-primary fw-bold fs-5">3</span>
+                                </div>
+                            </div>
+                            <div class="ms-3">
+                                <h5 class="mb-2">Was bedeutet die Auswahl?</h5>
+                                <p class="text-muted mb-0">Die Auswahl bedeutet nur, dass diese Unternehmungen vorgeplant/gebucht/reserviert werden. Es bedeutet nicht, dass wir nicht spontan "Restpunkte" dafür vor Ort ausgeben können.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-6">
+                        <div class="d-flex">
+                            <div class="flex-shrink-0">
+                                <div class="rounded-circle bg-primary bg-opacity-10 d-flex align-items-center justify-content-center" style="width: 50px; height: 50px;">
+                                    <span class="text-primary fw-bold fs-5">4</span>
+                                </div>
+                            </div>
+                            <div class="ms-3">
+                                <h5 class="mb-2">Punkte im Blick behalten</h5>
+                                <p class="text-muted mb-0">Dein verbleibendes Punktebudget wird live angezeigt. "Basisaktivitäten" sind kostenlos (Flug, Quartier usw), optionale Aktivitäten haben verschiedene Punktewerte.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-6">
+                        <div class="d-flex">
+                            <div class="flex-shrink-0">
+                                <div class="rounded-circle bg-primary bg-opacity-10 d-flex align-items-center justify-content-center" style="width: 50px; height: 50px;">
+                                    <span class="text-primary fw-bold fs-5">5</span>
+                                </div>
+                            </div>
+                            <div class="ms-3">
+                                <h5 class="mb-2">Flexibel bleiben</h5>
+                                <p class="text-muted mb-0">Spare Punkte für spontane Entscheidungen vor Ort.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="alert alert-info border-0 mt-4 mb-0" style="background-color: rgba(13, 110, 253, 0.05);">
+                    <div class="d-flex">
+                        <div class="flex-shrink-0 me-3">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="text-info" viewBox="0 0 16 16">
+                                <path d="M8 16A8 8 0 1 0 8 0a8 8 0 0 0 0 16zm.93-9.412-1 4.705c-.07.34.029.533.304.533.194 0 .487-.07.686-.246l-.088.416c-.287.346-.92.598-1.465.598-.703 0-1.002-.422-.808-1.319l.738-3.468c.064-.293.006-.399-.287-.47l-.451-.081.082-.381 2.29-.287zM8 5.5a1 1 0 1 1 0-2 1 1 0 0 1 0 2z"/>
+                            </svg>
+                        </div>
+                        <div>
+                            <strong>Tipp:</strong> Aktivitäten, die von Familie oder Freunden gesponsert werden, sind besonders gekennzeichnet. Diese zählen nicht zu deinem Punktebudget!
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
 {% if destinations %}
 <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
     {% for destination in destinations %}
