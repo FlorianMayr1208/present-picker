@@ -222,6 +222,7 @@ def export_pdf(id):
         activity_id = int(item['activity_id'])
         sub_id = item['sub_id']
         from_parents = item.get('from_parents', False)
+        from_friends = item.get('from_friends', False)
 
         # Find the activity
         activity = next((a for a in all_activities if a['id'] == activity_id and a['destination_id'] == id), None)
@@ -231,17 +232,33 @@ def export_pdf(id):
             sub_item = next((s for s in activity['sub_items'] if s['id'] == sub_id), None)
 
             if sub_item:
+                # Build absolute image URL
+                image_filename = sub_item.get('image_filename', '')
+                if image_filename:
+                    if image_filename.startswith('http'):
+                        image_url = image_filename
+                    else:
+                        # Convert relative path to absolute URL
+                        image_url = request.url_root + 'static/images/' + image_filename
+                else:
+                    image_url = ''
+
                 selected_activities_data.append({
                     'category': activity['title'],
                     'title': sub_item['title'],
                     'description': sub_item.get('description', ''),
                     'points': sub_item.get('points', 0),
-                    'image_url': sub_item.get('image_filename', ''),
-                    'from_parents': from_parents
+                    'image_url': image_url,
+                    'from_parents': from_parents,
+                    'from_friends': from_friends
                 })
 
-    # Calculate total points
-    total_points = sum(item['points'] for item in selected_activities_data)
+    # Calculate total points (excluding gifts from parents and friends)
+    total_points = sum(
+        item['points']
+        for item in selected_activities_data
+        if not item.get('from_parents', False) and not item.get('from_friends', False)
+    )
 
     # Render print-optimized HTML
     return render_template(

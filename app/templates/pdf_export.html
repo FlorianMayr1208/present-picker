@@ -109,6 +109,17 @@
             margin-left: 10pt;
         }
 
+        .friends-gift-badge {
+            display: inline-block;
+            background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+            color: white;
+            padding: 5pt 10pt;
+            border-radius: 3pt;
+            font-size: 10pt;
+            font-weight: bold;
+            margin-left: 10pt;
+        }
+
         .activity.from-parents {
             border: 2px solid #667eea;
             background: linear-gradient(to right, #f8f9ff 0%, #fff 100%);
@@ -121,6 +132,21 @@
 
         .activity.from-parents .activity-header .category,
         .activity.from-parents .activity-header .title {
+            color: white;
+        }
+
+        .activity.from-friends {
+            border: 2px solid #f093fb;
+            background: linear-gradient(to right, #fff5f8 0%, #fff 100%);
+        }
+
+        .activity.from-friends .activity-header {
+            background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+            color: white;
+        }
+
+        .activity.from-friends .activity-header .category,
+        .activity.from-friends .activity-header .title {
             color: white;
         }
 
@@ -205,12 +231,14 @@
     </div>
 
     {% for activity in selected_activities %}
-    <div class="activity {% if activity.from_parents %}from-parents{% endif %}">
+    <div class="activity {% if activity.from_parents %}from-parents{% elif activity.from_friends %}from-friends{% endif %}">
         <div class="activity-header">
             <div class="category">{{ activity.category }}</div>
             <div class="title">{{ activity.title }}</div>
             {% if activity.from_parents %}
             <span class="parents-gift-badge">🎁 Geschenk von meinen Eltern</span>
+            {% elif activity.from_friends %}
+            <span class="friends-gift-badge">🎁 Geschenk von Freunden</span>
             {% elif activity.points > 0 %}
             <span class="points-badge">{{ activity.points }} Punkte</span>
             {% endif %}
