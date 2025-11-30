@@ -148,6 +148,17 @@
         "from_parents": false,
         "is_spontaneous": false,
         "image_filename": "activities/mar_soukh.jpg"
+      },
+      {
+        "id": "3f",
+        "title": "Maison de la Photographie",
+        "description": "Ein ruhiges Museum in der Medina mit historischen Fotos von Marokko – ideal, wenn man eine Pause vom Trubel sucht.",
+        "points": 15,
+        "default_selected": false,
+        "mandatory": false,
+        "from_parents": false,
+        "is_spontaneous": false,
+        "image_filename": "activities/mar_photo.jpg"
       }
     ]
   },
