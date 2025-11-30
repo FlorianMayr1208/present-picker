@@ -58,6 +58,17 @@
         "default_selected": false,
         "mandatory": false,
         "from_parents": false,
+        "is_spontaneous": false,
+        "image_filename": "activities/mar_rooftop.jpg"
+      },
+      {
+        "id": "2d",
+        "title": "Cocktail auf einer Rooftop-Bar",
+        "description": "Genieße einen Cocktail auf einer Rooftop-Bar mit Blick über die Dächer von Marrakesch. Bei Sonnenuntergang verwandelt sich die Stadt in ein Meer aus warmen Farbtönen, während der Ruf des Muezzins erklingt - ein unvergesslicher Moment.",
+        "points": 12,
+        "default_selected": false,
+        "mandatory": false,
+        "from_parents": false,
         "from_friends": true,
         "is_spontaneous": false,
         "image_filename": "activities/mar_rooftop.jpg"
