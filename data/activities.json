@@ -227,6 +227,49 @@
     ]
   },
   {
+    "id": 9,
+    "destination_id": 2,
+    "title": "Anreise & Unterkunft",
+    "description": "Grundlagen der Reise: Flug, Unterkunft und Verpflegung",
+    "image_filename": "https://images.unsplash.com/photo-1597212618440-806262de4f6b?w=800",
+    "default_selected": true,
+    "sub_items": [
+      {
+        "id": "9a",
+        "title": "Flug nach Istanbul",
+        "description": "Flug von Wien nach Istanbul",
+        "points": 0,
+        "default_selected": true,
+        "mandatory": true,
+        "from_parents": false,
+        "is_spontaneous": false,
+        "image_filename": "https://images.unsplash.com/photo-1436491865332-7a61a109cc05?w=600"
+      },
+      {
+        "id": "9b",
+        "title": "Unterkunft in Istanbul",
+        "description": "Ein gemütliches Bett zwischen zwei Kontinenten - perfekt zum Ausruhen nach einem ereignisreichen Tag in der Stadt am Bosporus.",
+        "points": 0,
+        "default_selected": true,
+        "mandatory": true,
+        "from_parents": false,
+        "is_spontaneous": false,
+        "image_filename": "https://images.unsplash.com/photo-1564501049412-61c2a3083791?w=600"
+      },
+      {
+        "id": "9c",
+        "title": "Verpflegung",
+        "description": "Essen und sonstige Verpflegung für 2 Hobbits mit großem Appetit.",
+        "points": 0,
+        "default_selected": true,
+        "mandatory": true,
+        "from_parents": false,
+        "is_spontaneous": false,
+        "image_filename": "activities/mar_verpflegung.jpeg"
+      }
+    ]
+  },
+  {
     "id": 10,
     "destination_id": 2,
     "title": "Essen & Kulinarik",
