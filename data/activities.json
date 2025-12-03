@@ -259,7 +259,7 @@
       {
         "id": "9b",
         "title": "Unterkunft in Istanbul",
-        "description": "Ein gemütliches Bett zwischen zwei Kontinenten - perfekt zum Ausruhen nach einem ereignisreichen Tag in der Stadt am Bosporus.",
+        "description": "Ein gemütliches Bett zwischen zwei Kontinenten (im überragenen Sinn!) - perfekt zum Ausruhen nach einem ereignisreichen Tag in der Stadt am Bosporus.",
         "points": 0,
         "default_selected": true,
         "mandatory": true,
@@ -291,7 +291,7 @@
       {
         "id": "10a",
         "title": "Streetfood-Hopping",
-        "description": "Ein kulinarischer Spaziergang durch Istanbul: Du springst von einem Streetfood-Stand zum nächsten, probierst den Fisch-Sandwich 'Balık Ekmek' am Wasser, gönnst dir 'Simit' (sesambestreifter Kringel) zum Frühstück, wagst dich an herzhaftes 'Kokoreç' und rundest ab mit einem knusprigen 'Lahmacun'.",
+        "description": "Ein kulinarischer Spaziergang durch Istanbul: Du springst von einem Streetfood-Stand zum nächsten, probierst den Fisch-Sandwich 'Balık Ekmek' am Wasser (betonung auf DU), gönnst dir 'Simit' (sesambestreifter Kringel) zum Frühstück (erstes oder zweites, deine Wahl!), wagst dich an herzhaftes 'Kokoreç' und rundest ab mit einem knusprigen 'Lahmacun'.",
         "points": 25,
         "default_selected": false,
         "mandatory": false,
@@ -302,7 +302,7 @@
       {
         "id": "10b",
         "title": "Gewürzbasar-Verkostung",
-        "description": "Farbenprächtig, duftend und voller Geschmack: Im Gewürz- (und Süßigkeiten-)Bazar schnupperst du an getrockneten Früchten, wühlst dich durch Gewürzmischungen und gönnst dir eine Portion 'Lokum'. Ein Erlebnis für alle Sinne - und ideal für Mitbringsel.",
+        "description": "Farbenprächtig, duftend und voller Geschmack: Im Gewürz- (und Süßigkeiten-)Bazar schnupperst du an getrockneten Früchten, wühlst dich durch Gewürzmischungen und gönnst dir eine Portion 'Lokum'. Ein Erlebnis für alle Sinne - und ideal für Mitbringsel. Vielleicht haben sie ein kleines Fass Old Toby",
         "points": 15,
         "default_selected": false,
         "mandatory": false,
@@ -313,7 +313,7 @@
       {
         "id": "10c",
         "title": "Frühstück (Kahvaltı) in Beşiktaş",
-        "description": "Ein üppiges Frühstück ist in Istanbul nicht bloß ein Mahl, sondern ein Erlebnis: Viele kleine Schälchen mit Käse, Oliven, Honig, Eiern, 'Menemen' und frischem Brot. In Beşiktaş sitzt man gemütlich im Freien, beobachtet das Treiben und startet den Tag genüsslich.",
+        "description": "Ein üppiges Frühstück ist in Istanbul nicht bloß ein Mahl, sondern ein Erlebnis: Viele kleine Schälchen mit Käse, Oliven, Honig, Eiern, 'Menemen' und frischem Brot. In Beşiktaş sitzt man gemütlich im Freien, beobachtet das Treiben und startet den Tag genüsslich. Perfektes Aufwärmen für die zweite Runde 2 Stunden später.",
         "points": 20,
         "default_selected": false,
         "mandatory": false,
@@ -334,7 +334,7 @@
       {
         "id": "11a",
         "title": "Hagia Sophia",
-        "description": "Ein Architektur- und Geschichtswunder: Ursprünglich byzantinische Kathedrale, später Moschee, heute bedeutendes Bauwerk von Weltrang. Die riesige Kuppel, Mosaike und religiösen Spuren machen sie zu einem Muss in Istanbul.",
+        "description": "Ein Architektur- und Geschichtswunder: Ursprünglich byzantinische Kathedrale, später Moschee, heute bedeutendes Bauwerk von Weltrang. Die riesige Kuppel, Mosaike und religiösen Spuren machen sie zu einem Muss in Istanbul. Sind wir uns ehrlich, das Ding ist eigentlich eine übertrieben große Hobbithöhle, schau dir die Kuppel an!",
         "points": 18,
         "default_selected": false,
         "mandatory": false,
@@ -345,7 +345,7 @@
       {
         "id": "11b",
         "title": "Topkapi-Palast",
-        "description": "Einst Residenz der Sultane - heute Museum voller Prunk, Schatz- und Hofanlagen. Ein Fenster in das höfische Leben des Osmanischen Reichs und ein Spaziergang durch Jahrhunderte höfischer Geschichte.",
+        "description": "Einst Residenz der Sultane - heute Museum voller Prunk, Schatz- und Hofanlagen (vielleicht mit Drachen?). Ein Fenster in das höfische Leben des Osmanischen Reichs und ein Spaziergang durch Jahrhunderte höfischer Geschichte.",
         "points": 12,
         "default_selected": false,
         "mandatory": false,
@@ -356,7 +356,7 @@
       {
         "id": "11c",
         "title": "Blaue Moschee",
-        "description": "Ein imposantes Gotteshaus mit sechs Minaretten, hunderten Íznik-Fliesen und zentraler Lage gegenüber der Hagia Sophia. Besucher dürfen eintreten - bei respektvoller Kleidung.",
+        "description": "Ein imposantes Gotteshaus mit sechs Minaretten, hunderten Íznik-Fliesen und zentraler Lage gegenüber der Hagia Sophia. Besucher dürfen eintreten - bei respektvoller Kleidung. Was natürlich eine schwachsinnige Anforderung ist. Ein Hobbit ist immer respektvoll gekleidet!",
         "points": 15,
         "default_selected": false,
         "mandatory": false,
@@ -367,7 +367,7 @@
       {
         "id": "11d",
         "title": "Basilica Cistern",
-        "description": "Unterirdisch, kühl, geheimnisvoll: Diese riesige frühbyzantinische Zisterne mit ihren Säulen und dem Wasser spiegelt eine ganz andere Seite von Istanbul wider - ideal als kurze Pause vom Trubel über Tage.",
+        "description": "Unterirdisch, kühl, geheimnisvoll: Diese riesige frühbyzantinische Zisterne mit ihren Säulen und dem Wasser spiegelt eine ganz andere Seite von Istanbul wider - ideal als kurze Pause vom Trubel über Tage. Finger weg von den Skeletten am Brunnenrand und wenn es anfängt zu trommeln, bin ich weg!",
         "points": 15,
         "default_selected": false,
         "mandatory": false,
@@ -378,7 +378,7 @@
       {
         "id": "11e",
         "title": "Galata-Turm & Galata-Brücke",
-        "description": "Der Turm bietet spektakuläre Aussicht über Stadt und Wasser. Die Brücke verbindet Stadtteile, ist belebt mit Anglern und Straßenständen - beide Orte perfekt für einen Zwischenstopp und Panorama-Fotos.",
+        "description": "Der Turm bietet spektakuläre Aussicht über Stadt und Wasser. Die Brücke verbindet Stadtteile, ist belebt mit Anglern und Straßenständen - beide Orte perfekt für einen Zwischenstopp und Panorama-Fotos. Die Brücke am Weg zum Turm. Wir wissen was zu tun ist, wenn wir einen Zauberer treffen!",
         "points": 18,
         "default_selected": false,
         "mandatory": false,
@@ -389,7 +389,7 @@
       {
         "id": "11f",
         "title": "Grand Bazaar & Gewürz Bazaar",
-        "description": "Der große Basar - ein Labyrinth aus Geschäften, Souvenirs und Altstadt-Atmosphäre. Der Gewürzbasar daneben ein Duft- und Farbenspiel: Gewürze, Tees, Süßigkeiten. Ideal für ein wenig Shopping & Erlebnis.",
+        "description": "Der große Basar - ein Labyrinth aus Geschäften, Souvenirs und Altstadt-Atmosphäre. Der Gewürzbasar daneben ein Duft- und Farbenspiel: Gewürze, Tees, Süßigkeiten. Ideal für ein wenig Shopping & Erlebnis. Zeit die Speisekammer mit Gewürzen zu füllen.",
         "points": 0,
         "default_selected": false,
         "mandatory": false,
@@ -400,7 +400,7 @@
       {
         "id": "11g",
         "title": "Dolmabahçe-Palast",
-        "description": "Ein opulenter Palast am Bosporus mit europäisch inspiriertem Design, großen Prunksälen und prachtvoller Innenausstattung - ein starkes Kontrastprogramm zu älteren osmanischen Bauwerken.",
+        "description": "Ein opulenter Palast am Bosporus mit europäisch inspiriertem Design, großen Prunksälen und prachtvoller Innenausstattung - ein starkes Kontrastprogramm zu älteren osmanischen Bauwerken. Ich hab Bilder mit Kuchen drauf gesehen im zusammenhang mit der Attraktion...",
         "points": 20,
         "default_selected": false,
         "mandatory": false,
@@ -414,14 +414,14 @@
     "id": 12,
     "destination_id": 2,
     "title": "Musik, Kulturleben & Erlebnisse",
-    "description": "Abendliche Unterhaltung und kulturelle Highlights",
+    "description": "Abendliche Unterhaltung (schlafen?) und kulturelle Highlights",
     "image_filename": "https://images.unsplash.com/photo-1514525253161-7a46d19cd819?w=800",
     "default_selected": false,
     "sub_items": [
       {
         "id": "12a",
         "title": "Sufi-Derwisch-Zeremonie",
-        "description": "Eine spirituelle Tanzzeremonie, bei der die Derwische wirbeln, begleitet von mystischer Musik. Eine besondere Atmosphäre - ruhig, meditativ und kulturell tief.",
+        "description": "Eine spirituelle Tanzzeremonie, bei der die Derwische wirbeln, begleitet von mystischer Musik. Eine besondere Atmosphäre - ruhig, meditativ und kulturell tief. Wie tanzende Elben... nur mit bärtigen Türken.",
         "points": 25,
         "default_selected": false,
         "mandatory": false,
@@ -432,7 +432,7 @@
       {
         "id": "12b",
         "title": "Jazz-Clubs & Live-Musik in Kadıköy",
-        "description": "Auf der asiatischen Seite von Istanbul gelegen: Bars, Live-Musik, kreative Atmosphäre. Ideal für Abende fernab der klassischen Touristenpfade.",
+        "description": "Auf der asiatischen Seite von Istanbul gelegen: Bars, Live-Musik, kreative Atmosphäre. Ideal für Abende fernab der klassischen Touristenpfade. Es ist immer sicherer abseits der Pfade zu reisen.",
         "points": 30,
         "default_selected": false,
         "mandatory": false,
@@ -443,7 +443,7 @@
       {
         "id": "12c",
         "title": "Bosporus-Dinner-Cruise",
-        "description": "Ein Abend auf dem Wasser mit Dinner, Musik und Blick auf die beleuchtete Stadt: Brücken, Moscheen und Bosporus-Ufer im Schein der Lichter.",
+        "description": "Ein Abend auf dem Wasser mit Dinner, Musik und Blick auf die beleuchtete Stadt: Brücken, Moscheen und Bosporus-Ufer im Schein der Lichter. Bucklebury Ferry mit Snacks und Musik - mehr oder weniger.",
         "points": 35,
         "default_selected": false,
         "mandatory": false,
@@ -454,7 +454,7 @@
       {
         "id": "12d",
         "title": "Rooftop-Bar mit Stadtblick",
-        "description": "Für den Drink zum Sonnenuntergang: Auf einer Dachterrasse mit Blick über Istanbul ein Cocktail in der Hand - lässt den Tag stilvoll ausklingen.",
+        "description": "Für den Drink zum Sonnenuntergang: Auf einer Dachterrasse mit Blick über Istanbul ein Cocktail in der Hand - lässt den Tag stilvoll ausklingen. Gesponsert von einem Troll (Lorenz). Der Cocktail ist hoffentlich besser, als die Suppe die er kocht.",
         "points": 12,
         "default_selected": false,
         "mandatory": false,
@@ -476,7 +476,7 @@
       {
         "id": "13a",
         "title": "Ein Tag auf den Prinzeninseln (Adalar)",
-        "description": "Nur mit Fahrrad oder zu Fuß - keine Autos: Diese Inselgruppe vor Istanbul bietet Ruhe, Natur und charmante Holzhäuser. Ein schöner Kontrast zum Stadt-Trubel. Inkludiert sind natürlich auch das ausgiebige Essen.",
+        "description": "Nur mit Fahrrad oder zu Fuß - keine Autos: Diese Inselgruppe vor Istanbul bietet Ruhe, Natur und charmante Holzhäuser. Ein schöner Kontrast zum Stadt-Trubel. Inkludiert sind natürlich auch die ausgiebigen Mahlzeiten.",
         "points": 20,
         "default_selected": false,
         "mandatory": false,
@@ -487,7 +487,7 @@
       {
         "id": "13b",
         "title": "Üsküdar-Promenade & Maiden's Tower",
-        "description": "Ein Spaziergang auf der asiatischen Seite – von der Küste bei Üsküdar mit Blick auf den kleinen berühmten Turm im Wasser (Maiden's Tower). Sehr fotogen und ruhig.",
+        "description": "Ein Spaziergang auf der asiatischen Seite – von der Küste bei Üsküdar mit Blick auf den hobbitgroßen berühmten Turm im Wasser (Maiden's Tower). Sehr ruhig angeblich.",
         "points": 15,
         "default_selected": false,
         "mandatory": false,
@@ -498,7 +498,7 @@
       {
         "id": "13c",
         "title": "Ortaköy-Moschee + Waffeln",
-        "description": "Die Moschee direkt am Wasser, dazu Straße mit Waffelständen: Perfekter Snack-Stopp beim Ausflug ans Wasser oder für einen gemütlichen Nachmittags-Moment.",
+        "description": "Die Moschee direkt am Wasser, dazu Straße mit Waffelständen: Perfekter Snack-Stopp beim Ausflug ans Wasser oder für einen gemütlichen Nachmittags-Moment. Mich persönlich interessieren ja nur die Waffeln...",
         "points": 18,
         "default_selected": false,
         "mandatory": false,
@@ -539,8 +539,8 @@
     "sub_items": [
       {
         "id": "19a",
-        "title": "Was auch immer uns einfällt",
-        "description": "Nur den Flug dort hin und ein Auto. Dann schlagen wir für den Anfang unser Hauptquartier in Valencia auf und den Rest überlegen wir uns dort ",
+        "title": "Was auch immer udie Straße bringt",
+        "description": "Nur den Flug dort hin und ein Auto. Dann schlagen wir für den Anfang unser Hauptquartier in Valencia auf und den Rest überlegen wir uns dort. Wie es sich für Hobbits gehört.",
         "points": 100,
         "default_selected": false,
         "mandatory": false,
@@ -565,7 +565,7 @@
       {
         "id": "20a",
         "title": "Original Paella Valenciana am Albufera-See (El Palmar)",
-        "description": "Ein Besuch bei La Albufera-See und im Dörfchen El Palmar bedeutet: Bootsfahrt über stille Gewässer, Fahrt vorbei an Reisfeldern und Abstecher in ein Spezialitäten-Restaurant am Wasser, wo die echte Paella Valenciana serviert wird. Sie stammt genau aus dieser Region - mit Reis aus den Feldern der Albufera, Safran, Hühnchen oder Kaninchen sowie grünen Bohnen.",
+        "description": "Ein Besuch bei La Albufera-See und im Dörfchen El Palmar bedeutet: Bootsfahrt über stille Gewässer (keine Steine werfen!!!), Fahrt vorbei an Reisfeldern und Abstecher in ein Spezialitäten-Restaurant am Wasser, wo die echte Paella Valenciana serviert wird. Sie stammt genau aus dieser Region - mit Reis aus den Feldern der Albufera, Safran, Hühnchen oder Kaninchen sowie grünen Bohnen. Nix da mit Fisch!",
         "points": 25,
         "default_selected": false,
         "mandatory": false,
@@ -578,7 +578,7 @@
       {
         "id": "20b",
         "title": "Tapas-Hopping in Ruzafa",
-        "description": "Das gastronomische Angebot war zweifellos ein Grund für den Aufschwung des Viertels. Große valencianische Köche haben Ruzafa gewählt, um ungewöhnliche Restaurants aufzumachen. Wie die Nozomi Sushi Bar, das Bouet, das Fierro oder die Taquería la Llorona zeigen, gibt es hier Speisen aus aller Welt. Beliebt sind hier auch die Cervecerías (Bierstuben) mit Craft Beer wie Olhöps oder Ruzanovol und Cafeterías wie Dulce de Leche,  La Más Bonita und Bluebell Coffee mit einem verlockenden Angebot an Feingebäck.",
+        "description": "Das gastronomische Angebot war zweifellos ein Grund für den Aufschwung des Viertels. Große valencianische Köche haben Ruzafa gewählt, um ungewöhnliche Restaurants aufzumachen. Wie die Nozomi Sushi Bar, das Bouet, das Fierro oder die Taquería la Llorona zeigen, gibt es hier Speisen aus aller Welt. Beliebt sind hier auch die Cervecerías (Bierstuben) mit Craft Beer wie Olhöps oder Ruzanovol und Cafeterías wie Dulce de Leche,  La Más Bonita und Bluebell Coffee mit einem verlockenden Angebot an Feingebäck. Aus irgendeine Grund spricht mich das Viertel an...",
         "points": 18,
         "default_selected": false,
         "mandatory": false,
@@ -591,7 +591,7 @@
       {
         "id": "20c",
         "title": "Agua de Valencia Cocktail in einer Rooftop-Bar",
-        "description": "Der legendäre Drink Agua de Valencia (Orangensaft, Cava, Wodka/Gin) gehört zur Stadt wie die Orangenbäume. Genieße ihn auf einer Rooftop-Bar mit Blick über die Dächer Valencias - besonders bei Sonnenuntergang ein stilvoller Moment.",
+        "description": "Der legendäre Drink Agua de Valencia (Orangensaft, Cava, Wodka/Gin) gehört zur Stadt wie die Orangenbäume. Genieße ihn auf einer Rooftop-Bar mit Blick über die Dächer Valencias. Wenn ich nicht wüsste was drinnen ist, würde ich kein Getränk von einem Troll (Lorenz) annehmen. Hier mach ich eine Ausnahme.",
         "points": 15,
         "default_selected": false,
         "mandatory": false,
@@ -605,7 +605,7 @@
       {
         "id": "20d",
         "title": "Horchata + Farton in Alboraya",
-        "description": "Kurz außerhalb des Stadtzentrums liegt Alboraya, wo aus den Erdmandeln ('chufa') die erfrischende Horchata gemacht wird - dazu ein weiches 'Farton'-Gebäck zum Eintauchen. Diese Kombination ist typisch für Valencia und wunderbar für eine süße Pause zwischendurch.",
+        "description": "Kurz außerhalb des Stadtzentrums liegt Alboraya, wo aus den Erdmandeln ('chufa') die erfrischende Horchata gemacht wird (nicht sicher ob ich mehr oder weniger Details haben möchte) - dazu ein weiches 'Farton'-Gebäck zum Eintauchen. Diese Kombination ist angeblich typisch für Valencia und wunderbar für eine süße Pause zwischendurch.",
         "points": 10,
         "default_selected": false,
         "mandatory": false,
@@ -618,7 +618,7 @@
       {
         "id": "20e",
         "title": "Mercado Central - frische Meeresfrüchte, Jamón, lokale Produkte",
-        "description": "Der Mercado Central in Valencia zählt zu den schönsten Markthallen Europas: Stände mit frischen Meeresfrüchten, Jamón Iberico, Oliven, Käse und Produkten aus der Region laden zum Schlendern, Kosten und Einkaufen ein. Ideal, um lokale Spezialitäten zu entdecken.",
+        "description": "Der Mercado Central in Valencia zählt zu den schönsten Markthallen Europas: Stände mit frischen Meeresfrüchten, Jamón Iberico, Oliven, Käse und Produkten aus der Region laden zum Schlendern, Kosten und Einkaufen ein. Ideal, um lokale Spezialitäten zu entdecken und damit ist logischerweise ausgiebiges Kosten gemeint. Ob wir einen Schinken für die Speisekammer finden?",
         "points": 8,
         "default_selected": false,
         "mandatory": false,
@@ -631,7 +631,7 @@
       {
         "id": "20f",
         "title": "Picknick im Parque Cabecera",
-        "description": "Der Parque Cabecera am westlichen Ende des Turia-Parks umfasst Grünflächen, Seen und sogar einen Mini-Nike-Tempel-Nachbau. Perfekt für ein entspanntes Picknick oder eine Pause im Freien - ideal für einen milden Wintertag.",
+        "description": "Der Parque Cabecera am westlichen Ende des Turia-Parks umfasst Grünflächen, Seen und sogar einen Mini-Nike-Tempel-Nachbau. Perfekt für ein entspanntes Picknick oder eine Pause im Freien - ideal für einen milden Wintertag. Aufs Lagerfeuer sollten wir verzichten, nicht dass wir ungewünschte Gäste anziehen...",
         "points": 5,
         "default_selected": false,
         "mandatory": false,
@@ -656,7 +656,7 @@
       {
         "id": "21a",
         "title": "Ciudad de las Artes y las Ciencias",
-        "description": "Ein architektonisches Meisterwerk am Stadtrand von Valencia: Die Ciudad de las Artes y las Ciencias verbindet futuristische Bauwerke, Wissenschaftsmuseum und Aquarien-Komplex. Ideal für Technik- und Architekturinteressierte - und ein Kontrast zur historischen Altstadt.",
+        "description": "Ein architektonisches Meisterwerk am Stadtrand von Valencia: Die Ciudad de las Artes y las Ciencias verbindet futuristische Bauwerke, Wissenschaftsmuseum und Aquarien-Komplex. Ideal für Technik- und Architekturinteressierte - und ein Kontrast zur historischen Altstadt. Ähh... Hobbit am Mond?",
         "points": 15,
         "default_selected": false,
         "mandatory": false,
@@ -669,7 +669,7 @@
       {
         "id": "21b",
         "title": "Torres de Serranos + Altstadtbummel",
-        "description": "Die mittelalterlichen Türme der Torres de Serranos sind eines der Wahrzeichen Valencias und bieten wunderbare Ausblicke über die Altstadt. Der anschließende Altstadtbummel durch Gassen, Plätze und Cafés lässt die Geschichte der Stadt lebendig werden.",
+        "description": "Die zwei (!) mittelalterlichen Türme der Torres de Serranos sind eines der Wahrzeichen Valencias und bieten wunderbare Ausblicke über die Altstadt. Der anschließende Altstadtbummel durch Gassen, Plätze und Cafés lässt die Geschichte der Stadt lebendig werden.",
         "points": 10,
         "default_selected": false,
         "mandatory": false,
@@ -681,8 +681,8 @@
       },
       {
         "id": "21c",
-        "title": "Seidenbörse (Lonja de la Seda, UNESCO)",
-        "description": "Die Lonja de la Seda (Seidenbörse) ist ein spätgotisches Handelsgebäude und UNESCO-Welterbe: beeindruckende Säulenhalle, historisches Handelszentrum für Seide und ein Highlight für Kulturreisen in Valencia.",
+        "title": "Seidenbörse (Lonja de la Seda)",
+        "description": "Die Lonja de la Seda (Seidenbörse) ist ein spätgotisches Handelsgebäude und UNESCO-Welterbe: beeindruckende Säulenhalle, historisches Handelszentrum für Seide und ein Highlight für Kulturreisen in Valencia. Vielleicht finden wir so coole Umhänge mit denen wir ausschauen wie Steine, wenn wir uns drunter verstecken.",
         "points": 10,
         "default_selected": false,
         "mandatory": false,
