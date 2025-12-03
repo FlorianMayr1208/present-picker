@@ -420,6 +420,13 @@
             opacity: 0.7;
         }
     }
+
+    /* Hide explanation text on mobile */
+    @media (max-width: 768px) {
+        .sticky-points-card .text-muted {
+            display: none;
+        }
+    }
 </style>
 {% endblock %}
 
