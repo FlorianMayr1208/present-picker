@@ -21,7 +21,7 @@
       {
         "id": "1b",
         "title": "Unterkunft in Marrakesch",
-        "description": "Ein gemütliches hobbitgerechtes Bett, in dem man Bauch und Geist nach einem anstregenden Tag ausruhen kann",
+        "description": "Ein gemütliches hobbitgerechtes Bett, in dem man Bauch und Geist nach einem anstrengenden Tag ausruhen kann",
         "points": 0,
         "default_selected": true,
         "mandatory": true,
@@ -32,7 +32,7 @@
       {
         "id": "1c",
         "title": "Verpflegung",
-        "description": "Essen und sonstige Verpflegung für 2 Hobbits. Abholdienst, falls der Bauch die Beine überholt ist nicht inkludier.",
+        "description": "Essen und sonstige Verpflegung für 2 Hobbits. Abholdienst, falls der Bauch die Beine überholt ist nicht inkludiert.",
         "points": 0,
         "default_selected": true,
         "mandatory": true,
@@ -227,7 +227,7 @@
       {
         "id": "6a",
         "title": "Den Rest spontan",
-        "description": "Nutze alle verbleibenden Punkte flexibel vor Ort - für spontane Aktivitäten, zusätzliche Mahlzeiten oder besondere Momente - Also zusätliche Mahlzeiten.",
+        "description": "Nutze alle verbleibenden Punkte flexibel vor Ort - für spontane Aktivitäten, zusätzliche Mahlzeiten oder besondere Momente - Also zusätzliche Mahlzeiten.",
         "points": 0,
         "default_selected": false,
         "mandatory": false,
@@ -259,7 +259,7 @@
       {
         "id": "9b",
         "title": "Unterkunft in Istanbul",
-        "description": "Ein gemütliches Bett zwischen zwei Kontinenten (im überragenen Sinn!) - perfekt zum Ausruhen nach einem ereignisreichen Tag in der Stadt am Bosporus.",
+        "description": "Ein gemütliches Bett zwischen zwei Kontinenten (im übertragenen Sinn!) - perfekt zum Ausruhen nach einem ereignisreichen Tag in der Stadt am Bosporus.",
         "points": 0,
         "default_selected": true,
         "mandatory": true,
@@ -291,7 +291,7 @@
       {
         "id": "10a",
         "title": "Streetfood-Hopping",
-        "description": "Ein kulinarischer Spaziergang durch Istanbul: Du springst von einem Streetfood-Stand zum nächsten, probierst den Fisch-Sandwich 'Balık Ekmek' am Wasser (betonung auf DU), gönnst dir 'Simit' (sesambestreifter Kringel) zum Frühstück (erstes oder zweites, deine Wahl!), wagst dich an herzhaftes 'Kokoreç' und rundest ab mit einem knusprigen 'Lahmacun'.",
+        "description": "Ein kulinarischer Spaziergang durch Istanbul: Du springst von einem Streetfood-Stand zum nächsten, probierst den Fisch-Sandwich 'Balık Ekmek' am Wasser (betonung auf DU), gönnst dir 'Simit' (sesambestreuter Kringel) zum Frühstück (erstes oder zweites, deine Wahl!), wagst dich an herzhaftes 'Kokoreç' und rundest ab mit einem knusprigen 'Lahmacun'.",
         "points": 25,
         "default_selected": false,
         "mandatory": false,
@@ -356,7 +356,7 @@
       {
         "id": "11c",
         "title": "Blaue Moschee",
-        "description": "Ein imposantes Gotteshaus mit sechs Minaretten, hunderten Íznik-Fliesen und zentraler Lage gegenüber der Hagia Sophia. Besucher dürfen eintreten - bei respektvoller Kleidung. Was natürlich eine schwachsinnige Anforderung ist. Ein Hobbit ist immer respektvoll gekleidet!",
+        "description": "Ein imposantes Gotteshaus mit sechs Minaretten, hunderten İznik-Fliesen und zentraler Lage gegenüber der Hagia Sophia. Besucher dürfen eintreten - bei respektvoller Kleidung. Was natürlich eine schwachsinnige Anforderung ist. Ein Hobbit ist immer respektvoll gekleidet!",
         "points": 15,
         "default_selected": false,
         "mandatory": false,
@@ -539,7 +539,7 @@
     "sub_items": [
       {
         "id": "19a",
-        "title": "Was auch immer udie Straße bringt",
+        "title": "Was auch immer die Straße bringt",
         "description": "Nur den Flug dort hin und ein Auto. Dann schlagen wir für den Anfang unser Hauptquartier in Valencia auf und den Rest überlegen wir uns dort. Wie es sich für Hobbits gehört.",
         "points": 100,
         "default_selected": false,
@@ -565,7 +565,7 @@
       {
         "id": "20a",
         "title": "Original Paella Valenciana am Albufera-See (El Palmar)",
-        "description": "Ein Besuch bei La Albufera-See und im Dörfchen El Palmar bedeutet: Bootsfahrt über stille Gewässer (keine Steine werfen!!!), Fahrt vorbei an Reisfeldern und Abstecher in ein Spezialitäten-Restaurant am Wasser, wo die echte Paella Valenciana serviert wird. Sie stammt genau aus dieser Region - mit Reis aus den Feldern der Albufera, Safran, Hühnchen oder Kaninchen sowie grünen Bohnen. Nix da mit Fisch!",
+        "description": "Ein Besuch beim La Albufera-See schreit nach einer Einkehr in ein Spezialitäten-Restaurant am Wasser, wo die echte Paella Valenciana serviert wird. Sie stammt genau aus dieser Region - mit Reis aus den Feldern der Albufera, Safran, Hühnchen oder Kaninchen sowie grünen Bohnen. Nix da mit Fisch!",
         "points": 25,
         "default_selected": false,
         "mandatory": false,
@@ -695,7 +695,7 @@
       {
         "id": "21d",
         "title": "Street-Art-Tour durch El Carmen",
-        "description": "Im Stadtteil El Carmen erwartet dich moderne, urbane Kunst an den Wänden: Street-Art, Graffiti, kreative Szenekultur. Eine geführte Tour oder ein selbstständiger Spaziergang enthüllen versteckte Kunstwerke und zeitgenössischen Flair.",
+        "description": "Im Stadtteil El Carmen erwartet dich moderne, urbane Kunst an den Wänden: Street-Art, Graffiti, kreative Szenekultur. Eine geführte Tour oder ein selbstständiger Spaziergang enthüllen versteckte Kunstwerke und zeitgenössischen Flair. Kenn mich nicht aus mit Hobbitkunst...trotzdem",
         "points": 12,
         "default_selected": false,
         "mandatory": false,
@@ -708,7 +708,7 @@
       {
         "id": "21e",
         "title": "Botanischer Garten Valencia",
-        "description": "Der Botanische Garten Valencia (Jardín Botánico) lädt zu Ruhe- und Naturerlebnissen ein: verschiedene Gartenbereiche, Gewächshäuser und schattige Wege - angenehm in der kühleren Jahreszeit.",
+        "description": "Hobbits haben bekannterweise eine Zuneigung zu allem was lebt und wächst. Der Botanische Garten Valencia (Jardín Botánico) lädt zu Ruhe- und Naturerlebnissen ein: verschiedene Gartenbereiche, Gewächshäuser und schattige Wege - angenehm in der kühleren Jahreszeit.",
         "points": 8,
         "default_selected": false,
         "mandatory": false,
@@ -732,8 +732,8 @@
     "sub_items": [
       {
         "id": "22a",
-        "title": "Bootsfahrt durch Albufera bei Sonnenuntergang",
-        "description": "Eine Bootsfahrt über den See der Albufera bei Sonnenuntergang gehört zu den besonderen Momenten in der Region: Spiegelndes Wasser, goldene Lichtstimmung, Reisfelder im Hintergrund - kombiniert mit einem späten Paella-Essen ergibt sich ein unvergessliches Erlebnis.",
+        "title": "Bootsfahrt durch Albufera",
+        "description": "Eine Bootsfahrt über den See der Albufera bei Sonnenuntergang gehört zu den besonderen Momenten in der Region: Spiegelndes Wasser, goldene Lichtstimmung, Reisfelder im Hintergrund. Keine Steine werfen! Wer weiß, was man dadurch weckt.",
         "points": 20,
         "default_selected": false,
         "mandatory": false,
@@ -745,8 +745,8 @@
       },
       {
         "id": "22b",
-        "title": "Strandtag an Malvarrosa oder Las Arenas",
-        "description": "Die Strände Playa Malvarrosa und Las Arenas liegen nur wenige Minuten vom Zentrum Valencias entfernt - auch im Winter mit mildem Klima geeignet für Spaziergänge, Frischluft und eventuell ein Café am Meer.",
+        "title": "Strandbesuch an Malvarrosa oder Las Arenas",
+        "description": "Die Strände Playa Malvarrosa und Las Arenas liegen nur wenige Minuten vom Zentrum Valencias entfernt - auch im Winter mit mildem Klima geeignet für Spaziergänge, Frischluft und eventuell ein Café am Meer. Hobbits mögen normalerweise kein Wasser, aber ein Spaziergang am Meer ist etwas anderes!",
         "points": 0,
         "default_selected": false,
         "mandatory": false,
@@ -759,7 +759,7 @@
       {
         "id": "22c",
         "title": "Xàtiva - Burg & Altstadt mit arabischen Einflüssen (1-2 Übernachtungen)",
-        "description": "Nur etwa 1 Stunde von Valencia entfernt liegt Xàtiva mit seiner imposanten Burg auf einem Bergkamm und einer Altstadt, die von arabischer Geschichte geprägt ist. Ein spannender Tagesausflug zur Mischung aus Natur, Geschichte und Panorama.",
+        "description": "Nur etwa 1 Stunde von Valencia entfernt liegt Xàtiva mit seiner imposanten Burg auf einem Bergkamm und einer Altstadt, die von arabischer Geschichte geprägt ist. Wir hüpfen also in die Kutsche/das Pony und machen uns auf den Weg raus aus der Stadt. Ziel ist es die Gegend um Xàtiva zu erkunden.",
         "points": 30,
         "default_selected": false,
         "mandatory": false,
@@ -772,7 +772,7 @@
       {
         "id": "22d",
         "title": "Naturpark Cova Negra (Wanderung)",
-        "description": "In der Region von Xàtiva befindet sich der Parc Natural de la Cova Negra - ein wildes Tal mit Schluchten, Felsen, Höhlen und einem Flusslauf. Eine gut machbare Wanderung bietet Natur im Winter, die Ruhe genießen und etwas Aktivität verbinden.",
+        "description": "In der Region von Xàtiva befindet sich der Parc Natural de la Cova Negra - ein wildes Tal mit Schluchten, Felsen, Höhlen(Trollen?) und einem Flusslauf. Eine gut machbare Wanderung bietet Natur im Winter, die Ruhe genießen und etwas Aktivität verbinden.",
         "points": 15,
         "default_selected": false,
         "mandatory": false,
@@ -785,7 +785,7 @@
       {
         "id": "22e",
         "title": "Requena - Weinregion & Cava-Verkostungen (1 Übernachtung)",
-        "description": "Requena ist eine traditionsreiche Weinregion nordwestlich von Valencia: Verkostung von Cava und lokalen Rot- & Weißweinen, Besuch von Kelleranlagen.",
+        "description": "Requena ist eine traditionsreiche Weinregion nordwestlich von Valencia: Verkostung von Cava und lokalen Rot- & Weißweinen, Besuch von Kelleranlagen. Wenn wir uns dann den Magen vollgeschlagen haben werden wir vermutlich nicht mehr den Weg zu unserem Pony finden, also schlafen wir am besten gleich dort.",
         "points": 35,
         "default_selected": false,
         "mandatory": false,
@@ -810,7 +810,7 @@
       {
         "id": "24a",
         "title": "Flug und Quartier in Valencia",
-        "description": "Die essentiellen Reisevorbereitungen: Flug nach Valencia buchen und Unterkunft reservieren.",
+        "description": "Die essentiellen Reisevorbereitungen: Flug nach Valencia buchen und Unterkunft reservieren. Irgendwo muss man seine temporäre Höhle ja aufschlagen, um weitere Pläne machen zu können.",
         "points": 0,
         "default_selected": true,
         "mandatory": false,
@@ -822,8 +822,8 @@
       },
       {
         "id": "24b",
-        "title": "Mietwagen",
-        "description": "Mietwagen für unsere Ausflüge oder Weiterreise von Valencia weg.",
+        "title": "Mietpony/Kutsche",
+        "description": "Mietpony/Kutsche für unsere Ausflüge oder Weiterreise aus Valencia weg.",
         "points": 0,
         "default_selected": true,
         "mandatory": true,
@@ -836,7 +836,7 @@
       {
         "id": "24c",
         "title": "Cocktail trinken mit Sponsor",
-        "description": "Wir haben einen Sponsor gefunden (Lolo), der uns einen Cocktail auf unserer Reise finanzieren möchte. Wäre ja eigentlich schon fast unhöflich, dem nicht nachzukommen ;)",
+        "description": "Wer hätte gedacht, dass ein Troll einen Zylinder tragen kann. Nun ja, er ist ja auch ein Sponsor deshalb äußerst offiziell unterwegs. Gesponsert wird uns einen Cocktail auf unserer Reise. Wäre ja eigentlich schon fast unhöflich, dem nicht nachzukommen ;)",
         "points": 0,
         "default_selected": true,
         "mandatory": true,
