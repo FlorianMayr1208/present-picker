@@ -153,7 +153,7 @@
         "id": "3e",
         "title": "Souks",
         "description": "Souk Semmarine ist der Hauptsouk in Marrakesch, direkt neben dem Jemaa el Fnaa gelegen. Hier findet man fast alles — von Töpferwaren über Stoffe bis hin zu Souvenirs. Es ist wahrscheinlich der touristenfreundlichste Souk in Marrakesch. Souk El Attarine war einst ein Souk für Gewürze und Parfums, ist aber heute für seine Kupfer- und Metallarbeiten bekannt. Teekannen, Spiegel und Laternen sind hier die beliebtesten Artikel. Souk des Bijoutiers ist der beste Souk in Marrakesch für Schmuck. Seine hochwertigen Stücke heben ihn von anderen Souks ab. Souk Chouari ist auf Tischlerei und Holzverarbeitung spezialisiert und perfekt, um Kunsthandwerk in Marrakesch zu erleben.",
-        "points": 0,
+        "points": 10,
         "default_selected": false,
         "mandatory": false,
         "from_parents": false,
@@ -292,7 +292,7 @@
         "id": "10a",
         "title": "Streetfood-Hopping",
         "description": "Ein kulinarischer Spaziergang durch Istanbul: Du springst von einem Streetfood-Stand zum nächsten, probierst den Fisch-Sandwich 'Balık Ekmek' am Wasser (betonung auf DU), gönnst dir 'Simit' (sesambestreuter Kringel) zum Frühstück (erstes oder zweites, deine Wahl!), wagst dich an herzhaftes 'Kokoreç' und rundest ab mit einem knusprigen 'Lahmacun'.",
-        "points": 25,
+        "points": 20,
         "default_selected": false,
         "mandatory": false,
         "from_parents": false,
@@ -303,7 +303,7 @@
         "id": "10b",
         "title": "Gewürzbasar-Verkostung",
         "description": "Farbenprächtig, duftend und voller Geschmack: Im Gewürz- (und Süßigkeiten-)Bazar schnupperst du an getrockneten Früchten, wühlst dich durch Gewürzmischungen und gönnst dir eine Portion 'Lokum'. Ein Erlebnis für alle Sinne - und ideal für Mitbringsel. Vielleicht haben sie ein kleines Fass Old Toby",
-        "points": 15,
+        "points": 12,
         "default_selected": false,
         "mandatory": false,
         "from_parents": false,
@@ -314,7 +314,7 @@
         "id": "10c",
         "title": "Frühstück (Kahvaltı) in Beşiktaş",
         "description": "Ein üppiges Frühstück ist in Istanbul nicht bloß ein Mahl, sondern ein Erlebnis: Viele kleine Schälchen mit Käse, Oliven, Honig, Eiern, 'Menemen' und frischem Brot. In Beşiktaş sitzt man gemütlich im Freien, beobachtet das Treiben und startet den Tag genüsslich. Perfektes Aufwärmen für die zweite Runde 2 Stunden später.",
-        "points": 20,
+        "points": 16,
         "default_selected": false,
         "mandatory": false,
         "from_parents": false,
@@ -335,7 +335,7 @@
         "id": "11a",
         "title": "Hagia Sophia",
         "description": "Ein Architektur- und Geschichtswunder: Ursprünglich byzantinische Kathedrale, später Moschee, heute bedeutendes Bauwerk von Weltrang. Die riesige Kuppel, Mosaike und religiösen Spuren machen sie zu einem Muss in Istanbul. Sind wir uns ehrlich, das Ding ist eigentlich eine übertrieben große Hobbithöhle, schau dir die Kuppel an!",
-        "points": 18,
+        "points": 14,
         "default_selected": false,
         "mandatory": false,
         "from_parents": false,
@@ -357,7 +357,7 @@
         "id": "11c",
         "title": "Blaue Moschee",
         "description": "Ein imposantes Gotteshaus mit sechs Minaretten, hunderten İznik-Fliesen und zentraler Lage gegenüber der Hagia Sophia. Besucher dürfen eintreten - bei respektvoller Kleidung. Was natürlich eine schwachsinnige Anforderung ist. Ein Hobbit ist immer respektvoll gekleidet!",
-        "points": 15,
+        "points": 12,
         "default_selected": false,
         "mandatory": false,
         "from_parents": false,
@@ -368,7 +368,7 @@
         "id": "11d",
         "title": "Basilica Cistern",
         "description": "Unterirdisch, kühl, geheimnisvoll: Diese riesige frühbyzantinische Zisterne mit ihren Säulen und dem Wasser spiegelt eine ganz andere Seite von Istanbul wider - ideal als kurze Pause vom Trubel über Tage. Finger weg von den Skeletten am Brunnenrand und wenn es anfängt zu trommeln, bin ich weg!",
-        "points": 15,
+        "points": 12,
         "default_selected": false,
         "mandatory": false,
         "from_parents": false,
@@ -379,7 +379,7 @@
         "id": "11e",
         "title": "Galata-Turm & Galata-Brücke",
         "description": "Der Turm bietet spektakuläre Aussicht über Stadt und Wasser. Die Brücke verbindet Stadtteile, ist belebt mit Anglern und Straßenständen - beide Orte perfekt für einen Zwischenstopp und Panorama-Fotos. Die Brücke am Weg zum Turm. Wir wissen was zu tun ist, wenn wir einen Zauberer treffen!",
-        "points": 18,
+        "points": 14,
         "default_selected": false,
         "mandatory": false,
         "from_parents": false,
@@ -390,7 +390,7 @@
         "id": "11f",
         "title": "Grand Bazaar & Gewürz Bazaar",
         "description": "Der große Basar - ein Labyrinth aus Geschäften, Souvenirs und Altstadt-Atmosphäre. Der Gewürzbasar daneben ein Duft- und Farbenspiel: Gewürze, Tees, Süßigkeiten. Ideal für ein wenig Shopping & Erlebnis. Zeit die Speisekammer mit Gewürzen zu füllen.",
-        "points": 0,
+        "points": 10,
         "default_selected": false,
         "mandatory": false,
         "from_parents": false,
@@ -401,7 +401,7 @@
         "id": "11g",
         "title": "Dolmabahçe-Palast",
         "description": "Ein opulenter Palast am Bosporus mit europäisch inspiriertem Design, großen Prunksälen und prachtvoller Innenausstattung - ein starkes Kontrastprogramm zu älteren osmanischen Bauwerken. Ich hab Bilder mit Kuchen drauf gesehen im zusammenhang mit der Attraktion...",
-        "points": 20,
+        "points": 16,
         "default_selected": false,
         "mandatory": false,
         "from_parents": false,
@@ -422,7 +422,7 @@
         "id": "12a",
         "title": "Sufi-Derwisch-Zeremonie",
         "description": "Eine spirituelle Tanzzeremonie, bei der die Derwische wirbeln, begleitet von mystischer Musik. Eine besondere Atmosphäre - ruhig, meditativ und kulturell tief. Wie tanzende Elben... nur mit bärtigen Türken.",
-        "points": 25,
+        "points": 20,
         "default_selected": false,
         "mandatory": false,
         "from_parents": false,
@@ -433,7 +433,7 @@
         "id": "12b",
         "title": "Jazz-Clubs & Live-Musik in Kadıköy",
         "description": "Auf der asiatischen Seite von Istanbul gelegen: Bars, Live-Musik, kreative Atmosphäre. Ideal für Abende fernab der klassischen Touristenpfade. Es ist immer sicherer abseits der Pfade zu reisen.",
-        "points": 30,
+        "points": 24,
         "default_selected": false,
         "mandatory": false,
         "from_parents": false,
@@ -488,7 +488,7 @@
         "id": "13b",
         "title": "Üsküdar-Promenade & Maiden's Tower",
         "description": "Ein Spaziergang auf der asiatischen Seite – von der Küste bei Üsküdar mit Blick auf den hobbitgroßen berühmten Turm im Wasser (Maiden's Tower). Sehr ruhig angeblich.",
-        "points": 15,
+        "points": 12,
         "default_selected": false,
         "mandatory": false,
         "from_parents": false,
@@ -499,7 +499,7 @@
         "id": "13c",
         "title": "Ortaköy-Moschee + Waffeln",
         "description": "Die Moschee direkt am Wasser, dazu Straße mit Waffelständen: Perfekter Snack-Stopp beim Ausflug ans Wasser oder für einen gemütlichen Nachmittags-Moment. Mich persönlich interessieren ja nur die Waffeln...",
-        "points": 18,
+        "points": 14,
         "default_selected": false,
         "mandatory": false,
         "from_parents": false,
@@ -612,7 +612,7 @@
         "from_parents": false,
         "is_spontaneous": false,
         "image_filename": "activities/spa_horchata.jpg",
-        "slider_level_min": 3,
+        "slider_level_min": 4,
         "slider_level_max": 5
       },
       {
@@ -639,7 +639,7 @@
         "is_spontaneous": false,
         "image_filename": "activities/spa_parque_cabecera.jpg",
         "slider_level_min": 4,
-        "slider_level_max": 5
+        "slider_level_max": 4
       }
     ],
     "slider_level_min": 1,
@@ -663,7 +663,7 @@
         "from_parents": false,
         "is_spontaneous": false,
         "image_filename": "activities/spa_ciudad_artes_ciencias.jpg",
-        "slider_level_min": 3,
+        "slider_level_min": 5,
         "slider_level_max": 5
       },
       {
@@ -689,7 +689,7 @@
         "from_parents": false,
         "is_spontaneous": false,
         "image_filename": "activities/spa_seidenboerse.webp",
-        "slider_level_min": 4,
+        "slider_level_min": 5,
         "slider_level_max": 5
       },
       {
@@ -702,7 +702,7 @@
         "from_parents": false,
         "is_spontaneous": false,
         "image_filename": "activities/spa_street_art.jpg",
-        "slider_level_min": 4,
+        "slider_level_min": 3,
         "slider_level_max": 5
       },
       {
@@ -716,7 +716,7 @@
         "is_spontaneous": false,
         "image_filename": "activities/spa_botanischer_garten.jpg",
         "slider_level_min": 1,
-        "slider_level_max": 5
+        "slider_level_max": 4
       }
     ],
     "slider_level_min": 1,
@@ -740,7 +740,7 @@
         "from_parents": false,
         "is_spontaneous": false,
         "image_filename": "activities/spa_albufera.webp",
-        "slider_level_min": 4,
+        "slider_level_min": 5,
         "slider_level_max": 5
       },
       {
@@ -754,7 +754,7 @@
         "is_spontaneous": false,
         "image_filename": "activities/spa_strandtag_malvarrosa.jpg",
         "slider_level_min": 2,
-        "slider_level_max": 5
+        "slider_level_max": 4
       },
       {
         "id": "22c",
