@@ -702,7 +702,7 @@
         "from_parents": false,
         "is_spontaneous": false,
         "image_filename": "activities/spa_street_art.jpg",
-        "slider_level_min": 3,
+        "slider_level_min": 1,
         "slider_level_max": 5
       },
       {
@@ -715,7 +715,7 @@
         "from_parents": false,
         "is_spontaneous": false,
         "image_filename": "activities/spa_botanischer_garten.jpg",
-        "slider_level_min": 1,
+        "slider_level_min": 3,
         "slider_level_max": 4
       }
     ],
